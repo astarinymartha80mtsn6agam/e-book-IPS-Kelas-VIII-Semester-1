@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bab 5 - Pengaruh Kondisi Geografis terhadap Keseimbangan Harga | IPS Kelas VIII Semester I</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        body { line-height: 1.7; color: #333; background: #f5f7fa; }
+        nav { background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%); padding: 1rem 2rem; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        nav ul { list-style: none; display: flex; justify-content: center; flex-wrap: wrap; gap: 1.5rem; }
+        nav a { color: white; text-decoration: none; font-weight: 500; transition: all 0.3s; padding: 0.5rem 1rem; border-radius: 5px; }
+        nav a:hover { background: rgba(255,255,255,0.2); transform: translateY(-2px); }
+        .breadcrumb { background: #e8edf3; padding: 1rem 2rem; font-size: 0.9rem; border-bottom: 2px solid #2a5298; }
+        .breadcrumb a { color: #2a5298; text-decoration: none; font-weight: 500; }
+        .breadcrumb a:hover { text-decoration: underline; }
+        .breadcrumb span { margin: 0 0.5rem; color: #666; }
+        .hero { background: linear-gradient(135deg, #1e3c72 0%, #2a5298 50%, #3a7bd5 100%); color: white; padding: 4rem 2rem; text-align: center; position: relative; overflow: hidden; }
+        .hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/></svg>') repeat; opacity: 0.3; }
+        .hero-content { position: relative; z-index: 1; max-width: 900px; margin: 0 auto; }
+        .chapter-badge { display: inline-block; background: rgba(255,255,255,0.2); padding: 0.5rem 1.5rem; border-radius: 50px; margin-bottom: 1rem; font-size: 1rem; font-weight: 600; backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.3); }
+        .hero h1 { font-size: 2.5rem; margin-bottom: 1.5rem; text-shadow: 2px 2px 4px rgba(0,0,0,0.3); }
+        .hero p { font-size: 1.15rem; max-width: 750px; margin: 0 auto 2rem; opacity: 0.95; }
+        .action-buttons { display: flex; justify-content: center; flex-wrap: wrap; gap: 1rem; margin-top: 2rem; }
+        .btn { display: inline-block; padding: 0.8rem 1.8rem; border-radius: 50px; text-decoration: none; font-weight: 600; transition: all 0.3s; box-shadow: 0 4px 15px rgba(0,0,0,0.2); }
+        .btn-primary { background: #f39c12; color: white; }
+        .btn-primary:hover { background: #e67e22; transform: translateY(-3px); }
+        .btn-secondary { background: white; color: #1e3c72; }
+        .btn-secondary:hover { background: #f5f7fa; transform: translateY(-3px); }
+        .btn-success { background: #27ae60; color: white; }
+        .btn-success:hover { background: #219a52; transform: translateY(-3px); }
+        .content-section { max-width: 1000px; margin: 0 auto; padding: 3rem 2rem; }
+        .content-card { background: white; padding: 2.5rem; border-radius: 15px; box-shadow: 0 5px 25px rgba(0,0,0,0.08); margin-bottom: 2rem; }
+        .content-card h2 { color: #1e3c72; font-size: 1.8rem; margin-bottom: 1.5rem; padding-bottom: 0.8rem; border-bottom: 3px solid #f39c12; }
+        .content-card h3 { color: #2a5298; font-size: 1.4rem; margin: 1.5rem 0 1rem; }
+        .content-card p { margin-bottom: 1rem; text-align: justify; font-size: 1.05rem; }
+        .content-card ul, .content-card ol { margin: 1rem 0 1rem 2rem; }
+        .content-card li { margin-bottom: 0.5rem; font-size: 1.02rem; }
+        .highlight-box { background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%); border-left: 5px solid #2a5298; padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; }
+        .highlight-box h4 { color: #1e3c72; margin-bottom: 0.8rem; font-size: 1.15rem; }
+        .info-box { background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%); border-left: 5px solid #f39c12; padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; }
+        .info-box h4 { color: #e67e22; margin-bottom: 0.8rem; }
+        .warning-box { background: linear-gradient(135deg, #ffebee 0%, #ffcdd2 100%); border-left: 5px solid #c0392b; padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; }
+        .warning-box h4 { color: #c0392b; margin-bottom: 0.8rem; }
+        .success-box { background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%); border-left: 5px solid #27ae60; padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; }
+        .success-box h4 { color: #27ae60; margin-bottom: 0.8rem; }
+        .definition { background: #f5f7fa; padding: 1rem 1.5rem; border-radius: 8px; margin: 1rem 0; border-left: 4px solid #2a5298; font-style: italic; }
+        .definition strong { color: #1e3c72; font-style: normal; }
+        .formula-box { background: linear-gradient(135deg, #f3e5f5 0%, #e1bee7 100%); border-left: 5px solid #8e44ad; padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; text-align: center; font-size: 1.2rem; font-weight: 600; color: #4a148c; }
+        table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+        table th { background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%); color: white; padding: 1rem; text-align: left; font-weight: 600; }
+        table td { padding: 0.9rem 1rem; border-bottom: 1px solid #e0e0e0; }
+        table tr:nth-child(even) { background: #f5f7fa; }
+        table tr:hover { background: #e3f2fd; }
+        .map-placeholder { background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%); border: 2px dashed #f39c12; border-radius: 12px; padding: 3rem 2rem; text-align: center; margin: 1.5rem 0; color: #1e3c72; }
+        .map-placeholder .icon { font-size: 3rem; margin-bottom: 1rem; }
+        .nav-footer { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 1rem; margin-top: 3rem; padding: 2rem; background: white; border-radius: 15px; box-shadow: 0 5px 25px rgba(0,0,0,0.08); }
+        .nav-footer a { flex: 1; min-width: 200px; text-align: center; padding: 1rem; border-radius: 10px; text-decoration: none; font-weight: 600; transition: all 0.3s; }
+        .nav-prev { background: #e8edf3; color: #1e3c72; }
+        .nav-prev:hover { background: #2a5298; color: white; }
+        .nav-next { background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%); color: white; }
+        .nav-next:hover { background: linear-gradient(135deg, #2a5298 0%, #3a7bd5 100%); transform: translateY(-3px); }
+        footer { background: #0f1e3d; color: white; padding: 3rem 2rem 1rem; margin-top: 3rem; }
+        .footer-content { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-bottom: 2rem; }
+        .footer-section h4 { color: #f39c12; margin-bottom: 1rem; font-size: 1.1rem; }
+        .footer-section p, .footer-section a { color: rgba(255,255,255,0.85); margin-bottom: 0.5rem; font-size: 0.95rem; }
+        .footer-section a { text-decoration: none; display: block; transition: color 0.3s; }
+        .footer-section a:hover { color: #f39c12; }
+        .footer-bottom { text-align: center; padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,0.1); font-size: 0.9rem; opacity: 0.8; }
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 1.8rem; }
+            .hero p { font-size: 1rem; }
+            .content-card { padding: 1.5rem; }
+            .content-card h2 { font-size: 1.4rem; }
+            nav ul { gap: 0.5rem; }
+            nav a { padding: 0.3rem 0.6rem; font-size: 0.85rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <ul>
+            <li><a href="index.html">IPS Kelas VIII</a></li>
+            <li><a href="index.html#beranda">Beranda</a></li>
+            <li><a href="index.html#bab">Daftar Bab</a></li>
+            <li><a href="index.html#penulis">Penulis</a></li>
+            <li><a href="index.html#kontak">Kontak</a></li>
+        </ul>
+    </nav>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+        <a href="index.html">📘 IPS Kelas VIII Semester I</a>
+        <span>›</span>
+        <a href="index.html#beranda">Beranda</a>
+        <span>›</span>
+        <a href="index.html#bab">Daftar Bab</a>
+        <span>›</span>
+        <strong>Bab 5</strong>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="chapter-badge">💹 BAB 5</div>
+            <h1>Pengaruh Kondisi Geografis terhadap Keseimbangan Harga</h1>
+            <p>Memahami konsep permintaan dan penawaran, hukum permintaan dan penawaran, harga keseimbangan (equilibrium), serta pengaruh kondisi geografis Indonesia sebagai negara kepulauan terhadap perbedaan harga antarwilayah dan upaya menjaga keseimbangan harga.</p>
+            
+            <div class="action-buttons">
+                <a href="index.html" class="btn btn-secondary">🏠 Beranda</a>
+                <a href="uji-formatif-5.html" class="btn btn-primary">📝 Uji Formatif Bab 5</a>
+                <a href="6.html" class="btn btn-success">Bab Selanjutnya →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Content Section -->
+    <div class="content-section">
+
+        <!-- A. Pengertian Permintaan dan Penawaran -->
+        <div class="content-card">
+            <h2>A. Pengertian Permintaan dan Penawaran</h2>
+            
+            <p>Dalam kehidupan sehari-hari, kita sering melakukan kegiatan ekonomi berupa jual beli. Kegiatan ini melibatkan dua pihak utama, yaitu pembeli (konsumen) dan penjual (produsen). Hubungan antara kedua pihak ini melahirkan konsep permintaan dan penawaran yang menjadi dasar pembentukan harga di pasar.</p>
+
+            <h3>1. Pengertian Permintaan</h3>
+            <div class="definition">
+                <p><strong>Permintaan (Demand)</strong> adalah sejumlah barang atau jasa yang ingin dibeli atau dimiliki oleh konsumen pada berbagai tingkat harga tertentu dalam jangka waktu tertentu, dengan asumsi faktor-faktor lain tetap (ceteris paribus).</p>
+            </div>
+
+            <p>Permintaan dapat dibedakan menjadi dua jenis:</p>
+            <ul>
+                <li><strong>Permintaan Absolut (Absolut Demand)</strong> – Seluruh keinginan konsumen terhadap barang/jasa, tanpa memperhatikan daya beli</li>
+                <li><strong>Permintaan Efektif (Effective Demand)</strong> – Keinginan konsumen yang disertai dengan kemampuan daya beli</li>
+                <li><strong>Permintaan Potensial (Potential Demand)</strong> – Keinginan konsumen yang masih dapat ditingkatkan jika ada perubahan kondisi</li>
+            </ul>
+
+            <h3>2. Pengertian Penawaran</h3>
+            <div class="definition">
+                <p><strong>Penawaran (Supply)</strong> adalah sejumlah barang atau jasa yang tersedia dan dapat ditawarkan oleh produsen kepada konsumen pada berbagai tingkat harga tertentu dalam jangka waktu tertentu.</p>
+            </div>
+
+            <h3>3. Pasar sebagai Tempat Pertemuan</h3>
+            <div class="definition">
+                <p><strong>Pasar</strong> adalah tempat bertemunya penjual dan pembeli untuk melakukan transaksi jual beli barang atau jasa. Pasar dapat berupa pasar tradisional, pasar modern, pasar online (e-commerce), dan lain-lain.</p>
+            </div>
+
+            <div class="highlight-box">
+                <h4>📌 Penting untuk Dipahami</h4>
+                <p>Permintaan berasal dari sisi <strong>konsumen</strong> (pembeli), sedangkan penawaran berasal dari sisi <strong>produsen</strong> (penjual). Interaksi antara permintaan dan penawaran inilah yang akan menentukan <strong>harga pasar</strong> atau harga keseimbangan.</p>
+            </div>
+        </div>
+
+        <!-- B. Hukum Permintaan dan Hukum Penawaran -->
+        <div class="content-card">
+            <h2>B. Hukum Permintaan dan Hukum Penawaran</h2>
+            
+            <h3>1. Hukum Permintaan</h3>
+            <div class="definition">
+                <p><strong>Hukum Permintaan</strong> menyatakan bahwa "Jika harga suatu barang naik, maka jumlah barang yang diminta akan turun. Sebaliknya, jika harga barang turun, maka jumlah barang yang diminta akan naik, dengan asumsi faktor lain tetap (ceteris paribus)."</p>
+            </div>
+
+            <p>Dengan kata lain, hubungan antara harga dan jumlah permintaan bersifat <strong>negatif (berbanding terbalik)</strong>.</p>
+
+            <div class="formula-box">
+                Harga ↑ → Permintaan ↓<br>
+                Harga ↓ → Permintaan ↑
+            </div>
+
+            <p><strong>Contoh:</strong> Ketika harga beras naik dari Rp 12.000/kg menjadi Rp 15.000/kg, maka masyarakat akan membeli beras lebih sedikit karena daya belinya menurun. Sebaliknya, ketika harga beras turun, masyarakat akan membeli lebih banyak.</p>
+
+            <h3>2. Hukum Penawaran</h3>
+            <div class="definition">
+                <p><strong>Hukum Penawaran</strong> menyatakan bahwa "Jika harga suatu barang naik, maka jumlah barang yang ditawarkan akan naik. Sebaliknya, jika harga barang turun, maka jumlah barang yang ditawarkan akan turun, dengan asumsi faktor lain tetap (ceteris paribus)."</p>
+            </div>
+
+            <p>Dengan kata lain, hubungan antara harga dan jumlah penawaran bersifat <strong>positif (berbanding lurus)</strong>.</p>
+
+            <div class="formula-box">
+                Harga ↑ → Penawaran ↑<br>
+                Harga ↓ → Penawaran ↓
+            </div>
+
+            <p><strong>Contoh:</strong> Ketika harga cabai naik dari Rp 30.000/kg menjadi Rp 60.000/kg, para petani cabai akan terdorong untuk menanam lebih banyak cabai agar mendapat keuntungan lebih besar. Akibatnya, jumlah cabai yang ditawarkan di pasar meningkat.</p>
+
+            <h3>3. Perbandingan Hukum Permintaan dan Penawaran</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Aspek</th>
+                        <th>Hukum Permintaan</th>
+                        <th>Hukum Penawaran</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Pihak</strong></td>
+                        <td>Konsumen (pembeli)</td>
+                        <td>Produsen (penjual)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Hubungan Harga-Jumlah</strong></td>
+                        <td>Negatif (berbanding terbalik)</td>
+                        <td>Positif (berbanding lurus)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Jika harga naik</strong></td>
+                        <td>Jumlah diminta turun</td>
+                        <td>Jumlah ditawarkan naik</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Jika harga turun</strong></td>
+                        <td>Jumlah diminta naik</td>
+                        <td>Jumlah ditawarkan turun</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Bentuk Kurva</strong></td>
+                        <td>Miring dari kiri atas ke kanan bawah</td>
+                        <td>Miring dari kiri bawah ke kanan atas</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="info-box">
+                <h4>💡 Tahukah Kamu?</h4>
+                <p>Hukum permintaan dan penawaran memiliki <strong>pengecualian</strong> pada barang-barang tertentu, seperti barang Veblen (barang mewah yang justru makin dicari saat harga naik) dan barang Giffen (barang inferior yang permintaannya naik saat harga naik karena tidak ada substitusi).</p>
+            </div>
+        </div>
+
+        <!-- C. Faktor-faktor yang Memengaruhi Permintaan dan Penawaran -->
+        <div class="content-card">
+            <h2>C. Faktor-faktor yang Memengaruhi Permintaan dan Penawaran</h2>
+            
+            <h3>1. Faktor yang Memengaruhi Permintaan</h3>
+            <ul>
+                <li><strong>Harga Barang itu Sendiri</strong> – Harga naik, permintaan turun</li>
+                <li><strong>Pendapatan Konsumen</strong> – Pendapatan naik, daya beli naik, permintaan naik</li>
+                <li><strong>Selera Konsumen</strong> – Perubahan tren memengaruhi permintaan</li>
+                <li><strong>Harga Barang Substitusi</strong> – Harga barang pengganti naik, permintaan barang ini naik</li>
+                <li><strong>Harga Barang Komplementer</strong> – Harga barang pelengkap naik, permintaan barang ini turun</li>
+                <li><strong>Jumlah Penduduk</strong> – Penduduk banyak, permintaan besar</li>
+                <li><strong>Ekspektasi Masa Depan</strong> – Perkiraan harga naik mendorong pembelian sekarang</li>
+                <li><strong>Perkiraan Harga di Masa Depan</strong></li>
+            </ul>
+
+            <h3>2. Faktor yang Memengaruhi Penawaran</h3>
+            <ul>
+                <li><strong>Harga Barang itu Sendiri</strong> – Harga naik, penawaran naik</li>
+                <li><strong>Biaya Produksi</strong> – Biaya naik, penawaran turun</li>
+                <li><strong>Teknologi</strong> – Teknologi maju, produksi efisien, penawaran naik</li>
+                <li><strong>Pajak dan Subsidi</strong> – Pajak naik, penawaran turun; subsidi naik, penawaran naik</li>
+                <li><strong>Jumlah Produsen</strong> – Produsen banyak, penawaran besar</li>
+                <li><strong>Tujuan Perusahaan</strong> – Mencari keuntungan maksimal</li>
+                <li><strong>Ketersediaan Bahan Baku</strong></li>
+                <li><strong>Kondisi Alam/Cuaca</strong> – Mempengaruhi hasil pertanian</li>
+            </ul>
+
+            <div class="highlight-box">
+                <h4>📌 Hubungan dengan Kondisi Geografis</h4>
+                <p>Kondisi geografis Indonesia sangat memengaruhi <strong>biaya produksi</strong> dan <strong>ketersediaan bahan baku</strong>. Misalnya, daerah pegunungan cocok untuk sayuran, daerah pesisir untuk perikanan, dan daerah tertentu untuk perkebunan. Perbedaan ini memengaruhi penawaran barang di setiap daerah.</p>
+            </div>
+        </div>
+
+        <!-- D. Harga Keseimbangan (Equilibrium) -->
+        <div class="content-card">
+            <h2>D. Harga Keseimbangan (Equilibrium)</h2>
+            
+            <p>Harga keseimbangan adalah harga yang terbentuk pada titik pertemuan antara permintaan dan penawaran. Pada harga ini, jumlah barang yang diminta sama dengan jumlah barang yang ditawarkan.</p>
+
+            <div class="definition">
+                <p><strong>Harga Keseimbangan (Equilibrium Price)</strong> adalah harga yang terbentuk pada titik pertemuan antara kurva permintaan dan kurva penawaran, di mana jumlah barang yang diminta sama dengan jumlah barang yang ditawarkan (Qd = Qs).</p>
+            </div>
+
+            <div class="formula-box">
+                Qd = Qs → Harga Keseimbangan (Pe)
+            </div>
+
+            <h3>1. Proses Terbentuknya Harga Keseimbangan</h3>
+            <p>Harga keseimbangan terbentuk melalui mekanisme pasar:</p>
+            <ul>
+                <li><strong>Jika harga di atas keseimbangan</strong> → Terjadi kelebihan penawaran (surplus) → Harga turun</li>
+                <li><strong>Jika harga di bawah keseimbangan</strong> → Terjadi kelebihan permintaan (shortage) → Harga naik</li>
+                <li><strong>Jika harga pada titik keseimbangan</strong> → Pasar dalam keadaan seimbang</li>
+            </ul>
+
+            <h3>2. Contoh Perhitungan Harga Keseimbangan</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Harga (Rp)</th>
+                        <th>Jumlah Diminta (Qd)</th>
+                        <th>Jumlah Ditawarkan (Qs)</th>
+                        <th>Kondisi</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>10.000</td>
+                        <td>50</td>
+                        <td>10</td>
+                        <td>Shortage (kekurangan)</td>
+                    </tr>
+                    <tr>
+                        <td>15.000</td>
+                        <td>40</td>
+                        <td>20</td>
+                        <td>Shortage</td>
+                    </tr>
+                    <tr>
+                        <td><strong>20.000</strong></td>
+                        <td><strong>30</strong></td>
+                        <td><strong>30</strong></td>
+                        <td><strong>Equilibrium (seimbang)</strong></td>
+                    </tr>
+                    <tr>
+                        <td>25.000</td>
+                        <td>20</td>
+                        <td>40</td>
+                        <td>Surplus (kelebihan)</td>
+                    </tr>
+                    <tr>
+                        <td>30.000</td>
+                        <td>10</td>
+                        <td>50</td>
+                        <td>Surplus</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p>Dari tabel di atas, harga keseimbangan terbentuk pada <strong>Rp 20.000</strong> dengan jumlah barang 30 unit.</p>
+
+            <div class="success-box">
+                <h4>🏆 Pentingnya Harga Keseimbangan</h4>
+                <p>Harga keseimbangan memberikan manfaat bagi kedua belah pihak: konsumen mendapatkan barang dengan harga yang wajar, dan produsen mendapatkan keuntungan yang layak. Pasar yang efisien adalah pasar yang mampu mencapai harga keseimbangan secara alami.</p>
+            </div>
+        </div>
+
+        <!-- E. Pengaruh Kondisi Geografis terhadap Harga -->
+        <div class="content-card">
+            <h2>E. Pengaruh Kondisi Geografis terhadap Harga</h2>
+            
+            <p>Indonesia sebagai negara kepulauan memiliki kondisi geografis yang sangat beragam. Kondisi ini sangat memengaruhi harga barang di berbagai daerah, sehingga terjadi perbedaan harga antardaerah.</p>
+
+            <h3>1. Faktor Geografis yang Memengaruhi Harga</h3>
+            <ul>
+                <li><strong>Jarak Antarpulau</strong> – Semakin jauh jarak, semakin tinggi biaya transportasi, harga barang semakin mahal</li>
+                <li><strong>Kondisi Infrastruktur</strong> – Daerah dengan infrastruktur baik memiliki harga lebih murah</li>
+                <li><strong>Ketersediaan SDA</strong> – Daerah penghasil barang tertentu memiliki harga lebih murah untuk barang tersebut</li>
+                <li><strong>Akses Transportasi</strong> – Daerah terpencil sulit dijangkau, harga barang tinggi</li>
+                <li><strong>Kondisi Alam</strong> – Cuaca buruk dapat mengganggu distribusi, harga naik</li>
+            </ul>
+
+            <h3>2. Contoh Perbedaan Harga Antardaerah</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Barang</th>
+                        <th>Daerah Penghasil</th>
+                        <th>Harga di Daerah Penghasil</th>
+                        <th>Harga di Daerah Terpencil</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Beras</td>
+                        <td>Jawa (Karawang)</td>
+                        <td>Rp 12.000/kg</td>
+                        <td>Rp 18.000/kg (Papua)</td>
+                    </tr>
+                    <tr>
+                        <td>Ikan</td>
+                        <td>Pesisir pantai</td>
+                        <td>Rp 25.000/kg</td>
+                        <td>Rp 50.000/kg (pegunungan)</td>
+                    </tr>
+                    <tr>
+                        <td>Sayuran</td>
+                        <td>Dataran tinggi</td>
+                        <td>Rp 10.000/kg</td>
+                        <td>Rp 20.000/kg (pesisir)</td>
+                    </tr>
+                    <tr>
+                        <td>Bahan Bakar</td>
+                        <td>Jawa (dekat refinery)</td>
+                        <td>Rp 10.000/liter</td>
+                        <td>Rp 30.000/liter (daerah terpencil)</td>
+                    </tr>
+                    <tr>
+                        <td>Semen</td>
+                        <td>Jawa (pabrik)</td>
+                        <td>Rp 50.000/sak</td>
+                        <td>Rp 100.000/sak (Papua)</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>3. Dampak Perbedaan Harga</h3>
+            <p><strong>a. Dampak Negatif:</strong></p>
+            <ul>
+                <li>Kesenjangan ekonomi antarwilayah</li>
+                <li>Beban biaya hidup tinggi di daerah terpencil</li>
+                <li>Inflasi berbeda antardaerah</li>
+                <li>Ketidakadilan sosial</li>
+                <li>Penyelundupan barang antarpulau</li>
+            </ul>
+
+            <p><strong>b. Dampak Positif (jika dikelola):</strong></p>
+            <ul>
+                <li>Peluang perdagangan antardaerah</li>
+                <li>Mendorong pembangunan infrastruktur</li>
+                <li>Pemerataan pembangunan</li>
+            </ul>
+
+            <div class="warning-box">
+                <h4>⚠️ Masalah Nyata</h4>
+                <p>Di Indonesia, perbedaan harga antara <strong>Jawa dan luar Jawa</strong> bisa mencapai 2-3 kali lipat. Harga semen di Papua bisa 2x lipat dari harga di Jawa. Hal ini disebabkan oleh tingginya biaya logistik dan keterbatasan infrastruktur di daerah terpencil.</p>
+            </div>
+        </div>
+
+        <!-- F. Peran Distributor dan Konektivitas -->
+        <div class="content-card">
+            <h2>F. Peran Distributor dan Konektivitas Antarruang</h2>
+            
+            <p>Distributor (penyalur) adalah pihak yang menyalurkan barang dari produsen ke konsumen. Distributor berperan penting dalam menjaga keseimbangan harga antardaerah.</p>
+
+            <h3>1. Saluran Distribusi</h3>
+            <ul>
+                <li><strong>Distribusi Langsung</strong> – Produsen langsung ke konsumen</li>
+                <li><strong>Distribusi Semi-Langsung</strong> – Produsen → Pedagang → Konsumen</li>
+                <li><strong>Distribusi Tidak Langsung</strong> – Produsen → Agen → Grosir → Pengecer → Konsumen</li>
+            </ul>
+
+            <h3>2. Peran Distributor dalam Menyeimbangkan Harga</h3>
+            <ul>
+                <li>Menyalurkan barang dari daerah surplus ke daerah defisit</li>
+                <li>Menstabilkan harga melalui ketersediaan barang</li>
+                <li>Mengurangi kesenjangan harga antardaerah</li>
+                <li>Mempercepat distribusi barang</li>
+            </ul>
+
+            <h3>3. Peran Konektivitas Antarruang</h3>
+            <p>Konektivitas antarruang yang baik sangat penting untuk menjaga keseimbangan harga:</p>
+            <ul>
+                <li><strong>Tol Laut</strong> – Program pemerintah untuk pemerataan harga melalui jalur laut</li>
+                <li><strong>Jalan Tol Trans Jawa & Trans Sumatera</strong> – Mempercepat distribusi darat</li>
+                <li><strong>Kereta Api</strong> – Distribusi massal dalam satu pulau</li>
+                <li><strong>Penerbangan Perintis</strong> – Menghubungkan daerah terpencil</li>
+                <li><strong>Palapa Ring</strong> – Informasi harga real-time melalui internet</li>
+            </ul>
+
+            <div class="info-box">
+                <h4>💡 Program Tol Laut</h4>
+                <p>Program <strong>Tol Laut</strong> yang diluncurkan pemerintah bertujuan menurunkan disparitas (perbedaan) harga antara Indonesia Barat dan Indonesia Timur hingga <strong>20%</strong>. Melalui rute pelayaran reguler, barang dari Jawa dapat didistribusikan ke daerah terpencil dengan biaya lebih murah.</p>
+            </div>
+        </div>
+
+        <!-- G. Upaya Menjaga Keseimbangan Harga -->
+        <div class="content-card">
+            <h2>G. Upaya Menjaga Keseimbangan Harga</h2>
+            
+            <p>Pemerintah memiliki peran penting dalam menjaga keseimbangan harga agar tidak merugikan masyarakat, terutama masyarakat di daerah terpencil.</p>
+
+            <h3>1. Kebijakan Pemerintah</h3>
+            <ul>
+                <li><strong>Harga Eceran Tertinggi (HET)</strong> – Menetapkan batas harga tertinggi untuk barang pokok</li>
+                <li><strong>Operasi Pasar</strong> – Menyalurkan barang saat harga melonjak</li>
+                <li><strong>Subsidi</strong> – Subsidi BBM, listrik, dan pupuk untuk menekan biaya produksi</li>
+                <li><strong>Impor Barang</strong> – Mengimpor saat produksi dalam negeri kurang</li>
+                <li><strong>Bulog (Badan Urusan Logistik)</strong> – Menstabilkan harga beras dan bahan pokok</li>
+                <li><strong>Pembangunan Infrastruktur</strong> – Jalan, pelabuhan, bandara untuk distribusi</li>
+            </ul>
+
+            <h3>2. Peran Masyarakat</h3>
+            <ul>
+                <li>Tidak melakukan <strong>penimbunan barang</strong></li>
+                <li>Tidak melakukan <strong>spekulasi harga</strong></li>
+                <li>Melaporkan praktik <strong>perdagangan curang</strong></li>
+                <li>Mendukung produk lokal</li>
+                <li>Bersikap bijak dalam konsumsi</li>
+            </ul>
+
+            <h3>3. Peran Produsen dan Distributor</h3>
+            <ul>
+                <li>Menjaga kualitas barang</li>
+                <li>Menetapkan harga yang wajar</li>
+                <li>Mendistribusikan barang secara merata</li>
+                <li>Tidak melakukan monopoli</li>
+                <li>Mengembangkan efisiensi produksi</li>
+            </ul>
+
+            <div class="success-box">
+                <h4>🌟 Contoh Sukses</h4>
+                <p>Program <strong>One Price Policy (BBM Satu Harga)</strong> yang diterapkan pemerintah berhasil menyamakan harga BBM di seluruh Indonesia, termasuk di daerah terpencil seperti Papua. Sebelumnya, harga BBM di Papua bisa mencapai Rp 50.000/liter, sekarang sama dengan di Jawa yaitu Rp 10.000/liter.</p>
+            </div>
+        </div>
+
+        <!-- Poin Penting untuk Ujian -->
+        <div class="content-card">
+            <h2>📋 Poin Penting untuk Ujian</h2>
+            
+            <div class="highlight-box">
+                <h4>🎯 Konsep Kunci yang Harus Dikuasai</h4>
+                <ul>
+                    <li>Pahami <strong>pengertian permintaan dan penawaran</strong> beserta perbedaannya</li>
+                    <li>Kuasai <strong>Hukum Permintaan</strong>: harga naik, permintaan turun (hubungan negatif)</li>
+                    <li>Kuasai <strong>Hukum Penawaran</strong>: harga naik, penawaran naik (hubungan positif)</li>
+                    <li>Pahami <strong>harga keseimbangan (equilibrium)</strong>: Qd = Qs</li>
+                    <li>Hafalkan <strong>faktor-faktor yang memengaruhi</strong> permintaan dan penawaran</li>
+                    <li>Pahami <strong>pengaruh kondisi geografis</strong> terhadap perbedaan harga antardaerah</li>
+                    <li>Kuasai <strong>peran distributor</strong> dalam menyalurkan barang</li>
+                    <li>Pahami <strong>program Tol Laut</strong> dan <strong>BBM Satu Harga</strong> sebagai upaya pemerataan</li>
+                    <li>Hafalkan <strong>kebijakan pemerintah</strong> dalam menjaga keseimbangan harga (HET, operasi pasar, subsidi, Bulog)</li>
+                    <li>Pahami konsep <strong>surplus</strong> dan <strong>shortage</strong> dalam pasar</li>
+                </ul>
+            </div>
+
+            <div class="info-box">
+                <h4>💡 Tips Belajar</h4>
+                <p>Amati harga-harga di sekitarmu! Bandingkan harga beras, cabai, atau BBM di daerahmu dengan daerah lain. Diskusikan dengan teman: mengapa bisa berbeda? Faktor geografis apa yang memengaruhinya? Dengan demikian, kamu akan memahami materi secara kontekstual.</p>
+            </div>
+        </div>
+
+        <!-- Navigation Footer -->
+        <div class="nav-footer">
+            <a href="4.html" class="nav-prev">← Bab Sebelumnya</a>
+            <a href="uji-formatif-5.html" class="nav-next" style="background: linear-gradient(135deg, #f39c12 0%, #e67e22 100%);">📝 Uji Formatif Bab 5</a>
+            <a href="6.html" class="nav-next">Bab Selanjutnya →</a>
+        </div>
+
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>📘 IPS Kelas VIII Semester I</h4>
+                <p>Buku ajar untuk peserta didik Madrasah Tsanawiyah kelas VIII. Disusun oleh Astariny Martha, S.Pd.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Navigasi</h4>
+                <a href="index.html#beranda">Beranda</a>
+                <a href="index.html#tentang">Tentang Buku</a>
+                <a href="index.html#bab">Daftar Bab</a>
+                <a href="index.html#penulis">Penulis</a>
+            </div>
+            <div class="footer-section">
+                <h4>Buku</h4>
+                <a href="#">Cetak</a>
+                <a href="#">E-Book</a>
+                <a href="uji-formatif-5.html">Uji Formatif</a>
+            </div>
+            <div class="footer-section">
+                <h4>Kontak</h4>
+                <a href="mailto:astarinymartha80@gmail.com">astarinymartha80@gmail.com</a>
+                <p>MTsN 6 Agam</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 Astariny Martha, S.Pd. – MTsN 6 Agam. Hak cipta dilindungi.</p>
+            <p>IPS Kelas VIII Semester I: Pengaruh Kondisi Geografis terhadap Keseimbangan Harga</p>
+        </div>
+    </footer>
+
+</body>
+</html>
