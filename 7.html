@@ -1,0 +1,1457 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UTS - Ujian Tengah Semester | IPS Kelas VIII Semester I</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        body { line-height: 1.7; color: #333; background: #f5f7fa; }
+        nav { background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%); padding: 1rem 2rem; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        nav ul { list-style: none; display: flex; justify-content: center; flex-wrap: wrap; gap: 1.5rem; }
+        nav a { color: white; text-decoration: none; font-weight: 500; transition: all 0.3s; padding: 0.5rem 1rem; border-radius: 5px; }
+        nav a:hover { background: rgba(255,255,255,0.2); transform: translateY(-2px); }
+        .breadcrumb { background: #e8edf3; padding: 1rem 2rem; font-size: 0.9rem; border-bottom: 2px solid #2a5298; }
+        .breadcrumb a { color: #2a5298; text-decoration: none; font-weight: 500; }
+        .breadcrumb a:hover { text-decoration: underline; }
+        .breadcrumb span { margin: 0 0.5rem; color: #666; }
+        .hero { background: linear-gradient(135deg, #f39c12 0%, #e67e22 50%, #d35400 100%); color: white; padding: 3rem 2rem; text-align: center; position: relative; overflow: hidden; }
+        .hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/></svg>') repeat; opacity: 0.3; }
+        .hero-content { position: relative; z-index: 1; max-width: 900px; margin: 0 auto; }
+        .hero h1 { font-size: 2.2rem; margin-bottom: 1rem; text-shadow: 2px 2px 4px rgba(0,0,0,0.3); }
+        .hero p { font-size: 1.1rem; max-width: 750px; margin: 0 auto 1.5rem; opacity: 0.95; }
+        .hero .badge { display: inline-block; background: rgba(255,255,255,0.2); padding: 0.5rem 1.5rem; border-radius: 50px; margin-bottom: 1rem; font-size: 0.95rem; backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.3); }
+        .info-bar { display: flex; justify-content: center; flex-wrap: wrap; gap: 1rem; margin-top: 1.5rem; }
+        .info-item { background: rgba(255,255,255,0.15); padding: 0.6rem 1.2rem; border-radius: 50px; font-size: 0.9rem; backdrop-filter: blur(10px); }
+        .container { max-width: 1000px; margin: 0 auto; padding: 2rem; }
+        .card { background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 5px 25px rgba(0,0,0,0.08); margin-bottom: 2rem; }
+        .card h2 { color: #1e3c72; font-size: 1.6rem; margin-bottom: 1rem; padding-bottom: 0.8rem; border-bottom: 3px solid #f39c12; }
+        .card h3 { color: #2a5298; font-size: 1.3rem; margin: 1.5rem 0 1rem; }
+        .card p { margin-bottom: 1rem; text-align: justify; }
+        .form-group { margin-bottom: 1.2rem; }
+        .form-group label { display: block; font-weight: 600; margin-bottom: 0.5rem; color: #1e3c72; }
+        .form-group input, .form-group select, .form-group textarea { width: 100%; padding: 0.8rem 1rem; border: 2px solid #e0e0e0; border-radius: 8px; font-size: 1rem; transition: all 0.3s; font-family: inherit; }
+        .form-group input:focus, .form-group select:focus { outline: none; border-color: #2a5298; box-shadow: 0 0 0 3px rgba(42,82,152,0.1); }
+        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+        .question { background: #f5f7fa; padding: 1.5rem; border-radius: 10px; margin-bottom: 1.2rem; border-left: 4px solid #2a5298; }
+        .question.correct { background: #e8f5e9; border-left-color: #27ae60; }
+        .question.incorrect { background: #ffebee; border-left-color: #c0392b; }
+        .question.partial { background: #fff3e0; border-left-color: #f39c12; }
+        .question-header { display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.8rem; flex-wrap: wrap; }
+        .question-number { background: #1e3c72; color: white; padding: 0.3rem 0.8rem; border-radius: 50px; font-size: 0.9rem; font-weight: 600; }
+        .question-score { margin-left: auto; background: #f39c12; color: white; padding: 0.3rem 0.8rem; border-radius: 50px; font-size: 0.85rem; font-weight: 600; }
+        .question-type { background: #27ae60; color: white; padding: 0.3rem 0.8rem; border-radius: 50px; font-size: 0.8rem; font-weight: 600; }
+        .question-type.complex { background: #8e44ad; }
+        .question-type.tf { background: #16a085; }
+        .question-type.match { background: #d35400; }
+        .question p { font-weight: 500; margin-bottom: 1rem; }
+        .options { display: grid; gap: 0.6rem; }
+        .option { display: flex; align-items: flex-start; gap: 0.8rem; padding: 0.8rem 1rem; background: white; border: 2px solid #e0e0e0; border-radius: 8px; cursor: pointer; transition: all 0.3s; }
+        .option:hover { border-color: #2a5298; background: #e3f2fd; }
+        .option input { margin-top: 0.2rem; cursor: pointer; transform: scale(1.2); }
+        .option label { cursor: pointer; flex: 1; margin: 0; font-weight: normal; }
+        .option.selected { background: #e3f2fd; border-color: #2a5298; }
+        .option.correct-answer { background: #c8e6c9 !important; border-color: #27ae60 !important; }
+        .option.wrong-answer { background: #ffcdd2 !important; border-color: #c0392b !important; }
+        .option.missed-answer { background: #fff9c4 !important; border-color: #fbc02d !important; }
+        .tf-options { display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem; }
+        .tf-option { display: flex; align-items: center; justify-content: center; gap: 0.5rem; padding: 0.8rem; background: white; border: 2px solid #e0e0e0; border-radius: 8px; cursor: pointer; transition: all 0.3s; }
+        .tf-option:hover { border-color: #2a5298; background: #e3f2fd; }
+        .tf-option input { cursor: pointer; transform: scale(1.3); }
+        .tf-option label { cursor: pointer; font-weight: 600; margin: 0; }
+        .tf-option.selected { background: #e3f2fd; border-color: #2a5298; }
+        .tf-option.correct-answer { background: #c8e6c9 !important; border-color: #27ae60 !important; }
+        .tf-option.wrong-answer { background: #ffcdd2 !important; border-color: #c0392b !important; }
+        .match-container { display: grid; gap: 0.8rem; }
+        .match-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; align-items: center; padding: 0.8rem; background: white; border: 2px solid #e0e0e0; border-radius: 8px; }
+        .match-statement { font-weight: 500; }
+        .match-row select { padding: 0.6rem; border: 2px solid #e0e0e0; border-radius: 6px; font-size: 0.95rem; cursor: pointer; }
+        .match-row.correct { background: #c8e6c9 !important; border-color: #27ae60 !important; }
+        .match-row.incorrect { background: #ffcdd2 !important; border-color: #c0392b !important; }
+        .alert { padding: 1rem 1.5rem; border-radius: 8px; margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.8rem; }
+        .alert-warning { background: #fff3e0; border-left: 4px solid #f39c12; color: #e67e22; }
+        .alert-info { background: #e3f2fd; border-left: 4px solid #2a5298; color: #1e3c72; }
+        .alert-success { background: #e8f5e9; border-left: 4px solid #27ae60; color: #219a52; }
+        .btn { display: inline-block; padding: 0.9rem 2rem; border-radius: 50px; text-decoration: none; font-weight: 600; transition: all 0.3s; border: none; cursor: pointer; font-size: 1rem; font-family: inherit; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+        .btn-primary { background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%); color: white; }
+        .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 6px 20px rgba(30,60,114,0.3); }
+        .btn-success { background: linear-gradient(135deg, #27ae60 0%, #219a52 100%); color: white; }
+        .btn-success:hover { transform: translateY(-3px); }
+        .btn-warning { background: linear-gradient(135deg, #f39c12 0%, #e67e22 100%); color: white; }
+        .btn-warning:hover { transform: translateY(-3px); }
+        .btn-secondary { background: #e8edf3; color: #1e3c72; }
+        .btn-secondary:hover { background: #2a5298; color: white; }
+        .btn-danger { background: linear-gradient(135deg, #c0392b 0%, #e74c3c 100%); color: white; }
+        .btn-danger:hover { transform: translateY(-3px); }
+        .btn-group { display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 1.5rem; justify-content: center; }
+        .result-section { display: none; background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%); color: white; padding: 2.5rem; border-radius: 15px; text-align: center; margin-bottom: 2rem; box-shadow: 0 10px 30px rgba(30,60,114,0.2); }
+        .result-section.show { display: block; animation: fadeIn 0.6s ease; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(-20px); } to { opacity: 1; transform: translateY(0); } }
+        .result-section h2 { color: white; border-bottom: 3px solid #f39c12; margin-bottom: 2rem; padding-bottom: 1rem; }
+        .score-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1.5rem; margin: 2rem 0; }
+        .score-item { background: rgba(255,255,255,0.15); padding: 1.5rem; border-radius: 12px; backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.2); }
+        .score-item .label { font-size: 0.9rem; opacity: 0.9; margin-bottom: 0.5rem; }
+        .score-item .value { font-size: 2.2rem; font-weight: bold; color: #f39c12; }
+        .score-item .max { font-size: 0.9rem; opacity: 0.8; }
+        .grade { font-size: 4rem; font-weight: bold; margin: 1rem 0; text-shadow: 2px 2px 4px rgba(0,0,0,0.3); }
+        .grade.excellent { color: #2ecc71; }
+        .grade.good { color: #3498db; }
+        .grade.average { color: #f39c12; }
+        .grade.poor { color: #e74c3c; }
+        .nav-footer { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 1rem; margin-top: 2rem; padding: 1.5rem; background: white; border-radius: 15px; box-shadow: 0 5px 25px rgba(0,0,0,0.08); }
+        .nav-footer a { flex: 1; min-width: 200px; text-align: center; padding: 1rem; border-radius: 10px; text-decoration: none; font-weight: 600; transition: all 0.3s; }
+        .nav-prev { background: #e8edf3; color: #1e3c72; }
+        .nav-prev:hover { background: #2a5298; color: white; }
+        .nav-next { background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%); color: white; }
+        .nav-next:hover { transform: translateY(-3px); }
+        footer { background: #0f1e3d; color: white; padding: 2.5rem 2rem 1rem; margin-top: 3rem; }
+        .footer-content { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 2rem; margin-bottom: 1.5rem; }
+        .footer-section h4 { color: #f39c12; margin-bottom: 1rem; font-size: 1.1rem; }
+        .footer-section p, .footer-section a { color: rgba(255,255,255,0.85); margin-bottom: 0.5rem; font-size: 0.95rem; }
+        .footer-section a { text-decoration: none; display: block; transition: color 0.3s; }
+        .footer-section a:hover { color: #f39c12; }
+        .footer-bottom { text-align: center; padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,0.1); font-size: 0.9rem; opacity: 0.8; }
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 1.6rem; }
+            .form-row { grid-template-columns: 1fr; }
+            .tf-options { grid-template-columns: 1fr; }
+            .match-row { grid-template-columns: 1fr; }
+            .container { padding: 1rem; }
+            .card { padding: 1.5rem; }
+            .score-item .value { font-size: 1.8rem; }
+            .grade { font-size: 3rem; }
+        }
+        @media print {
+            nav, .breadcrumb, .nav-footer, footer, .btn-group, .alert { display: none !important; }
+            .hero { padding: 1rem; }
+            .result-section { background: #1e3c72 !important; -webkit-print-color-adjust: exact; }
+            body { background: white; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <ul>
+            <li><a href="index.html">IPS Kelas VIII</a></li>
+            <li><a href="index.html#beranda">Beranda</a></li>
+            <li><a href="index.html#bab">Daftar Bab</a></li>
+            <li><a href="index.html#penulis">Penulis</a></li>
+            <li><a href="index.html#kontak">Kontak</a></li>
+        </ul>
+    </nav>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+        <a href="index.html">📘 IPS Kelas VIII Semester I</a>
+        <span>›</span>
+        <a href="index.html#bab">Daftar Bab</a>
+        <span>›</span>
+        <strong>Ujian Tengah Semester (UTS)</strong>
+    </div>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="badge">📝 UJIAN TENGAH SEMESTER (UTS)</div>
+            <h1>IPS Kelas VIII Semester I</h1>
+            <p>Ujian Tengah Semester mencakup materi Bab 1 sampai Bab 6: Kondisi Geografis dan Keragaman Sosial Budaya, Pemanfaatan SDA, Peningkatan Kualitas SDM, Konektivitas Antarruang, Keseimbangan Harga, serta Interaksi dengan Bangsa Asing.</p>
+            
+            <div class="info-bar">
+                <div class="info-item">📝 PG: 20 soal × 5 poin</div>
+                <div class="info-item">🔀 PG Kompleks: 10 soal × 5 poin</div>
+                <div class="info-item">✅❌ Benar/Salah: 10 soal × 5 poin</div>
+                <div class="info-item">🔗 Menjodohkan: 10 soal × 5 poin</div>
+                <div class="info-item">🎯 Total: 250 poin</div>
+            </div>
+        </div>
+    </section>
+
+    <div class="container">
+
+        <!-- Data Siswa -->
+        <div class="card" id="form-data">
+            <h2>📋 Data Siswa</h2>
+            <div class="alert alert-info">
+                <span>ℹ️</span>
+                <span>Lengkapi data diri sebelum mengerjakan soal. Data ini akan digunakan untuk laporan hasil ujian.</span>
+            </div>
+
+            <form id="studentForm">
+                <div class="form-group">
+                    <label for="nama">Nama Lengkap <span style="color:red;">*</span></label>
+                    <input type="text" id="nama" name="nama" required placeholder="Masukkan nama lengkap">
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="nis">NIS (Nomor Induk Siswa) <span style="color:red;">*</span></label>
+                        <input type="text" id="nis" name="nis" required placeholder="Masukkan NIS">
+                    </div>
+                    <div class="form-group">
+                        <label for="tanggal">📅 Tanggal Ujian</label>
+                        <input type="date" id="tanggal" name="tanggal">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="kelas">Kelas <span style="color:red;">*</span></label>
+                        <select id="kelas" name="kelas" required>
+                            <option value="">-- Pilih Kelas --</option>
+                            <option value="VIII-A">VIII-A</option>
+                            <option value="VIII-B">VIII-B</option>
+                            <option value="VIII-C">VIII-C</option>
+                            <option value="VIII-D">VIII-D</option>
+                            <option value="VIII-E">VIII-E</option>
+                            <option value="VIII-F">VIII-F</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="absen">No. Absen</label>
+                        <input type="number" id="absen" name="absen" min="1" max="40" placeholder="No. absen">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="sekolah">Asal Sekolah</label>
+                    <input type="text" id="sekolah" name="sekolah" value="MTsN 6 Agam" placeholder="Nama sekolah">
+                </div>
+            </form>
+        </div>
+
+        <!-- ============ BAGIAN A: PILIHAN GANDA ============ -->
+        <div class="card" id="bagian-a">
+            <h2>📋 Bagian A – Pilihan Ganda (20 Soal × 5 Poin = 100 Poin)</h2>
+            <div class="alert alert-warning">
+                <span>⚠️</span>
+                <span>Pilih <strong>satu jawaban yang paling tepat</strong> untuk setiap soal! Setiap soal bernilai <strong>5 poin</strong>.</span>
+            </div>
+
+            <!-- Soal 1 -->
+            <div class="question" data-type="pg" data-correct="b">
+                <div class="question-header">
+                    <span class="question-number">Soal 1</span>
+                    <span class="question-type">PG</span>
+                    <span class="question-score">5 poin</span>
+                </div>
+                <p>Secara astronomis, Indonesia terletak pada koordinat...</p>
+                <div class="options">
+                    <div class="option"><input type="radio" name="pg1" id="pg1a" value="a"><label for="pg1a">a) 23,5° LU – 23,5° LS dan 95° BT – 141° BT</label></div>
+                    <div class="option"><input type="radio" name="pg1" id="pg1b" value="b"><label for="pg1b">b) 6° LU – 11° LS dan 95° BT – 141° BT</label></div>
+                    <div class="option"><input type="radio" name="pg1" id="pg1c" value="c"><label for="pg1c">c) 6° LU – 11° LS dan 85° BT – 131° BT</label></div>
+                    <div class="option"><input type="radio" name="pg1" id="pg1d" value="d"><label for="pg1d">d) 10° LU – 15° LS dan 90° BT – 145° BT</label></div>
+                </div>
+            </div>
+
+            <!-- Soal 2 -->
+            <div class="question" data-type="pg" data-correct="c">
+                <div class="question-header">
+                    <span class="question-number">Soal 2</span>
+                    <span class="question-type">PG</span>
+                    <span class="question-score">5 poin</span>
+                </div>
+                <p>Secara geografis, Indonesia terletak di antara dua benua dan dua samudra. Posisi ini disebut...</p>
+                <div class="options">
+                    <div class="option"><input type="radio" name="pg2" id="pg2a" value="a"><label for="pg2a">a) Posisi astronomis</label></div>
+                    <div class="option"><input type="radio" name="pg2" id="pg2b" value="b"><label for="pg2b">b) Posisi khatulistiwa</label></div>
+                    <div class="option"><input type="radio" name="pg2" id="pg2c" value="c"><label for="pg2c">c) Posisi silang (cross position)</label></div>
+                    <div class="option"><input type="radio" name="pg2" id="pg2d" value="d"><label for="pg2d">d) Posisi geologis</label></div>
+                </div>
+            </div>
+
+            <!-- Soal 3 -->
+            <div class="question" data-type="pg" data-correct="a">
+                <div class="question-header">
+                    <span class="question-number">Soal 3</span>
+                    <span class="question-type">PG</span>
+                    <span class="question-score">5 poin</span>
+                </div>
+                <p>Iklim yang disebabkan oleh angin muson yang berganti setiap enam bulan disebut...</p>
+                <div class="options">
+                    <div class="option"><input type="radio" name="pg3" id="pg3a" value="a"><label for="pg3a">a) Iklim Muson</label></div>
+                    <div class="option"><input type="radio" name="pg3" id="pg3b" value="b"><label for="pg3b">b) Iklim Laut</label></div>
+                    <div class="option"><input type="radio" name="pg3" id="pg3c" value="c"><label for="pg3c">c) Iklim Sedang</label></div>
+                    <div class="option"><input type="radio" name="pg3" id="pg3d" value="d"><label for="pg3d">d) Iklim Kutub</label></div>
+                </div>
+            </div>
+
+            <!-- Soal 4 -->
+            <div class="question" data-type="pg" data-correct="c">
+                <div class="question-header">
+                    <span class="question-number">Soal 4</span>
+                    <span class="question-type">PG</span>
+                    <span class="question-score">5 poin</span>
+                </div>
+                <p>Harimau, Gajah, dan Orangutan termasuk dalam wilayah persebaran fauna...</p>
+                <div class="options">
+                    <div class="option"><input type="radio" name="pg4" id="pg4a" value="a"><label for="pg4a">a) Australis</label></div>
+                    <div class="option"><input type="radio" name="pg4" id="pg4b" value="b"><label for="pg4b">b) Peralihan</label></div>
+                    <div class="option"><input type="radio" name="pg4" id="pg4c" value="c"><label for="pg4c">c) Asiatis</label></div>
+                    <div class="option"><input type="radio" name="pg4" id="pg4d" value="d"><label for="pg4d">d) Endemik</label></div>
+                </div>
+            </div>
+
+            <!-- Soal 5 -->
+            <div class="question" data-type="pg" data-correct="b">
+                <div class="question-header">
+                    <span class="question-number">Soal 5</span>
+                    <span class="question-type">PG</span>
+                    <span class="question-score">5 poin</span>
+                </div>
+                <p>Semboyan "Bhinneka Tunggal Ika"取自 dari kitab...</p>
+                <div class="options">
+                    <div class="option"><input type="radio" name="pg5" id="pg5a" value="a"><label for="pg5a">a) Negarakertagama karya Mpu Prapanca</label></div>
+                    <div class="option"><input type="radio" name="pg5" id="pg5b" value="b"><label for="pg5b">b) Sutasoma karya Mpu Tantular</label></div>
+                    <div class="option"><input type="radio" name="pg5" id="pg5c" value="c"><label for="pg5c">c) Arjunawiwaha karya Mpu Kanwa</label></div>
+                    <div class="option"><input type="radio" name="pg5" id="pg5d" value="d"><label for="pg5d">d) Baratayudha karya Mpu Sedah</label></div>
+                </div>
+            </div>
+
+            <!-- Soal 6 -->
+            <div class="question" data-type="pg" data-correct="c">
+                <div class="question-header">
+                    <span class="question-number">Soal 6</span>
+                    <span class="question-type">PG</span>
+                    <span class="question-score">5 poin</span>
+                </div>
+                <p>Minyak bumi, batu bara, dan gas alam termasuk SDA...</p>
+                <div class="options">
+                    <div class="option"><input type="radio" name="pg6" id="pg6a" value="a"><label for="pg6a">a) Hayati yang dapat diperbarui</label></div>
+                    <div class="option"><input type="radio" name="pg6" id="pg6b" value="b"><label for="pg6b">b) Hayati yang tidak dapat diperbarui</label></div>
+                    <div class="option"><input type="radio" name="pg6" id="pg6c" value="c"><label for="pg6c">c) Non-hayati yang tidak dapat diperbarui</label></div>
+                    <div class="option"><input type="radio" name="pg6" id="pg6d" value="d"><label for="pg6d">d) Non-hayati yang tidak habis</label></div>
+                </div>
+            </div>
+
+            <!-- Soal 7 -->
+            <div class="question" data-type="pg" data-correct="a">
+                <div class="question-header">
+                    <span class="question-number">Soal 7</span>
+                    <span class="question-type">PG</span>
+                    <span class="question-score">5 poin</span>
+                </div>
+                <p>Daerah penghasil batu bara terbesar di Indonesia adalah...</p>
+                <div class="options">
+                    <div class="option"><input type="radio" name="pg7" id="pg7a" value="a"><label for="pg7a">a) Kalimantan Timur dan Sumatera Selatan</label></div>
+                    <div class="option"><input type="radio" name="pg7" id="pg7b" value="b"><label for="pg7b">b) Papua dan Maluku</label></div>
+                    <div class="option"><input type="radio" name="pg7" id="pg7c" value="c"><label for="pg7c">c) Jawa dan Bali</label></div>
+                    <div class="option"><input type="radio" name="pg7" id="pg7d" value="d"><label for="pg7d">d) Sulawesi dan Nusa Tenggara</label></div>
+                </div>
+            </div>
+
+            <!-- Soal 8 -->
+            <div class="question" data-type="pg" data-correct="d">
+                <div class="question-header">
+                    <span class="question-number">Soal 8</span>
+                    <span class="question-type">PG</span>
+                    <span class="question-score">5 poin</span>
+                </div>
+                <p>Konsep 3R dalam pengelolaan SDA terdiri dari...</p>
+                <div class="options">
+                    <div class="option"><input type="radio" name="pg8" id="pg8a" value="a"><label for="pg8a">a) Replant, Rebuild, Recycle</label></div>
+                    <div class="option"><input type="radio" name="pg8" id="pg8b" value="b"><label for="pg8b">b) Reduce, Rebuild, Recycle</label></div>
+                    <div class="option"><input type="radio" name="pg8" id="pg8c" value="c"><label for="pg8c">c) Reuse, Replant, Recycle</label></div>
+                    <div class="option"><input type="radio" name="pg8" id="pg8d" value="d"><label for="pg8d">d) Reduce, Reuse, Recycle</label></div>
+                </div>
+            </div>
+
+            <!-- Soal 9 -->
+            <div class="question" data-type="pg" data-correct="b">
+                <div class="question-header">
+                    <span class="question-number">Soal 9</span>
+                    <span class="question-type">PG</span>
+                    <span class="question-score">5 poin</span>
+                </div>
+                <p>IPM Indonesia pada tahun 2024 mencapai 74,49, termasuk kategori...</p>
+                <div class="options">
+                    <div class="option"><input type="radio" name="pg9" id="pg9a" value="a"><label for="pg9a">a) Sangat Tinggi</label></div>
+                    <div class="option"><input type="radio" name="pg9" id="pg9b" value="b"><label for="pg9b">b) Tinggi</label></div>
+                    <div class="option"><input type="radio" name="pg9" id="pg9c" value="c"><label for="pg9c">c) Sedang</label></div>
+                    <div class="option"><input type="radio" name="pg9" id="pg9d" value="d"><label for="pg9d">d) Rendah</label></div>
+                </div>
+            </div>
+
+            <!-- Soal 10 -->
+            <div class="question" data-type="pg" data-correct="c">
+                <div class="question-header">
+                    <span class="question-number">Soal 10</span>
+                    <span class="question-type">PG</span>
+                    <span class="question-score">5 poin</span>
+                </div>
+                <p>Bonus demografi adalah kondisi di mana...</p>
+                <div class="options">
+                    <div class="option"><input type="radio" name="pg10" id="pg10a" value="a"><label for="pg10a">a) Jumlah penduduk lansia lebih banyak</label></div>
+                    <div class="option"><input type="radio" name="pg10" id="pg10b" value="b"><label for="pg10b">b) Jumlah penduduk anak-anak lebih banyak</label></div>
+                    <div class="option"><input type="radio" name="pg10" id="pg10c" value="c"><label for="pg10c">c) Jumlah penduduk usia produktif lebih besar dari usia tidak produktif</label></div>
+                    <div class="option"><input type="radio" name="pg10" id="pg10d" value="d"><label for="pg10d">d) Jumlah penduduk menurun drastis</label></div>
+                </div>
+            </div>
+
+            <!-- Soal 11 -->
+            <div class="question" data-type="pg" data-correct="a">
+                <div class="question-header">
+                    <span class="question-number">Soal 11</span>
+                    <span class="question-type">PG</span>
+                    <span class="question-score">5 poin</span>
+                </div>
+                <p>Program pemerintah untuk memberikan pelatihan dan sertifikasi keterampilan kerja adalah...</p>
+                <div class="options">
+                    <div class="option"><input type="radio" name="pg11" id="pg11a" value="a"><label for="pg11a">a) Kartu Prakerja</label></div>
+                    <div class="option"><input type="radio" name="pg11" id="pg11b" value="b"><label for="pg11b">b) Kartu Indonesia Pintar</label></div>
+                    <div class="option"><input type="radio" name="pg11" id="pg11c" value="c"><label for="pg11c">c) Kartu Indonesia Sehat</label></div>
+                    <div class="option"><input type="radio" name="pg11" id="pg11d" value="d"><label for="pg11d">d) Program Keluarga Harapan</label></div>
+                </div>
+            </div>
+
+            <!-- Soal 12 -->
+            <div class="question" data-type="pg" data-correct="d">
+                <div class="question-header">
+                    <span class="question-number">Soal 12</span>
+                    <span class="question-type">PG</span>
+                    <span class="question-score">5 poin</span>
+                </div>
+                <p>Ruang dalam konteks geografi adalah...</p>
+                <div class="options">
+                    <div class="option"><input type="radio" name="pg12" id="pg12a" value="a"><label for="pg12a">a) Tempat kosong tanpa isi</label></div>
+                    <div class="option"><input type="radio" name="pg12" id="pg12b" value="b"><label for="pg12b">b) Hanya berupa daratan saja</label></div>
+                    <div class="option"><input type="radio" name="pg12" id="pg12c" value="c"><label for="pg12c">c) Wilayah perkotaan saja</label></div>
+                    <div class="option"><input type="radio" name="pg12" id="pg12d" value="d"><label for="pg12d">d) Tempat di permukaan bumi beserta lapisan udara dan bumi di bawahnya</label></div>
+                </div>
+            </div>
+
+            <!-- Soal 13 -->
+            <div class="question" data-type="pg" data-correct="b">
+                <div class="question-header">
+                    <span class="question-number">Soal 13</span>
+                    <span class="question-type">PG</span>
+                    <span class="question-score">5 poin</span>
+                </div>
+                <p>Konektivitas antarruang adalah...</p>
+                <div class="options">
+                    <div class="option"><input type="radio" name="pg13" id="pg13a" value="a"><label for="pg13a">a) Pemisahan antarwilayah</label></div>
+                    <div class="option"><input type="radio" name="pg13" id="pg13b" value="b"><label for="pg13b">b) Keterhubungan antarwilayah yang memungkinkan perpindahan manusia, barang, informasi</label></div>
+                    <div class="option"><input type="radio" name="pg13" id="pg13c" value="c"><label for="pg13c">c) Pembangunan jalan raya saja</label></div>
+                    <div class="option"><input type="radio" name="pg13" id="pg13d" value="d"><label for="pg13d">d) Perpindahan penduduk ke luar negeri</label></div>
+                </div>
+            </div>
+
+            <!-- Soal 14 -->
+            <div class="question" data-type="pg" data-correct="a">
+                <div class="question-header">
+                    <span class="question-number">Soal 14</span>
+                    <span class="question-type">PG</span>
+                    <span class="question-score">5 poin</span>
+                </div>
+                <p>Program pemerintah untuk pemerataan harga barang antarwilayah melalui jalur laut disebut...</p>
+                <div class="options">
+                    <div class="option"><input type="radio" name="pg14" id="pg14a" value="a"><label for="pg14a">a) Tol Laut</label></div>
+                    <div class="option"><input type="radio" name="pg14" id="pg14b" value="b"><label for="pg14b">b) Jalan Tol Trans Jawa</label></div>
+                    <div class="option"><input type="radio" name="pg14" id="pg14c" value="c"><label for="pg14c">c) Kereta Cepat</label></div>
+                    <div class="option"><input type="radio" name="pg14" id="pg14d" value="d"><label for="pg14d">d) Palapa Ring</label></div>
+                </div>
+            </div>
+
+            <!-- Soal 15 -->
+            <div class="question" data-type="pg" data-correct="c">
+                <div class="question-header">
+                    <span class="question-number">Soal 15</span>
+                    <span class="question-type">PG</span>
+                    <span class="question-score">5 poin</span>
+                </div>
+                <p>Teori Gravitasi dari W.J. Reilly menyatakan bahwa interaksi dua wilayah dipengaruhi oleh...</p>
+                <div class="options">
+                    <div class="option"><input type="radio" name="pg15" id="pg15a" value="a"><label for="pg15a">a) Luas wilayah dan iklim</label></div>
+                    <div class="option"><input type="radio" name="pg15" id="pg15b" value="b"><label for="pg15b">b) Jumlah SDA dan budaya</label></div>
+                    <div class="option"><input type="radio" name="pg15" id="pg15c" value="c"><label for="pg15c">c) Jumlah penduduk dan jarak antar wilayah</label></div>
+                    <div class="option"><input type="radio" name="pg15" id="pg15d" value="d"><label for="pg15d">d) Pendapatan per kapita dan pendidikan</label></div>
+                </div>
+            </div>
+
+            <!-- Soal 16 -->
+            <div class="question" data-type="pg" data-correct="d">
+                <div class="question-header">
+                    <span class="question-number">Soal 16</span>
+                    <span class="question-type">PG</span>
+                    <span class="question-score">5 poin</span>
+                </div>
+                <p>Hukum permintaan menyatakan bahwa...</p>
+                <div class="options">
+                    <div class="option"><input type="radio" name="pg16" id="pg16a" value="a"><label for="pg16a">a) Jika harga naik, permintaan naik</label></div>
+                    <div class="option"><input type="radio" name="pg16" id="pg16b" value="b"><label for="pg16b">b) Jika harga turun, permintaan turun</label></div>
+                    <div class="option"><input type="radio" name="pg16" id="pg16c" value="c"><label for="pg16c">c) Harga tidak memengaruhi permintaan</label></div>
+                    <div class="option"><input type="radio" name="pg16" id="pg16d" value="d"><label for="pg16d">d) Jika harga naik, permintaan turun (ceteris paribus)</label></div>
+                </div>
+            </div>
+
+            <!-- Soal 17 -->
+            <div class="question" data-type="pg" data-correct="b">
+                <div class="question-header">
+                    <span class="question-number">Soal 17</span>
+                    <span class="question-type">PG</span>
+                    <span class="question-score">5 poin</span>
+                </div>
+                <p>Harga pasar terbentuk pada titik...</p>
+                <div class="options">
+                    <div class="option"><input type="radio" name="pg17" id="pg17a" value="a"><label for="pg17a">a) Titik maksimum permintaan</label></div>
+                    <div class="option"><input type="radio" name="pg17" id="pg17b" value="b"><label for="pg17b">b) Titik equilibrium (keseimbangan) antara permintaan dan penawaran</label></div>
+                    <div class="option"><input type="radio" name="pg17" id="pg17c" value="c"><label for="pg17c">c) Titik maksimum penawaran</label></div>
+                    <div class="option"><input type="radio" name="pg17" id="pg17d" value="d"><label for="pg17d">d) Titik terendah produksi</label></div>
+                </div>
+            </div>
+
+            <!-- Soal 18 -->
+            <div class="question" data-type="pg" data-correct="a">
+                <div class="question-header">
+                    <span class="question-number">Soal 18</span>
+                    <span class="question-type">PG</span>
+                    <span class="question-score">5 poin</span>
+                </div>
+                <p>Pihak yang menyalurkan barang dari produsen ke konsumen disebut...</p>
+                <div class="options">
+                    <div class="option"><input type="radio" name="pg18" id="pg18a" value="a"><label for="pg18a">a) Distributor</label></div>
+                    <div class="option"><input type="radio" name="pg18" id="pg18b" value="b"><label for="pg18b">b) Konsumen</label></div>
+                    <div class="option"><input type="radio" name="pg18" id="pg18c" value="c"><label for="pg18c">c) Produsen</label></div>
+                    <div class="option"><input type="radio" name="pg18" id="pg18d" value="d"><label for="pg18d">d) Investor</label></div>
+                </div>
+            </div>
+
+            <!-- Soal 19 -->
+            <div class="question" data-type="pg" data-correct="c">
+                <div class="question-header">
+                    <span class="question-number">Soal 19</span>
+                    <span class="question-type">PG</span>
+                    <span class="question-score">5 poin</span>
+                </div>
+                <p>Salah satu faktor yang menyebabkan Indonesia didatangi bangsa asing pada masa lalu adalah...</p>
+                <div class="options">
+                    <div class="option"><input type="radio" name="pg19" id="pg19a" value="a"><label for="pg19a">a) Indonesia memiliki banyak tambang emas</label></div>
+                    <div class="option"><input type="radio" name="pg19" id="pg19b" value="b"><label for="pg19b">b) Indonesia memiliki iklim subtropis</label></div>
+                    <div class="option"><input type="radio" name="pg19" id="pg19c" value="c"><label for="pg19c">c) Indonesia kaya akan rempah-rempah</label></div>
+                    <div class="option"><input type="radio" name="pg19" id="pg19d" value="d"><label for="pg19d">d) Indonesia memiliki banyak suku bangsa</label></div>
+                </div>
+            </div>
+
+            <!-- Soal 20 -->
+            <div class="question" data-type="pg" data-correct="d">
+                <div class="question-header">
+                    <span class="question-number">Soal 20</span>
+                    <span class="question-type">PG</span>
+                    <span class="question-score">5 poin</span>
+                </div>
+                <p>Perusahaan dagang Belanda yang didirikan pada tahun 1602 untuk memonopoli perdagangan di Indonesia adalah...</p>
+                <div class="options">
+                    <div class="option"><input type="radio" name="pg20" id="pg20a" value="a"><label for="pg20a">a) British East India Company (EIC)</label></div>
+                    <div class="option"><input type="radio" name="pg20" id="pg20b" value="b"><label for="pg20b">b) Compagnie des Indes Orientales</label></div>
+                    <div class="option"><input type="radio" name="pg20" id="pg20c" value="c"><label for="pg20c">c) Vereenigde Oostindische Compagnie (VOC)</label></div>
+                    <div class="option"><input type="radio" name="pg20" id="pg20d" value="d"><label for="pg20d">d) Dutch East India Company (VOC)</label></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ============ BAGIAN B: PILIHAN GANDA KOMPLEKS ============ -->
+        <div class="card" id="bagian-b">
+            <h2>🔀 Bagian B – Pilihan Ganda Kompleks (10 Soal × 5 Poin = 50 Poin)</h2>
+            <div class="alert alert-warning">
+                <span>⚠️</span>
+                <span>Pilih <strong>TEPAT 2 jawaban yang benar</strong> untuk setiap soal! Setiap soal bernilai <strong>5 poin</strong> jika kedua jawaban benar.</span>
+            </div>
+
+            <!-- Soal K1 -->
+            <div class="question" data-type="complex" data-correct="a,c">
+                <div class="question-header">
+                    <span class="question-number">Soal K1</span>
+                    <span class="question-type complex">PG Kompleks</span>
+                    <span class="question-score">5 poin</span>
+                </div>
+                <p>Dua benua yang mengapit Indonesia secara geografis adalah...</p>
+                <div class="options">
+                    <div class="option"><input type="checkbox" name="k1" id="k1a" value="a"><label for="k1a">a) Benua Asia</label></div>
+                    <div class="option"><input type="checkbox" name="k1" id="k1b" value="b"><label for="k1b">b) Benua Eropa</label></div>
+                    <div class="option"><input type="checkbox" name="k1" id="k1c" value="c"><label for="k1c">c) Benua Australia</label></div>
+                    <div class="option"><input type="checkbox" name="k1" id="k1d" value="d"><label for="k1d">d) Benua Amerika</label></div>
+                </div>
+            </div>
+
+            <!-- Soal K2 -->
+            <div class="question" data-type="complex" data-correct="b,d">
+                <div class="question-header">
+                    <span class="question-number">Soal K2</span>
+                    <span class="question-type complex">PG Kompleks</span>
+                    <span class="question-score">5 poin</span>
+                </div>
+                <p>Dua contoh SDA yang <strong>tidak dapat diperbarui</strong> adalah...</p>
+                <div class="options">
+                    <div class="option"><input type="checkbox" name="k2" id="k2a" value="a"><label for="k2a">a) Tumbuhan</label></div>
+                    <div class="option"><input type="checkbox" name="k2" id="k2b" value="b"><label for="k2b">b) Minyak bumi</label></div>
+                    <div class="option"><input type="checkbox" name="k2" id="k2c" value="c"><label for="k2c">c) Hewan ternak</label></div>
+                    <div class="option"><input type="checkbox" name="k2" id="k2d" value="d"><label for="k2d">d) Batu bara</label></div>
+                </div>
+            </div>
+
+            <!-- Soal K3 -->
+            <div class="question" data-type="complex" data-correct="a,c">
+                <div class="question-header">
+                    <span class="question-number">Soal K3</span>
+                    <span class="question-type complex">PG Kompleks</span>
+                    <span class="question-score">5 poin</span>
+                </div>
+                <p>Dua komponen utama kualitas SDM adalah...</p>
+                <div class="options">
+                    <div class="option"><input type="checkbox" name="k3" id="k3a" value="a"><label for="k3a">a) Kualitas fisik (kesehatan)</label></div>
+                    <div class="option"><input type="checkbox" name="k3" id="k3b" value="b"><label for="k3b">b) Kekayaan materi</label></div>
+                    <div class="option"><input type="checkbox" name="k3" id="k3c" value="c"><label for="k3c">c) Kualitas mental (pendidikan)</label></div>
+                    <div class="option"><input type="checkbox" name="k3" id="k3d" value="d"><label for="k3d">d) Keturunan bangsawan</label></div>
+                </div>
+            </div>
+
+            <!-- Soal K4 -->
+            <div class="question" data-type="complex" data-correct="b,d">
+                <div class="question-header">
+                    <span class="question-number">Soal K4</span>
+                    <span class="question-type complex">PG Kompleks</span>
+                    <span class="question-score">5 poin</span>
+                </div>
+                <p>Dua dimensi yang diukur dalam Indeks Pembangunan Manusia (IPM) adalah...</p>
+                <div class="options">
+                    <div class="option"><input type="checkbox" name="k4" id="k4a" value="a"><label for="k4a">a) Jumlah penduduk</label></div>
+                    <div class="option"><input type="checkbox" name="k4" id="k4b" value="b"><label for="k4b">b) Umur panjang dan hidup sehat</label></div>
+                    <div class="option"><input type="checkbox" name="k4" id="k4c" value="c"><label for="k4c">c) Luas wilayah</label></div>
+                    <div class="option"><input type="checkbox" name="k4" id="k4d" value="d"><label for="k4d">d) Pengetahuan (pendidikan)</label></div>
+                </div>
+            </div>
+
+            <!-- Soal K5 -->
+            <div class="question" data-type="complex" data-correct="a,c">
+                <div class="question-header">
+                    <span class="question-number">Soal K5</span>
+                    <span class="question-type complex">PG Kompleks</span>
+                    <span class="question-score">5 poin</span>
+                </div>
+                <p>Dua contoh pelestarian SDA secara <strong>in-situ</strong> (di tempat asal) adalah...</p>
+                <div class="options">
+                    <div class="option"><input type="checkbox" name="k5" id="k5a" value="a"><label for="k5a">a) Taman Nasional Komodo</label></div>
+                    <div class="option"><input type="checkbox" name="k5" id="k5b" value="b"><label for="k5b">b) Kebun Binatang Ragunan</label></div>
+                    <div class="option"><input type="checkbox" name="k5" id="k5c" value="c"><label for="k5c">c) Cagar Alam Ujung Kulon</label></div>
+                    <div class="option"><input type="checkbox" name="k5" id="k5d" value="d"><label for="k5d">d) Taman Safari Indonesia</label></div>
+                </div>
+            </div>
+
+            <!-- Soal K6 -->
+            <div class="question" data-type="complex" data-correct="b,d">
+                <div class="question-header">
+                    <span class="question-number">Soal K6</span>
+                    <span class="question-type complex">PG Kompleks</span>
+                    <span class="question-score">5 poin</span>
+                </div>
+                <p>Dua faktor pendorong interaksi antarruang adalah...</p>
+                <div class="options">
+                    <div class="option"><input type="checkbox" name="k6" id="k6a" value="a"><label for="k6a">a) Isolasi geografis</label></div>
+                    <div class="option"><input type="checkbox" name="k6" id="k6b" value="b"><label for="k6b">b) Perbedaan sumber daya alam</label></div>
+                    <div class="option"><input type="checkbox" name="k6" id="k6c" value="c"><label for="k6c">c) Ketidakmerataan penduduk</label></div>
+                    <div class="option"><input type="checkbox" name="k6" id="k6d" value="d"><label for="k6d">d) Kemudahan transportasi dan komunikasi</label></div>
+                </div>
+            </div>
+
+            <!-- Soal K7 -->
+            <div class="question" data-type="complex" data-correct="a,c">
+                <div class="question-header">
+                    <span class="question-number">Soal K7</span>
+                    <span class="question-type complex">PG Kompleks</span>
+                    <span class="question-score">5 poin</span>
+                </div>
+                <p>Dua dampak positif konektivitas antarruang di bidang ekonomi adalah...</p>
+                <div class="options">
+                    <div class="option"><input type="checkbox" name="k7" id="k7a" value="a"><label for="k7a">a) Peningkatan perdagangan antardaerah</label></div>
+                    <div class="option"><input type="checkbox" name="k7" id="k7b" value="b"><label for="k7b">b) Pudarnya budaya lokal</label></div>
+                    <div class="option"><input type="checkbox" name="k7" id="k7c" value="c"><label for="k7c">c) Pemerataan harga barang</label></div>
+                    <div class="option"><input type="checkbox" name="k7" id="k7d" value="d"><label for="k7d">d) Urbanisasi berlebihan</label></div>
+                </div>
+            </div>
+
+            <!-- Soal K8 -->
+            <div class="question" data-type="complex" data-correct="b,d">
+                <div class="question-header">
+                    <span class="question-number">Soal K8</span>
+                    <span class="question-type complex">PG Kompleks</span>
+                    <span class="question-score">5 poin</span>
+                </div>
+                <p>Dua faktor yang memengaruhi permintaan barang adalah...</p>
+                <div class="options">
+                    <div class="option"><input type="checkbox" name="k8" id="k8a" value="a"><label for="k8a">a) Biaya produksi</label></div>
+                    <div class="option"><input type="checkbox" name="k8" id="k8b" value="b"><label for="k8b">b) Harga barang itu sendiri</label></div>
+                    <div class="option"><input type="checkbox" name="k8" id="k8c" value="c"><label for="k8c">c) Teknologi produksi</label></div>
+                    <div class="option"><input type="checkbox" name="k8" id="k8d" value="d"><label for="k8d">d) Pendapatan konsumen</label></div>
+                </div>
+            </div>
+
+            <!-- Soal K9 -->
+            <div class="question" data-type="complex" data-correct="a,c">
+                <div class="question-header">
+                    <span class="question-number">Soal K9</span>
+                    <span class="question-type complex">PG Kompleks</span>
+                    <span class="question-score">5 poin</span>
+                </div>
+                <p>Dua bangsa Eropa yang datang ke Indonesia untuk berdagang rempah-rempah adalah...</p>
+                <div class="options">
+                    <div class="option"><input type="checkbox" name="k9" id="k9a" value="a"><label for="k9a">a) Portugis</label></div>
+                    <div class="option"><input type="checkbox" name="k9" id="k9b" value="b"><label for="k9b">b) Jepang</label></div>
+                    <div class="option"><input type="checkbox" name="k9" id="k9c" value="c"><label for="k9c">c) Belanda</label></div>
+                    <div class="option"><input type="checkbox" name="k9" id="k9d" value="d"><label for="k9d">d) Tiongkok</label></div>
+                </div>
+            </div>
+
+            <!-- Soal K10 -->
+            <div class="question" data-type="complex" data-correct="b,d">
+                <div class="question-header">
+                    <span class="question-number">Soal K10</span>
+                    <span class="question-type complex">PG Kompleks</span>
+                    <span class="question-score">5 poin</span>
+                </div>
+                <p>Dua bentuk interaksi antara desa dan kota adalah...</p>
+                <div class="options">
+                    <div class="option"><input type="checkbox" name="k10" id="k10a" value="a"><label for="k10a">a) Kota menyediakan hasil pertanian ke desa</label></div>
+                    <div class="option"><input type="checkbox" name="k10" id="k10b" value="b"><label for="k10b">b) Desa menyediakan hasil pertanian ke kota</label></div>
+                    <div class="option"><input type="checkbox" name="k10" id="k10c" value="c"><label for="k10c">c) Desa menyediakan barang industri ke kota</label></div>
+                    <div class="option"><input type="checkbox" name="k10" id="k10d" value="d"><label for="k10d">d) Kota menyediakan teknologi dan modal ke desa</label></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ============ BAGIAN C: BENAR/SALAH ============ -->
+        <div class="card" id="bagian-c">
+            <h2>✅❌ Bagian C – Benar/Salah (10 Soal × 5 Poin = 50 Poin)</h2>
+            <div class="alert alert-warning">
+                <span>⚠️</span>
+                <span>Tentukan apakah pernyataan berikut <strong>BENAR</strong> atau <strong>SALAH</strong>! Setiap soal bernilai <strong>5 poin</strong>.</span>
+            </div>
+
+            <!-- Soal BS1 -->
+            <div class="question" data-type="tf" data-correct="benar">
+                <div class="question-header">
+                    <span class="question-number">Soal BS1</span>
+                    <span class="question-type tf">Benar/Salah</span>
+                    <span class="question-score">5 poin</span>
+                </div>
+                <p>Indonesia terletak di antara Benua Asia dan Benua Australia.</p>
+                <div class="tf-options">
+                    <div class="tf-option"><input type="radio" name="bs1" id="bs1b" value="benar"><label for="bs1b">✅ BENAR</label></div>
+                    <div class="tf-option"><input type="radio" name="bs1" id="bs1s" value="salah"><label for="bs1s">❌ SALAH</label></div>
+                </div>
+            </div>
+
+            <!-- Soal BS2 -->
+            <div class="question" data-type="tf" data-correct="salah">
+                <div class="question-header">
+                    <span class="question-number">Soal BS2</span>
+                    <span class="question-type tf">Benar/Salah</span>
+                    <span class="question-score">5 poin</span>
+                </div>
+                <p>Minyak bumi termasuk SDA yang dapat diperbarui karena dapat dibuat ulang di pabrik.</p>
+                <div class="tf-options">
+                    <div class="tf-option"><input type="radio" name="bs2" id="bs2b" value="benar"><label for="bs2b">✅ BENAR</label></div>
+                    <div class="tf-option"><input type="radio" name="bs2" id="bs2s" value="salah"><label for="bs2s">❌ SALAH</label></div>
+                </div>
+            </div>
+
+            <!-- Soal BS3 -->
+            <div class="question" data-type="tf" data-correct="benar">
+                <div class="question-header">
+                    <span class="question-number">Soal BS3</span>
+                    <span class="question-type tf">Benar/Salah</span>
+                    <span class="question-score">5 poin</span>
+                </div>
+                <p>Indeks Pembangunan Manusia (IPM) mengukur tiga dimensi dasar: kesehatan, pendidikan, dan standar hidup layak.</p>
+                <div class="tf-options">
+                    <div class="tf-option"><input type="radio" name="bs3" id="bs3b" value="benar"><label for="bs3b">✅ BENAR</label></div>
+                    <div class="tf-option"><input type="radio" name="bs3" id="bs3s" value="salah"><label for="bs3s">❌ SALAH</label></div>
+                </div>
+            </div>
+
+            <!-- Soal BS4 -->
+            <div class="question" data-type="tf" data-correct="benar">
+                <div class="question-header">
+                    <span class="question-number">Soal BS4</span>
+                    <span class="question-type tf">Benar/Salah</span>
+                    <span class="question-score">5 poin</span>
+                </div>
+                <p>Indonesia diprediksi mengalami bonus demografi pada periode 2020-2035.</p>
+                <div class="tf-options">
+                    <div class="tf-option"><input type="radio" name="bs4" id="bs4b" value="benar"><label for="bs4b">✅ BENAR</label></div>
+                    <div class="tf-option"><input type="radio" name="bs4" id="bs4s" value="salah"><label for="bs4s">❌ SALAH</label></div>
+                </div>
+            </div>
+
+            <!-- Soal BS5 -->
+            <div class="question" data-type="tf" data-correct="benar">
+                <div class="question-header">
+                    <span class="question-number">Soal BS5</span>
+                    <span class="question-type tf">Benar/Salah</span>
+                    <span class="question-score">5 poin</span>
+                </div>
+                <p>Indonesia memiliki sekitar 17.000 pulau dan merupakan negara kepulauan terbesar di dunia.</p>
+                <div class="tf-options">
+                    <div class="tf-option"><input type="radio" name="bs5" id="bs5b" value="benar"><label for="bs5b">✅ BENAR</label></div>
+                    <div class="tf-option"><input type="radio" name="bs5" id="bs5s" value="salah"><label for="bs5s">❌ SALAH</label></div>
+                </div>
+            </div>
+
+            <!-- Soal BS6 -->
+            <div class="question" data-type="tf" data-correct="salah">
+                <div class="question-header">
+                    <span class="question-number">Soal BS6</span>
+                    <span class="question-type tf">Benar/Salah</span>
+                    <span class="question-score">5 poin</span>
+                </div>
+                <p>Teori Gravitasi interaksi wilayah dikembangkan oleh Walter Christaller.</p>
+                <div class="tf-options">
+                    <div class="tf-option"><input type="radio" name="bs6" id="bs6b" value="benar"><label for="bs6b">✅ BENAR</label></div>
+                    <div class="tf-option"><input type="radio" name="bs6" id="bs6s" value="salah"><label for="bs6s">❌ SALAH</label></div>
+                </div>
+            </div>
+
+            <!-- Soal BS7 -->
+            <div class="question" data-type="tf" data-correct="benar">
+                <div class="question-header">
+                    <span class="question-number">Soal BS7</span>
+                    <span class="question-type tf">Benar/Salah</span>
+                    <span class="question-score">5 poin</span>
+                </div>
+                <p>Menurut hukum permintaan, jika harga barang naik maka jumlah barang yang diminta akan turun (ceteris paribus).</p>
+                <div class="tf-options">
+                    <div class="tf-option"><input type="radio" name="bs7" id="bs7b" value="benar"><label for="bs7b">✅ BENAR</label></div>
+                    <div class="tf-option"><input type="radio" name="bs7" id="bs7s" value="salah"><label for="bs7s">❌ SALAH</label></div>
+                </div>
+            </div>
+
+            <!-- Soal BS8 -->
+            <div class="question" data-type="tf" data-correct="benar">
+                <div class="question-header">
+                    <span class="question-number">Soal BS8</span>
+                    <span class="question-type tf">Benar/Salah</span>
+                    <span class="question-score">5 poin</span>
+                </div>
+                <p>Menurut hukum penawaran, jika harga barang naik maka jumlah barang yang ditawarkan akan naik (ceteris paribus).</p>
+                <div class="tf-options">
+                    <div class="tf-option"><input type="radio" name="bs8" id="bs8b" value="benar"><label for="bs8b">✅ BENAR</label></div>
+                    <div class="tf-option"><input type="radio" name="bs8" id="bs8s" value="salah"><label for="bs8s">❌ SALAH</label></div>
+                </div>
+            </div>
+
+            <!-- Soal BS9 -->
+            <div class="question" data-type="tf" data-correct="benar">
+                <div class="question-header">
+                    <span class="question-number">Soal BS9</span>
+                    <span class="question-type tf">Benar/Salah</span>
+                    <span class="question-score">5 poin</span>
+                </div>
+                <p>Kekayaan rempah-rempah menjadi salah satu alasan utama bangsa Eropa datang ke Indonesia pada abad ke-15.</p>
+                <div class="tf-options">
+                    <div class="tf-option"><input type="radio" name="bs9" id="bs9b" value="benar"><label for="bs9b">✅ BENAR</label></div>
+                    <div class="tf-option"><input type="radio" name="bs9" id="bs9s" value="salah"><label for="bs9s">❌ SALAH</label></div>
+                </div>
+            </div>
+
+            <!-- Soal BS10 -->
+            <div class="question" data-type="tf" data-correct="benar">
+                <div class="question-header">
+                    <span class="question-number">Soal BS10</span>
+                    <span class="question-type tf">Benar/Salah</span>
+                    <span class="question-score">5 poin</span>
+                </div>
+                <p>VOC (Vereenigde Oostindische Compagnie) adalah perusahaan dagang Belanda yang didirikan pada tahun 1602.</p>
+                <div class="tf-options">
+                    <div class="tf-option"><input type="radio" name="bs10" id="bs10b" value="benar"><label for="bs10b">✅ BENAR</label></div>
+                    <div class="tf-option"><input type="radio" name="bs10" id="bs10s" value="salah"><label for="bs10s">❌ SALAH</label></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ============ BAGIAN D: MENJODOHKAN ============ -->
+        <div class="card" id="bagian-d">
+            <h2>🔗 Bagian D – Menjodohkan (10 Soal × 5 Poin = 50 Poin)</h2>
+            <div class="alert alert-warning">
+                <span>⚠️</span>
+                <span>Pasangkan pernyataan di sebelah kiri dengan jawaban yang tepat di sebelah kanan! Setiap soal bernilai <strong>5 poin</strong>.</span>
+            </div>
+
+            <div class="match-container">
+                <!-- M1 -->
+                <div class="match-row" data-correct="f">
+                    <div class="match-statement"><strong>1.</strong> 6° LU – 11° LS dan 95° BT – 141° BT</div>
+                    <select name="m1" id="m1">
+                        <option value="">-- Pilih Jawaban --</option>
+                        <option value="a">Garis Wallace</option>
+                        <option value="b">Bhinneka Tunggal Ika</option>
+                        <option value="c">Bonus Demografi</option>
+                        <option value="d">Tol Laut</option>
+                        <option value="e">Hukum Permintaan</option>
+                        <option value="f">Letak Astronomis Indonesia</option>
+                        <option value="g">VOC</option>
+                        <option value="h">IPM</option>
+                        <option value="i">Konektivitas Antarruang</option>
+                        <option value="j">Posisi Silang</option>
+                    </select>
+                </div>
+
+                <!-- M2 -->
+                <div class="match-row" data-correct="a">
+                    <div class="match-statement"><strong>2.</strong> Garis pembatas antara fauna Asiatis dan Peralihan</div>
+                    <select name="m2" id="m2">
+                        <option value="">-- Pilih Jawaban --</option>
+                        <option value="a">Garis Wallace</option>
+                        <option value="b">Bhinneka Tunggal Ika</option>
+                        <option value="c">Bonus Demografi</option>
+                        <option value="d">Tol Laut</option>
+                        <option value="e">Hukum Permintaan</option>
+                        <option value="f">Letak Astronomis Indonesia</option>
+                        <option value="g">VOC</option>
+                        <option value="h">IPM</option>
+                        <option value="i">Konektivitas Antarruang</option>
+                        <option value="j">Posisi Silang</option>
+                    </select>
+                </div>
+
+                <!-- M3 -->
+                <div class="match-row" data-correct="b">
+                    <div class="match-statement"><strong>3.</strong> "Berbeda-beda tetapi tetap satu jua"</div>
+                    <select name="m3" id="m3">
+                        <option value="">-- Pilih Jawaban --</option>
+                        <option value="a">Garis Wallace</option>
+                        <option value="b">Bhinneka Tunggal Ika</option>
+                        <option value="c">Bonus Demografi</option>
+                        <option value="d">Tol Laut</option>
+                        <option value="e">Hukum Permintaan</option>
+                        <option value="f">Letak Astronomis Indonesia</option>
+                        <option value="g">VOC</option>
+                        <option value="h">IPM</option>
+                        <option value="i">Konektivitas Antarruang</option>
+                        <option value="j">Posisi Silang</option>
+                    </select>
+                </div>
+
+                <!-- M4 -->
+                <div class="match-row" data-correct="c">
+                    <div class="match-statement"><strong>4.</strong> Kondisi ketika penduduk usia produktif lebih banyak</div>
+                    <select name="m4" id="m4">
+                        <option value="">-- Pilih Jawaban --</option>
+                        <option value="a">Garis Wallace</option>
+                        <option value="b">Bhinneka Tunggal Ika</option>
+                        <option value="c">Bonus Demografi</option>
+                        <option value="d">Tol Laut</option>
+                        <option value="e">Hukum Permintaan</option>
+                        <option value="f">Letak Astronomis Indonesia</option>
+                        <option value="g">VOC</option>
+                        <option value="h">IPM</option>
+                        <option value="i">Konektivitas Antarruang</option>
+                        <option value="j">Posisi Silang</option>
+                    </select>
+                </div>
+
+                <!-- M5 -->
+                <div class="match-row" data-correct="d">
+                    <div class="match-statement"><strong>5.</strong> Program pemerataan harga barang melalui jalur laut</div>
+                    <select name="m5" id="m5">
+                        <option value="">-- Pilih Jawaban --</option>
+                        <option value="a">Garis Wallace</option>
+                        <option value="b">Bhinneka Tunggal Ika</option>
+                        <option value="c">Bonus Demografi</option>
+                        <option value="d">Tol Laut</option>
+                        <option value="e">Hukum Permintaan</option>
+                        <option value="f">Letak Astronomis Indonesia</option>
+                        <option value="g">VOC</option>
+                        <option value="h">IPM</option>
+                        <option value="i">Konektivitas Antarruang</option>
+                        <option value="j">Posisi Silang</option>
+                    </select>
+                </div>
+
+                <!-- M6 -->
+                <div class="match-row" data-correct="e">
+                    <div class="match-statement"><strong>6.</strong> Harga naik, permintaan turun (ceteris paribus)</div>
+                    <select name="m6" id="m6">
+                        <option value="">-- Pilih Jawaban --</option>
+                        <option value="a">Garis Wallace</option>
+                        <option value="b">Bhinneka Tunggal Ika</option>
+                        <option value="c">Bonus Demografi</option>
+                        <option value="d">Tol Laut</option>
+                        <option value="e">Hukum Permintaan</option>
+                        <option value="f">Letak Astronomis Indonesia</option>
+                        <option value="g">VOC</option>
+                        <option value="h">IPM</option>
+                        <option value="i">Konektivitas Antarruang</option>
+                        <option value="j">Posisi Silang</option>
+                    </select>
+                </div>
+
+                <!-- M7 -->
+                <div class="match-row" data-correct="g">
+                    <div class="match-statement"><strong>7.</strong> Perusahaan dagang Belanda (1602)</div>
+                    <select name="m7" id="m7">
+                        <option value="">-- Pilih Jawaban --</option>
+                        <option value="a">Garis Wallace</option>
+                        <option value="b">Bhinneka Tunggal Ika</option>
+                        <option value="c">Bonus Demografi</option>
+                        <option value="d">Tol Laut</option>
+                        <option value="e">Hukum Permintaan</option>
+                        <option value="f">Letak Astronomis Indonesia</option>
+                        <option value="g">VOC</option>
+                        <option value="h">IPM</option>
+                        <option value="i">Konektivitas Antarruang</option>
+                        <option value="j">Posisi Silang</option>
+                    </select>
+                </div>
+
+                <!-- M8 -->
+                <div class="match-row" data-correct="h">
+                    <div class="match-statement"><strong>8.</strong> Indeks yang mengukur kesehatan, pendidikan, dan standar hidup</div>
+                    <select name="m8" id="m8">
+                        <option value="">-- Pilih Jawaban --</option>
+                        <option value="a">Garis Wallace</option>
+                        <option value="b">Bhinneka Tunggal Ika</option>
+                        <option value="c">Bonus Demografi</option>
+                        <option value="d">Tol Laut</option>
+                        <option value="e">Hukum Permintaan</option>
+                        <option value="f">Letak Astronomis Indonesia</option>
+                        <option value="g">VOC</option>
+                        <option value="h">IPM</option>
+                        <option value="i">Konektivitas Antarruang</option>
+                        <option value="j">Posisi Silang</option>
+                    </select>
+                </div>
+
+                <!-- M9 -->
+                <div class="match-row" data-correct="i">
+                    <div class="match-statement"><strong>9.</strong> Keterhubungan antarwilayah yang memungkinkan perpindahan manusia dan barang</div>
+                    <select name="m9" id="m9">
+                        <option value="">-- Pilih Jawaban --</option>
+                        <option value="a">Garis Wallace</option>
+                        <option value="b">Bhinneka Tunggal Ika</option>
+                        <option value="c">Bonus Demografi</option>
+                        <option value="d">Tol Laut</option>
+                        <option value="e">Hukum Permintaan</option>
+                        <option value="f">Letak Astronomis Indonesia</option>
+                        <option value="g">VOC</option>
+                        <option value="h">IPM</option>
+                        <option value="i">Konektivitas Antarruang</option>
+                        <option value="j">Posisi Silang</option>
+                    </select>
+                </div>
+
+                <!-- M10 -->
+                <div class="match-row" data-correct="j">
+                    <div class="match-statement"><strong>10.</strong> Letak Indonesia di antara 2 benua dan 2 samudra</div>
+                    <select name="m10" id="m10">
+                        <option value="">-- Pilih Jawaban --</option>
+                        <option value="a">Garis Wallace</option>
+                        <option value="b">Bhinneka Tunggal Ika</option>
+                        <option value="c">Bonus Demografi</option>
+                        <option value="d">Tol Laut</option>
+                        <option value="e">Hukum Permintaan</option>
+                        <option value="f">Letak Astronomis Indonesia</option>
+                        <option value="g">VOC</option>
+                        <option value="h">IPM</option>
+                        <option value="i">Konektivitas Antarruang</option>
+                        <option value="j">Posisi Silang</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <!-- Hasil -->
+        <div class="result-section" id="resultSection">
+            <h2>📊 Hasil Ujian Tengah Semester</h2>
+            <p>Terima kasih telah menyelesaikan UTS IPS Kelas VIII Semester I!</p>
+
+            <div class="score-grid">
+                <div class="score-item">
+                    <div class="label">Pilihan Ganda</div>
+                    <div class="value" id="pgScore">0</div>
+                    <div class="max">/ 100</div>
+                </div>
+                <div class="score-item">
+                    <div class="label">PG Kompleks</div>
+                    <div class="value" id="complexScore">0</div>
+                    <div class="max">/ 50</div>
+                </div>
+                <div class="score-item">
+                    <div class="label">Benar/Salah</div>
+                    <div class="value" id="tfScore">0</div>
+                    <div class="max">/ 50</div>
+                </div>
+                <div class="score-item">
+                    <div class="label">Menjodohkan</div>
+                    <div class="value" id="matchScore">0</div>
+                    <div class="max">/ 50</div>
+                </div>
+                <div class="score-item">
+                    <div class="label">Skor Total</div>
+                    <div class="value" id="totalScore">0</div>
+                    <div class="max">/ 250</div>
+                </div>
+                <div class="score-item">
+                    <div class="label">Nilai Akhir</div>
+                    <div class="value" id="finalGrade">0</div>
+                    <div class="max">/ 100</div>
+                </div>
+            </div>
+
+            <div class="grade" id="gradeLabel">-</div>
+            <p id="gradeMessage" style="font-size:1.1rem; opacity:0.95;"></p>
+
+            <div class="btn-group">
+                <button class="btn btn-success" onclick="downloadPDF()">📥 Unduh PDF Lengkap</button>
+                <button class="btn btn-warning" onclick="downloadScore()">📊 Unduh Skor Saja</button>
+                <button class="btn btn-primary" onclick="sendEmail()">✉️ Kirim Email Guru</button>
+                <button class="btn btn-danger" onclick="resetQuiz()">🔄 Mulai Ulang</button>
+            </div>
+        </div>
+
+        <!-- Submit Button -->
+        <div class="card" id="submitCard" style="text-align:center;">
+            <h2>📤 Kirim Jawaban</h2>
+            <p>Setelah yakin dengan semua jawaban, klik tombol di bawah untuk melihat hasil dan mengirimkan jawaban ke guru.</p>
+            <div class="btn-group">
+                <button class="btn btn-success" onclick="submitQuiz()" style="font-size:1.1rem; padding:1rem 3rem;">
+                    ✉️ KIRIM JAWABAN & LIHAT HASIL
+                </button>
+            </div>
+        </div>
+
+        <!-- Nav Footer -->
+        <div class="nav-footer">
+            <a href="index.html" class="nav-prev">← Kembali ke Beranda</a>
+            <a href="5.html" class="nav-prev">📖 Kembali ke Materi Bab 5</a>
+            <a href="7.html" class="nav-next">Lanjut ke Bab 8 →</a>
+        </div>
+
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>📘 IPS Kelas VIII Semester I</h4>
+                <p>Buku ajar untuk peserta didik Madrasah Tsanawiyah kelas VIII. Disusun oleh Astariny Martha, S.Pd.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Navigasi</h4>
+                <a href="index.html#beranda">Beranda</a>
+                <a href="index.html#tentang">Tentang Buku</a>
+                <a href="index.html#bab">Daftar Bab</a>
+                <a href="index.html#penulis">Penulis</a>
+            </div>
+            <div class="footer-section">
+                <h4>Bab Terkait</h4>
+                <a href="1.html">Bab 1: Kondisi Geografis</a>
+                <a href="2.html">Bab 2: Pemanfaatan SDA</a>
+                <a href="3.html">Bab 3: Kualitas SDM</a>
+                <a href="4.html">Bab 4: Konektivitas</a>
+                <a href="5.html">Bab 5: Keseimbangan Harga</a>
+                <a href="6.html">Bab 6: Interaksi Bangsa Asing</a>
+            </div>
+            <div class="footer-section">
+                <h4>Kontak</h4>
+                <a href="mailto:astarinymartha80@gmail.com">astarinymartha80@gmail.com</a>
+                <p>MTsN 6 Agam</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 Astariny Martha, S.Pd. – MTsN 6 Agam. Hak cipta dilindungi.</p>
+            <p>IPS Kelas VIII Semester I: Ujian Tengah Semester (UTS)</p>
+        </div>
+    </footer>
+
+    <script>
+        // Set tanggal hari ini
+        document.getElementById('tanggal').valueAsDate = new Date();
+
+        // Highlight PG option saat dipilih
+        document.querySelectorAll('#bagian-a .option input').forEach(input => {
+            input.addEventListener('change', function() {
+                const name = this.name;
+                document.querySelectorAll(`input[name="${name}"]`).forEach(r => {
+                    r.closest('.option').classList.remove('selected');
+                });
+                this.closest('.option').classList.add('selected');
+            });
+        });
+
+        // Highlight PG Kompleks option saat dipilih
+        document.querySelectorAll('#bagian-b .option input').forEach(input => {
+            input.addEventListener('change', function() {
+                const name = this.name;
+                const checked = document.querySelectorAll(`input[name="${name}"]:checked`);
+                document.querySelectorAll(`input[name="${name}"]`).forEach(r => {
+                    r.closest('.option').classList.remove('selected');
+                });
+                checked.forEach(c => c.closest('.option').classList.add('selected'));
+            });
+        });
+
+        // Highlight TF option saat dipilih
+        document.querySelectorAll('.tf-option input').forEach(input => {
+            input.addEventListener('change', function() {
+                const name = this.name;
+                document.querySelectorAll(`input[name="${name}"]`).forEach(r => {
+                    r.closest('.tf-option').classList.remove('selected');
+                });
+                this.closest('.tf-option').classList.add('selected');
+            });
+        });
+
+        let quizSubmitted = false;
+
+        function submitQuiz() {
+            // Validasi data siswa
+            const nama = document.getElementById('nama').value.trim();
+            const nis = document.getElementById('nis').value.trim();
+            const kelas = document.getElementById('kelas').value;
+
+            if (!nama || !nis || !kelas) {
+                alert('⚠️ Mohon lengkapi data siswa (Nama, NIS, dan Kelas) sebelum mengirim jawaban!');
+                document.getElementById('nama').focus();
+                return;
+            }
+
+            // ====== HITUNG SKOR PG ======
+            let pgScore = 0;
+            const pgQuestions = document.querySelectorAll('#bagian-a .question');
+            pgQuestions.forEach((q, idx) => {
+                const qNum = idx + 1;
+                const correct = q.dataset.correct;
+                const selected = document.querySelector(`input[name="pg${qNum}"]:checked`);
+                
+                q.querySelectorAll('input').forEach(i => i.disabled = true);
+                const correctOption = q.querySelector(`input[value="${correct}"]`).closest('.option');
+                correctOption.classList.add('correct-answer');
+                
+                if (selected) {
+                    if (selected.value === correct) {
+                        pgScore += 5;
+                        q.classList.add('correct');
+                    } else {
+                        q.classList.add('incorrect');
+                        selected.closest('.option').classList.add('wrong-answer');
+                    }
+                } else {
+                    q.classList.add('incorrect');
+                }
+            });
+
+            // ====== HITUNG SKOR PG KOMPLEKS ======
+            let complexScore = 0;
+            const complexQuestions = document.querySelectorAll('#bagian-b .question');
+            complexQuestions.forEach((q, idx) => {
+                const qNum = idx + 1;
+                const correctAnswers = q.dataset.correct.split(',');
+                const selected = document.querySelectorAll(`input[name="k${qNum}"]:checked`);
+                
+                q.querySelectorAll('input').forEach(i => i.disabled = true);
+                
+                // Tandai jawaban benar
+                correctAnswers.forEach(ans => {
+                    const correctOption = q.querySelector(`input[value="${ans.trim()}"]`).closest('.option');
+                    correctOption.classList.add('correct-answer');
+                });
+                
+                // Cek apakah semua jawaban benar dipilih dan tidak ada yang salah
+                const selectedValues = Array.from(selected).map(s => s.value);
+                const allCorrect = correctAnswers.every(a => selectedValues.includes(a.trim()));
+                const noWrong = selectedValues.every(v => correctAnswers.includes(v));
+                
+                if (allCorrect && noWrong && selectedValues.length === correctAnswers.length) {
+                    complexScore += 5;
+                    q.classList.add('correct');
+                } else {
+                    q.classList.add(selectedValues.length > 0 ? 'partial' : 'incorrect');
+                    selected.forEach(s => {
+                        if (!correctAnswers.includes(s.value)) {
+                            s.closest('.option').classList.add('wrong-answer');
+                        }
+                    });
+                }
+            });
+
+            // ====== HITUNG SKOR BENAR/SALAH ======
+            let tfScore = 0;
+            const tfQuestions = document.querySelectorAll('#bagian-c .question');
+            tfQuestions.forEach((q, idx) => {
+                const qNum = idx + 1;
+                const correct = q.dataset.correct;
+                const selected = document.querySelector(`input[name="bs${qNum}"]:checked`);
+                
+                q.querySelectorAll('input').forEach(i => i.disabled = true);
+                const correctOption = q.querySelector(`input[value="${correct}"]`).closest('.tf-option');
+                correctOption.classList.add('correct-answer');
+                
+                if (selected) {
+                    if (selected.value === correct) {
+                        tfScore += 5;
+                        q.classList.add('correct');
+                    } else {
+                        q.classList.add('incorrect');
+                        selected.closest('.tf-option').classList.add('wrong-answer');
+                    }
+                } else {
+                    q.classList.add('incorrect');
+                }
+            });
+
+            // ====== HITUNG SKOR MENJODOHKAN ======
+            let matchScore = 0;
+            const matchRows = document.querySelectorAll('.match-row');
+            matchRows.forEach((row, idx) => {
+                const qNum = idx + 1;
+                const correct = row.dataset.correct;
+                const selected = document.getElementById(`m${qNum}`).value;
+                
+                document.getElementById(`m${qNum}`).disabled = true;
+                
+                if (selected === correct) {
+                    matchScore += 5;
+                    row.classList.add('correct');
+                } else {
+                    row.classList.add('incorrect');
+                }
+            });
+
+            // ====== HITUNG TOTAL ======
+            const totalScore = pgScore + complexScore + tfScore + matchScore;
+            const finalGrade = Math.round((totalScore / 250) * 100);
+
+            // Tampilkan hasil
+            document.getElementById('pgScore').textContent = pgScore;
+            document.getElementById('complexScore').textContent = complexScore;
+            document.getElementById('tfScore').textContent = tfScore;
+            document.getElementById('matchScore').textContent = matchScore;
+            document.getElementById('totalScore').textContent = totalScore;
+            document.getElementById('finalGrade').textContent = finalGrade;
+
+            // Grade label
+            const gradeLabel = document.getElementById('gradeLabel');
+            const gradeMessage = document.getElementById('gradeMessage');
+            
+            if (finalGrade >= 85) {
+                gradeLabel.textContent = 'A (Sangat Baik)';
+                gradeLabel.className = 'grade excellent';
+                gradeMessage.textContent = '🎉 Luar biasa! Kamu menguasai materi Bab 1-6 dengan sangat baik.';
+            } else if (finalGrade >= 70) {
+                gradeLabel.textContent = 'B (Baik)';
+                gradeLabel.className = 'grade good';
+                gradeMessage.textContent = '👍 Bagus! Pemahamanmu sudah baik, terus tingkatkan!';
+            } else if (finalGrade >= 55) {
+                gradeLabel.textContent = 'C (Cukup)';
+                gradeLabel.className = 'grade average';
+                gradeMessage.textContent = '📚 Cukup baik. Pelajari kembali materi yang belum dikuasai.';
+            } else {
+                gradeLabel.textContent = 'D (Perlu Belajar Lagi)';
+                gradeLabel.className = 'grade poor';
+                gradeMessage.textContent = '💪 Jangan menyerah! Baca kembali materi Bab 1-6 dan coba lagi.';
+            }
+
+            // Tampilkan hasil
+            document.getElementById('resultSection').classList.add('show');
+            document.getElementById('submitCard').style.display = 'none';
+            
+            // Scroll ke hasil
+            document.getElementById('resultSection').scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+            quizSubmitted = true;
+
+            // Simpan data untuk email
+            window.quizData = {
+                nama, nis, kelas,
+                sekolah: document.getElementById('sekolah').value,
+                tanggal: document.getElementById('tanggal').value,
+                absen: document.getElementById('absen').value,
+                pgScore, complexScore, tfScore, matchScore, totalScore, finalGrade
+            };
+        }
+
+        function downloadPDF() {
+            if (!quizSubmitted) { alert('⚠️ Kirim jawaban terlebih dahulu!'); return; }
+            window.print();
+        }
+
+        function downloadScore() {
+            if (!quizSubmitted) { alert('⚠️ Kirim jawaban terlebih dahulu!'); return; }
+            const d = window.quizData;
+            const content = `
+LAPORAN HASIL UJIAN TENGAH SEMESTER (UTS)
+IPS KELAS VIII SEMESTER I
+============================================================
+
+DATA SISWA
+Nama Lengkap : ${d.nama}
+NIS          : ${d.nis}
+Kelas        : ${d.kelas}
+No. Absen    : ${d.absen || '-'}
+Sekolah      : ${d.sekolah}
+Tanggal      : ${d.tanggal}
+
+HASIL UJIAN
+Bagian A - Pilihan Ganda      : ${d.pgScore} / 100
+Bagian B - PG Kompleks        : ${d.complexScore} / 50
+Bagian C - Benar/Salah        : ${d.tfScore} / 50
+Bagian D - Menjodohkan        : ${d.matchScore} / 50
+----------------------------------------------------
+Skor Total                    : ${d.totalScore} / 250
+Nilai Akhir                   : ${d.finalGrade} / 100
+
+============================================================
+Guru Mata Pelajaran,
+
+
+( Astariny Martha, S.Pd )
+MTsN 6 Agam
+            `.trim();
+
+            const blob = new Blob([content], { type: 'text/plain' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `Hasil_UTS_IPS_${d.nama.replace(/\s+/g, '_')}.txt`;
+            a.click();
+            URL.revokeObjectURL(url);
+        }
+
+        function sendEmail() {
+            if (!quizSubmitted) { alert('⚠️ Kirim jawaban terlebih dahulu!'); return; }
+            const d = window.quizData;
+            const subject = encodeURIComponent(`Hasil UTS IPS - ${d.nama} (${d.kelas})`);
+            const body = encodeURIComponent(`
+Yth. Ibu Astariny Martha, S.Pd,
+
+Berikut adalah hasil Ujian Tengah Semester IPS Kelas VIII Semester I:
+
+DATA SISWA
+Nama    : ${d.nama}
+NIS     : ${d.nis}
+Kelas   : ${d.kelas}
+Tanggal : ${d.tanggal}
+
+HASIL UJIAN
+Pilihan Ganda      : ${d.pgScore} / 100
+PG Kompleks        : ${d.complexScore} / 50
+Benar/Salah        : ${d.tfScore} / 50
+Menjodohkan        : ${d.matchScore} / 50
+------------------------------------
+Skor Total         : ${d.totalScore} / 250
+Nilai Akhir        : ${d.finalGrade} / 100
+
+Terima kasih.
+            `.trim());
+
+            window.location.href = `mailto:astarinymartha80@gmail.com?subject=${subject}&body=${body}`;
+        }
+
+        function resetQuiz() {
+            if (!confirm('⚠️ Yakin ingin mengulang ujian? Semua jawaban akan dihapus.')) return;
+            location.reload();
+        }
+    </script>
+
+</body>
+</html>

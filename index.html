@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IPS Kelas VIII Semester I | Astariny Martha, S.Pd</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            line-height: 1.6;
+            color: #333;
+            background: #f5f7fa;
+        }
+
+        /* Navigation */
+        nav {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+        }
+
+        nav a:hover {
+            background: rgba(255,255,255,0.2);
+            transform: translateY(-2px);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 50%, #3a7bd5 100%);
+            color: white;
+            padding: 5rem 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/></svg>') repeat;
+            opacity: 0.3;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero h2 {
+            font-size: 1.5rem;
+            font-weight: 300;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+            opacity: 0.9;
+        }
+
+        .badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.3);
+        }
+
+        .author-info {
+            margin-top: 2rem;
+            padding: 1.5rem;
+            background: rgba(255,255,255,0.1);
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            display: inline-block;
+        }
+
+        .author-info h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .author-info p {
+            font-size: 1rem;
+            margin: 0.2rem 0;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #f39c12;
+            color: white;
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            margin-top: 1rem;
+            box-shadow: 0 4px 15px rgba(243,156,18,0.4);
+        }
+
+        .btn:hover {
+            background: #e67e22;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(243,156,18,0.6);
+        }
+
+        /* Sections */
+        section {
+            padding: 4rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        section h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #1e3c72;
+            position: relative;
+            padding-bottom: 1rem;
+        }
+
+        section h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, #f39c12, #e67e22);
+            border-radius: 2px;
+        }
+
+        /* About Section */
+        .about-content {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.08);
+            margin-bottom: 2rem;
+        }
+
+        .about-content p {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            text-align: justify;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .feature-card {
+            background: linear-gradient(135deg, #f5f7fa 0%, #e8edf3 100%);
+            padding: 1.5rem;
+            border-radius: 12px;
+            text-align: center;
+            border-left: 4px solid #2a5298;
+            transition: all 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(42,82,152,0.15);
+        }
+
+        .feature-card .icon {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .feature-card h4 {
+            color: #1e3c72;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Structure Section */
+        .structure {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.08);
+        }
+
+        .structure-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .structure-item {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .structure-item h4 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Chapters Grid */
+        .chapters-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .chapter-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: all 0.3s;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+            position: relative;
+        }
+
+        .chapter-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(30,60,114,0.2);
+        }
+
+        .chapter-number {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 1rem;
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .chapter-card.uts .chapter-number {
+            background: linear-gradient(135deg, #f39c12 0%, #e67e22 100%);
+        }
+
+        .chapter-card.uas .chapter-number {
+            background: linear-gradient(135deg, #c0392b 0%, #e74c3c 100%);
+        }
+
+        .chapter-title {
+            padding: 1.5rem;
+            font-size: 1rem;
+            line-height: 1.5;
+            color: #333;
+            font-weight: 500;
+        }
+
+        .chapter-card:hover .chapter-title {
+            color: #1e3c72;
+        }
+
+        .chapter-icon {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            font-size: 1.2rem;
+            opacity: 0.7;
+        }
+
+        /* Author Section */
+        .author-section {
+            background: white;
+            padding: 3rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.08);
+            text-align: center;
+        }
+
+        .author-avatar {
+            width: 120px;
+            height: 120px;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            border-radius: 50%;
+            margin: 0 auto 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3rem;
+            font-weight: bold;
+            box-shadow: 0 5px 20px rgba(30,60,114,0.3);
+        }
+
+        .author-section h3 {
+            font-size: 1.8rem;
+            color: #1e3c72;
+            margin-bottom: 0.5rem;
+        }
+
+        .author-section .position {
+            color: #666;
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .author-section p {
+            max-width: 700px;
+            margin: 0 auto 1.5rem;
+            text-align: justify;
+        }
+
+        .quote {
+            font-style: italic;
+            color: #555;
+            padding: 1.5rem;
+            background: #f5f7fa;
+            border-left: 4px solid #f39c12;
+            border-radius: 8px;
+            max-width: 700px;
+            margin: 1.5rem auto;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 3rem 2rem;
+            border-radius: 15px;
+            text-align: center;
+        }
+
+        .contact-section h2 {
+            color: white;
+        }
+
+        .contact-section h2::after {
+            background: linear-gradient(90deg, #f39c12, #e67e22);
+        }
+
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            max-width: 800px;
+            margin: 2rem auto 0;
+        }
+
+        .contact-item {
+            background: rgba(255,255,255,0.1);
+            padding: 1.5rem;
+            border-radius: 12px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .contact-item .icon {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-item a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .contact-item a:hover {
+            text-decoration: underline;
+        }
+
+        /* Footer */
+        footer {
+            background: #0f1e3d;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+        }
+
+        footer p {
+            margin: 0.3rem 0;
+            opacity: 0.9;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .hero h2 {
+                font-size: 1.2rem;
+            }
+            section h2 {
+                font-size: 1.8rem;
+            }
+            nav ul {
+                gap: 1rem;
+            }
+            nav a {
+                padding: 0.3rem 0.6rem;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <ul>
+            <li><a href="#beranda">Beranda</a></li>
+            <li><a href="#tentang">Tentang Buku</a></li>
+            <li><a href="#bab">Daftar Bab</a></li>
+            <li><a href="#penulis">Penulis</a></li>
+            <li><a href="#kontak">Kontak</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="beranda">
+        <div class="hero-content">
+            <div class="badge">📘 Buku Ajar Kurikulum Merdeka</div>
+            <h1>IPS Kelas VIII Semester I</h1>
+            <h2>Ilmu Pengetahuan Sosial untuk Madrasah Tsanawiyah</h2>
+            <p>Buku ajar komprehensif yang menyajikan materi IPS secara sistematis, mulai dari kondisi geografis Indonesia, pemanfaatan sumber daya, hingga interaksi budaya dan masa kerajaan Islam. Disusun untuk mendukung pembelajaran aktif, kreatif, dan berkarakter bagi peserta didik kelas VIII MTs.</p>
+            
+            <div class="author-info">
+                <h3>Astariny Martha, S.Pd</h3>
+                <p>MTsN 6 Agam</p>
+                <p>📧 astarinymartha80@gmail.com</p>
+            </div>
+            <br>
+            <a href="#bab" class="btn">📖 Lihat Daftar Bab</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="tentang">
+        <h2>Tentang Buku</h2>
+        <div class="about-content">
+            <p>Buku <strong>IPS Kelas VIII Semester I</strong> ini dirancang sebagai pendamping belajar peserta didik Madrasah Tsanawiyah kelas VIII. Buku ini mengintegrasikan konsep-konsep geografi, ekonomi, sosiologi, dan sejarah dalam satu kesatuan yang utuh, sehingga siswa dapat memahami realitas sosial di lingkungannya secara multidimensi.</p>
+            <p>Materi disajikan dengan bahasa yang mudah dipahami, dilengkapi contoh kontekstual, aktivitas pembelajaran, serta evaluasi di setiap bab untuk mengukur capaian kompetensi peserta didik.</p>
+
+            <div class="features">
+                <div class="feature-card">
+                    <div class="icon">📚</div>
+                    <h4>12 Bab Lengkap</h4>
+                    <p>Materi sistematis dari geografi hingga sejarah</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon">🎯</div>
+                    <h4>Berbasis Kompetensi</h4>
+                    <p>Sesuai Kurikulum Merdeka</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon">🗺️</div>
+                    <h4>Kontekstual</h4>
+                    <p>Dilengkapi peta, gambar, dan studi kasus</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon">✅</div>
+                    <h4>UTS & UAS</h4>
+                    <p>Evaluasi tengah dan akhir semester</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="structure">
+            <h3 style="text-align:center; color:#1e3c72; margin-bottom:1rem;">Struktur Pembahasan</h3>
+            <p style="text-align:center;">Buku ini disusun secara sistematis dengan pembagian sebagai berikut:</p>
+            <div class="structure-grid">
+                <div class="structure-item">
+                    <h4>Bab 1 – 6</h4>
+                    <p>Materi Semester Ganjil Bagian I</p>
+                </div>
+                <div class="structure-item" style="background: linear-gradient(135deg, #f39c12 0%, #e67e22 100%);">
+                    <h4>Bab 7</h4>
+                    <p>Ujian Tengah Semester (UTS)</p>
+                </div>
+                <div class="structure-item">
+                    <h4>Bab 8 – 11</h4>
+                    <p>Materi Semester Ganjil Bagian II</p>
+                </div>
+                <div class="structure-item" style="background: linear-gradient(135deg, #c0392b 0%, #e74c3c 100%);">
+                    <h4>Bab 12</h4>
+                    <p>Ujian Akhir Semester (UAS)</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Chapters Section -->
+    <section id="bab">
+        <h2>Daftar Bab</h2>
+        <p style="text-align:center; margin-bottom:2rem; color:#666;">Klik pada setiap bab untuk membuka materi lengkap (file .html terpisah). Semua bab akan terbuka di tab baru.</p>
+        
+        <div class="chapters-grid">
+            <a href="1.html" target="_blank" class="chapter-card">
+                <div class="chapter-number">BAB I</div>
+                <div class="chapter-title">Kondisi Geografis dan Keragaman Sosial Budaya di Indonesia</div>
+                <span class="chapter-icon">🌏</span>
+            </a>
+
+            <a href="2.html" target="_blank" class="chapter-card">
+                <div class="chapter-number">BAB II</div>
+                <div class="chapter-title">Pemanfaatan Sumber Daya Alam (SDA)</div>
+                <span class="chapter-icon">🌿</span>
+            </a>
+
+            <a href="3.html" target="_blank" class="chapter-card">
+                <div class="chapter-number">BAB III</div>
+                <div class="chapter-title">Peningkatan Kualitas Sumber Daya Manusia (SDM)</div>
+                <span class="chapter-icon">👥</span>
+            </a>
+
+            <a href="4.html" target="_blank" class="chapter-card">
+                <div class="chapter-number">BAB IV</div>
+                <div class="chapter-title">Pengaruh Perbedaan Kondisi Wilayah dan Konektivitas Antarruang</div>
+                <span class="chapter-icon">🔗</span>
+            </a>
+
+            <a href="5.html" target="_blank" class="chapter-card">
+                <div class="chapter-number">BAB V</div>
+                <div class="chapter-title">Pengaruh Kondisi Geografis terhadap Keseimbangan Harga</div>
+                <span class="chapter-icon">💹</span>
+            </a>
+
+            <a href="6.html" target="_blank" class="chapter-card">
+                <div class="chapter-number">BAB VI</div>
+                <div class="chapter-title">Kondisi Geografi dan Interaksi dengan Bangsa Asing</div>
+                <span class="chapter-icon">🌐</span>
+            </a>
+
+            <a href="7.html" target="_blank" class="chapter-card uts">
+                <div class="chapter-number">UTS</div>
+                <div class="chapter-title">Ujian Tengah Semester – Review Materi Bab I – VI</div>
+                <span class="chapter-icon">📝</span>
+            </a>
+
+            <a href="8.html" target="_blank" class="chapter-card">
+                <div class="chapter-number">BAB VIII</div>
+                <div class="chapter-title">Keragaman Aktivitas Ekonomi Masyarakat</div>
+                <span class="chapter-icon">🏭</span>
+            </a>
+
+            <a href="9.html" target="_blank" class="chapter-card">
+                <div class="chapter-number">BAB IX</div>
+                <div class="chapter-title">Lembaga Keuangan</div>
+                <span class="chapter-icon">🏦</span>
+            </a>
+
+            <a href="10.html" target="_blank" class="chapter-card">
+                <div class="chapter-number">BAB X</div>
+                <div class="chapter-title">Norma dan Nilai Sosial</div>
+                <span class="chapter-icon">⚖️</span>
+            </a>
+
+            <a href="11.html" target="_blank" class="chapter-card">
+                <div class="chapter-number">BAB XI</div>
+                <div class="chapter-title">Interaksi Budaya dan Masa Kerajaan Islam</div>
+                <span class="chapter-icon">🕌</span>
+            </a>
+
+            <a href="12.html" target="_blank" class="chapter-card uas">
+                <div class="chapter-number">UAS</div>
+                <div class="chapter-title">Ujian Akhir Semester – Review Komprehensif</div>
+                <span class="chapter-icon">📋</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- Author Section -->
+    <section id="penulis">
+        <h2>Tentang Penulis</h2>
+        <div class="author-section">
+            <div class="author-avatar">AM</div>
+            <h3>Astariny Martha, S.Pd</h3>
+            <p class="position">Guru Ilmu Pengetahuan Sosial – MTsN 6 Agam</p>
+            <p>Penulis merupakan pendidik profesional yang berdedikasi di MTsN 6 Agam. Dengan pengalaman mengajar di bidang Ilmu Pengetahuan Sosial, penulis menyusun buku ini berdasarkan kebutuhan nyata peserta didik di kelas, memadukan pendekatan saintifik dengan nilai-nilai keislaman agar pembelajaran IPS menjadi lebih bermakna dan relevan dengan kehidupan sehari-hari.</p>
+            <p>Buku ini disusun sebagai upaya untuk menghadirkan materi IPS yang tidak hanya informatif, tetapi juga inspiratif, sehingga mampu membentuk karakter peserta didik yang cinta tanah air, berwawasan luas, dan berakhlak mulia.</p>
+            <div class="quote">
+                "Belajar IPS bukan sekadar menghafal fakta, tetapi memahami kehidupan, mengenali lingkungan, dan mencintai negeri ini dengan sepenuh hati."
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="kontak">
+        <div class="contact-section">
+            <h2>Informasi Kontak</h2>
+            <p>Untuk informasi lebih lanjut tentang buku ini, saran, masukan, atau kerja sama, silakan menghubungi penulis melalui:</p>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <div class="icon">📧</div>
+                    <h4>Email</h4>
+                    <a href="mailto:astarinymartha80@gmail.com">astarinymartha80@gmail.com</a>
+                </div>
+                <div class="contact-item">
+                    <div class="icon">🏫</div>
+                    <h4>Institusi</h4>
+                    <p>MTsN 6 Agam</p>
+                </div>
+                <div class="contact-item">
+                    <div class="icon">📅</div>
+                    <h4>Tahun Terbit</h4>
+                    <p>2026</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p><strong>© 2026 Astariny Martha, S.Pd – MTsN 6 Agam</strong></p>
+        <p>IPS Kelas VIII Semester I – Ilmu Pengetahuan Sosial untuk Madrasah Tsanawiyah</p>
+        <p style="margin-top:0.5rem; font-size:0.9rem; opacity:0.7;">Hak Cipta Dilindungi Undang-Undang</p>
+    </footer>
+
+</body>
+</html>

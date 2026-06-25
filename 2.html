@@ -1,0 +1,965 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bab 2 - Pemanfaatan Sumber Daya Alam (SDA) | IPS Kelas VIII Semester I</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            line-height: 1.7;
+            color: #333;
+            background: #f5f7fa;
+        }
+
+        /* Navigation */
+        nav {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+        }
+
+        nav a:hover {
+            background: rgba(255,255,255,0.2);
+            transform: translateY(-2px);
+        }
+
+        /* Breadcrumb */
+        .breadcrumb {
+            background: #e8edf3;
+            padding: 1rem 2rem;
+            font-size: 0.9rem;
+            border-bottom: 2px solid #2a5298;
+        }
+
+        .breadcrumb a {
+            color: #2a5298;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+
+        .breadcrumb span {
+            margin: 0 0.5rem;
+            color: #666;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 50%, #3a7bd5 100%);
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/></svg>') repeat;
+            opacity: 0.3;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .chapter-badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            margin-bottom: 1rem;
+            font-size: 1rem;
+            font-weight: 600;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.3);
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero p {
+            font-size: 1.15rem;
+            max-width: 750px;
+            margin: 0 auto 2rem;
+            opacity: 0.95;
+        }
+
+        .action-buttons {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 1.8rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .btn-primary {
+            background: #f39c12;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #e67e22;
+            transform: translateY(-3px);
+        }
+
+        .btn-secondary {
+            background: white;
+            color: #1e3c72;
+        }
+
+        .btn-secondary:hover {
+            background: #f5f7fa;
+            transform: translateY(-3px);
+        }
+
+        .btn-success {
+            background: #27ae60;
+            color: white;
+        }
+
+        .btn-success:hover {
+            background: #219a52;
+            transform: translateY(-3px);
+        }
+
+        /* Content Section */
+        .content-section {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+
+        .content-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.08);
+            margin-bottom: 2rem;
+        }
+
+        .content-card h2 {
+            color: #1e3c72;
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.8rem;
+            border-bottom: 3px solid #f39c12;
+        }
+
+        .content-card h3 {
+            color: #2a5298;
+            font-size: 1.4rem;
+            margin: 1.5rem 0 1rem;
+        }
+
+        .content-card p {
+            margin-bottom: 1rem;
+            text-align: justify;
+            font-size: 1.05rem;
+        }
+
+        .content-card ul, .content-card ol {
+            margin: 1rem 0 1rem 2rem;
+        }
+
+        .content-card li {
+            margin-bottom: 0.5rem;
+            font-size: 1.02rem;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+            border-left: 5px solid #2a5298;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+        }
+
+        .highlight-box h4 {
+            color: #1e3c72;
+            margin-bottom: 0.8rem;
+            font-size: 1.15rem;
+        }
+
+        .info-box {
+            background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%);
+            border-left: 5px solid #f39c12;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+        }
+
+        .info-box h4 {
+            color: #e67e22;
+            margin-bottom: 0.8rem;
+        }
+
+        .warning-box {
+            background: linear-gradient(135deg, #ffebee 0%, #ffcdd2 100%);
+            border-left: 5px solid #c0392b;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+        }
+
+        .warning-box h4 {
+            color: #c0392b;
+            margin-bottom: 0.8rem;
+        }
+
+        .success-box {
+            background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+            border-left: 5px solid #27ae60;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+        }
+
+        .success-box h4 {
+            color: #27ae60;
+            margin-bottom: 0.8rem;
+        }
+
+        .definition {
+            background: #f5f7fa;
+            padding: 1rem 1.5rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+            border-left: 4px solid #2a5298;
+            font-style: italic;
+        }
+
+        .definition strong {
+            color: #1e3c72;
+            font-style: normal;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        table th {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 1rem;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        table td {
+            padding: 0.9rem 1rem;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        table tr:nth-child(even) {
+            background: #f5f7fa;
+        }
+
+        table tr:hover {
+            background: #e3f2fd;
+        }
+
+        .map-placeholder {
+            background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+            border: 2px dashed #27ae60;
+            border-radius: 12px;
+            padding: 3rem 2rem;
+            text-align: center;
+            margin: 1.5rem 0;
+            color: #1e3c72;
+        }
+
+        .map-placeholder .icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Navigation Footer */
+        .nav-footer {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 3rem;
+            padding: 2rem;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.08);
+        }
+
+        .nav-footer a {
+            flex: 1;
+            min-width: 200px;
+            text-align: center;
+            padding: 1rem;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .nav-prev {
+            background: #e8edf3;
+            color: #1e3c72;
+        }
+
+        .nav-prev:hover {
+            background: #2a5298;
+            color: white;
+        }
+
+        .nav-next {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+        }
+
+        .nav-next:hover {
+            background: linear-gradient(135deg, #2a5298 0%, #3a7bd5 100%);
+            transform: translateY(-3px);
+        }
+
+        /* Site Footer */
+        footer {
+            background: #0f1e3d;
+            color: white;
+            padding: 3rem 2rem 1rem;
+            margin-top: 3rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h4 {
+            color: #f39c12;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .footer-section p, .footer-section a {
+            color: rgba(255,255,255,0.85);
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+        }
+
+        .footer-section a {
+            text-decoration: none;
+            display: block;
+            transition: color 0.3s;
+        }
+
+        .footer-section a:hover {
+            color: #f39c12;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            .hero p {
+                font-size: 1rem;
+            }
+            .content-card {
+                padding: 1.5rem;
+            }
+            .content-card h2 {
+                font-size: 1.4rem;
+            }
+            nav ul {
+                gap: 0.5rem;
+            }
+            nav a {
+                padding: 0.3rem 0.6rem;
+                font-size: 0.85rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <ul>
+            <li><a href="index.html">IPS Kelas VIII</a></li>
+            <li><a href="index.html#beranda">Beranda</a></li>
+            <li><a href="index.html#bab">Daftar Bab</a></li>
+            <li><a href="index.html#penulis">Penulis</a></li>
+            <li><a href="index.html#kontak">Kontak</a></li>
+        </ul>
+    </nav>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+        <a href="index.html">📘 IPS Kelas VIII Semester I</a>
+        <span>›</span>
+        <a href="index.html#beranda">Beranda</a>
+        <span>›</span>
+        <a href="index.html#bab">Daftar Bab</a>
+        <span>›</span>
+        <strong>Bab 2</strong>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="chapter-badge">🌿 BAB 2</div>
+            <h1>Pemanfaatan Sumber Daya Alam (SDA)</h1>
+            <p>Memahami pengertian, klasifikasi, dan potensi Sumber Daya Alam Indonesia. Menganalisis cara pemanfaatan SDA secara bijaksana dan berkelanjutan untuk kesejahteraan masyarakat serta pelestarian lingkungan.</p>
+            
+            <div class="action-buttons">
+                <a href="index.html" class="btn btn-secondary">🏠 Beranda</a>
+                <a href="uji-formatif-2.html" class="btn btn-primary">📝 Uji Formatif Bab 2</a>
+                <a href="3.html" class="btn btn-success">Bab Selanjutnya →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Content Section -->
+    <div class="content-section">
+
+        <!-- A. Pengertian Sumber Daya Alam -->
+        <div class="content-card">
+            <h2>A. Pengertian Sumber Daya Alam (SDA)</h2>
+            
+            <p>Sumber Daya Alam (SDA) adalah segala sesuatu yang berasal dari alam yang dapat digunakan untuk memenuhi kebutuhan hidup manusia. SDA mencakup komponen biotik (makhluk hidup) maupun abiotik (benda mati) yang terdapat di bumi dan bermanfaat bagi kelangsungan hidup manusia.</p>
+
+            <div class="definition">
+                <p><strong>Sumber Daya Alam (SDA)</strong> adalah semua kekayaan alam, baik berupa makhluk hidup maupun benda mati, yang dapat dimanfaatkan oleh manusia untuk memenuhi kebutuhan hidup dan meningkatkan kesejahteraan.</p>
+            </div>
+
+            <h3>1. Konsep Dasar SDA</h3>
+            <p>Suatu benda dapat dikatakan sebagai SDA apabila memenuhi dua syarat utama:</p>
+            <ul>
+                <li><strong>Bersumber dari alam</strong> – Bukan buatan manusia</li>
+                <li><strong>Bermanfaat bagi manusia</strong> – Dapat memenuhi kebutuhan hidup</li>
+            </ul>
+
+            <h3>2. Faktor yang Memengaruhi Pemanfaatan SDA</h3>
+            <p>Pemanfaatan SDA dipengaruhi oleh beberapa faktor:</p>
+            <ul>
+                <li><strong>Teknologi</strong> – Kemajuan teknologi memungkinkan pemanfaatan SDA yang lebih efisien</li>
+                <li><strong>Jumlah Penduduk</strong> – Semakin banyak penduduk, semakin besar kebutuhan akan SDA</li>
+                <li><strong>Tingkat Kebudayaan</strong> – Masyarakat modern memanfaatkan SDA dengan cara yang berbeda</li>
+                <li><strong>Kebijakan Pemerintah</strong> – Regulasi memengaruhi cara pengelolaan SDA</li>
+            </ul>
+
+            <div class="highlight-box">
+                <h4>📌 Penting untuk Dipahami</h4>
+                <p>SDA bukan hanya bahan mentah, tetapi juga mencakup jasa lingkungan seperti udara bersih, air bersih, keindahan alam, dan kesuburan tanah yang memberikan manfaat tidak langsung bagi manusia.</p>
+            </div>
+        </div>
+
+        <!-- B. Klasifikasi Sumber Daya Alam -->
+        <div class="content-card">
+            <h2>B. Klasifikasi Sumber Daya Alam</h2>
+            
+            <p>Sumber Daya Alam dapat diklasifikasikan berdasarkan beberapa sudut pandang. Klasifikasi ini membantu kita memahami karakteristik dan cara pengelolaan yang tepat untuk setiap jenis SDA.</p>
+
+            <h3>1. Berdasarkan Jenisnya</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Jenis SDA</th>
+                        <th>Pengertian</th>
+                        <th>Contoh</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>SDA Hayati (Biotik)</strong></td>
+                        <td>Sumber daya alam yang berasal dari makhluk hidup</td>
+                        <td>Tumbuhan, hewan, mikroorganisme, hasil pertanian, perikanan, peternakan</td>
+                    </tr>
+                    <tr>
+                        <td><strong>SDA Non-Hayati (Abiotik)</strong></td>
+                        <td>Sumber daya alam yang berasal dari benda mati</td>
+                        <td>Tanah, air, udara, tambang, mineral, batuan, minyak bumi, gas alam</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>2. Berdasarkan Sifat Pembaruannya</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Jenis SDA</th>
+                        <th>Pengertian</th>
+                        <th>Contoh</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>SDA yang Dapat Diperbarui (Renewable)</strong></td>
+                        <td>SDA yang dapat dipulihkan kembali melalui proses alam atau budidaya</td>
+                        <td>Tumbuhan, hewan, hasil pertanian, air tawar</td>
+                    </tr>
+                    <tr>
+                        <td><strong>SDA yang Tidak Dapat Diperbarui (Non-Renewable)</strong></td>
+                        <td>SDA yang akan habis jika dieksploitasi terus-menerus</td>
+                        <td>Minyak bumi, batu bara, gas alam, emas, tembaga</td>
+                    </tr>
+                    <tr>
+                        <td><strong>SDA yang Tidak Habis (Inexhaustible)</strong></td>
+                        <td>SDA yang tidak akan habis meskipun digunakan terus-menerus</td>
+                        <td>Sinar matahari, angin, pasang surut air laut, panas bumi</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>3. Berdasarkan Ruang (Tempat) Keberadaannya</h3>
+            <ul>
+                <li><strong>SDA Tanah</strong> – Tanah subur untuk pertanian, bahan bangunan</li>
+                <li><strong>SDA Air</strong> – Air laut, air sungai, air tanah, danau</li>
+                <li><strong>SDA Udara</strong> – Oksigen, nitrogen, energi angin</li>
+                <li><strong>SDA Tambang/Mineral</strong> – Emas, perak, tembaga, batubara, minyak bumi</li>
+                <li><strong>SDA Hutan</strong> – Kayu, rotan, damar, hasil hutan non-kayu</li>
+                <li><strong>SDA Laut</strong> – Ikan, terumbu karang, rumput laut, energi gelombang</li>
+            </ul>
+
+            <div class="info-box">
+                <h4>💡 Tahukah Kamu?</h4>
+                <p>Indonesia merupakan salah satu negara terkaya di dunia dalam hal SDA. Hutan Indonesia merupakan <strong>paru-paru dunia</strong> kedua setelah Amazon (Brasil). Indonesia juga memiliki <strong>keanekaragaman hayati tertinggi ketiga</strong> di dunia setelah Brasil dan Kongo.</p>
+            </div>
+        </div>
+
+        <!-- C. Potensi Sumber Daya Alam Indonesia -->
+        <div class="content-card">
+            <h2>C. Potensi Sumber Daya Alam Indonesia</h2>
+            
+            <p>Indonesia dianugerahi kekayaan SDA yang luar biasa. Posisi geografis dan kondisi geologis yang strategis menjadikan Indonesia memiliki potensi SDA yang sangat beragam.</p>
+
+            <h3>1. Potensi SDA Hayati</h3>
+            <p><strong>a. Hutan</strong></p>
+            <ul>
+                <li>Luas hutan Indonesia mencapai ±120 juta hektar</li>
+                <li>Hutan hujan tropis dengan keanekaragaman hayati tinggi</li>
+                <li>Menghasilkan kayu, rotan, damar, kemenyan, dan hasil hutan non-kayu</li>
+                <li>Hutan lindung, hutan produksi, dan hutan konservasi</li>
+            </ul>
+
+            <p><strong>b. Pertanian</strong></p>
+            <ul>
+                <li>Tanah vulkanik yang subur di Jawa, Sumatera, dan Sulawesi</li>
+                <li>Penghasil padi, jagung, kedelai, sayuran, dan buah-buahan</li>
+                <li>Perkebunan: kelapa sawit, karet, teh, kopi, kakao</li>
+                <li>Indonesia merupakan penghasil <strong>kelapa sawit terbesar di dunia</strong></li>
+            </ul>
+
+            <p><strong>c. Perikanan</strong></p>
+            <ul>
+                <li>Wilayah perairan mencapai 5,8 juta km²</li>
+                <li>Kaya akan ikan tuna, cakalang, udang, dan rumput laut</li>
+                <li>Potensi perikanan tangkap dan budidaya</li>
+            </ul>
+
+            <p><strong>d. Peternakan</strong></p>
+            <ul>
+                <li>Sapi, kerbau, kambing, domba, ayam, itik</li>
+                <li>Daerah peternakan utama: Nusa Tenggara, Sulawesi Selatan, Jawa Timur</li>
+            </ul>
+
+            <h3>2. Potensi SDA Non-Hayati</h3>
+            <p><strong>a. Pertambangan Energi</strong></p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Jenis Tambang</th>
+                        <th>Daerah Penghasil</th>
+                        <th>Kegunaan</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Minyak Bumi</td>
+                        <td>Cepu (Jatim), Balikpapan (Kaltim), Dumai (Riau), Sorong (Papbar)</td>
+                        <td>Bahan bakar, industri petrokimia</td>
+                    </tr>
+                    <tr>
+                        <td>Gas Alam</td>
+                        <td>Bontang (Kaltim), Arun (Aceh), Tangguh (Papbar)</td>
+                        <td>Bahan bakar, LNG, pupuk</td>
+                    </tr>
+                    <tr>
+                        <td>Batu Bara</td>
+                        <td>Kalimantan Timur, Sumatera Selatan, Bengkulu</td>
+                        <td>PLTU, industri, ekspor</td>
+                    </tr>
+                    <tr>
+                        <td>Panas Bumi (Geothermal)</td>
+                        <td>Dieng (Jateng), Kamojang (Jabar), Lahendong (Sulut)</td>
+                        <td>Pembangkit listrik</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p><strong>b. Pertambangan Mineral</strong></p>
+            <ul>
+                <li><strong>Emas</strong> – Freeport (Papua), Bombana (Sultra), Gunung Pongkor (Jabar)</li>
+                <li><strong>Tembaga</strong> – Grasberg (Papua), Batu Hijau (NTB)</li>
+                <li><strong>Timah</strong> – Bangka, Belitung, Singkep</li>
+                <li><strong>Nikel</strong> – Sulawesi Tenggara, Sulawesi Tengah, Maluku Utara</li>
+                <li><strong>Bauksit</strong> – Kalimantan Barat, Kepulauan Riau</li>
+                <li><strong>Mangan</strong> – Klireng (Jateng), Tasikmalaya (Jabar)</li>
+            </ul>
+
+            <h3>3. Potensi SDA Kelautan</h3>
+            <ul>
+                <li>Indonesia memiliki garis pantai terpanjang kedua di dunia (±99.000 km)</li>
+                <li>Kekayaan terumbu karang (Coral Triangle)</li>
+                <li>Mangrove terluas di dunia</li>
+                <li>Potensi energi gelombang, pasang surut, dan OTEC</li>
+            </ul>
+
+            <div class="success-box">
+                <h4>🏆 Kekayaan Alam Indonesia</h4>
+                <p>Indonesia dijuluki sebagai <strong>"Zamrud Khatulistiwa"</strong> karena kekayaan alamnya yang melimpah. Indonesia juga merupakan negara <strong>megabiodiversity</strong> dengan lebih dari 300.000 spesies tumbuhan dan hewan.</p>
+            </div>
+        </div>
+
+        <!-- D. Pemanfaatan Sumber Daya Alam -->
+        <div class="content-card">
+            <h2>D. Pemanfaatan Sumber Daya Alam</h2>
+            
+            <p>Pemanfaatan SDA harus dilakukan secara bijaksana agar dapat memberikan manfaat optimal bagi masyarakat tanpa merusak lingkungan. Berikut adalah beberapa bentuk pemanfaatan SDA di berbagai sektor.</p>
+
+            <h3>1. Pemanfaatan SDA di Sektor Pertanian</h3>
+            <ul>
+                <li>Pengolahan tanah subur untuk pertanian pangan (padi, jagung, kedelai)</li>
+                <li>Perkebunan kelapa sawit, karet, teh, kopi</li>
+                <li>Hidroponik dan pertanian modern</li>
+                <li>Penggunaan pupuk organik untuk menjaga kesuburan tanah</li>
+            </ul>
+
+            <h3>2. Pemanfaatan SDA di Sektor Perikanan</h3>
+            <ul>
+                <li>Perikanan tangkap di laut, sungai, dan danau</li>
+                <li>Budidaya ikan (tambak, keramba, kolam)</li>
+                <li>Budidaya rumput laut dan mutiara</li>
+                <li>Industri pengolahan hasil perikanan</li>
+            </ul>
+
+            <h3>3. Pemanfaatan SDA di Sektor Kehutanan</h3>
+            <ul>
+                <li>Penebangan kayu dengan sistem tebang pilih</li>
+                <li>Industri kayu lapis dan mebel</li>
+                <li>Pengambilan hasil hutan non-kayu (rotan, damar, madu)</li>
+                <li>Ekowisata dan konservasi hutan</li>
+            </ul>
+
+            <h3>4. Pemanfaatan SDA di Sektor Pertambangan</h3>
+            <ul>
+                <li>Eksploitasi minyak bumi dan gas alam untuk energi</li>
+                <li>Pertambangan batu bara untuk pembangkit listrik</li>
+                <li>Pertambangan mineral untuk industri</li>
+                <li>Pemanfaatan energi terbarukan (panas bumi, tenaga air, angin)</li>
+            </ul>
+
+            <h3>5. Pemanfaatan SDA di Sektor Pariwisata</h3>
+            <ul>
+                <li>Wisata alam (gunung, pantai, danau, hutan)</li>
+                <li>Wisata bahari (snorkeling, diving)</li>
+                <li>Agrowisata (perkebunan, sawah)</li>
+                <li>Geowisata (gunung berapi, gua, air panas)</li>
+            </ul>
+
+            <div class="map-placeholder">
+                <div class="icon">🗺️</div>
+                <h4>Peta Persebaran SDA Indonesia</h4>
+                <p>Setiap daerah memiliki potensi SDA yang berbeda-beda sesuai kondisi geografisnya</p>
+            </div>
+        </div>
+
+        <!-- E. Pengelolaan SDA Berkelanjutan -->
+        <div class="content-card">
+            <h2>E. Pengelolaan SDA Berkelanjutan</h2>
+            
+            <p>Pengelolaan SDA berkelanjutan adalah pemanfaatan SDA dengan memperhatikan kebutuhan generasi saat ini tanpa mengorbankan kemampuan generasi mendatang untuk memenuhi kebutuhannya.</p>
+
+            <div class="definition">
+                <p><strong>Pembangunan Berkelanjutan (Sustainable Development)</strong> adalah pembangunan yang memenuhi kebutuhan masa kini tanpa mengorbankan kemampuan generasi mendatang untuk memenuhi kebutuhan mereka sendiri (Brundtland Report, 1987).</p>
+            </div>
+
+            <h3>1. Prinsip-Prinsip Pengelolaan SDA Berkelanjutan</h3>
+            <ul>
+                <li><strong>Prinsip Kelestarian</strong> – Menjaga kelestarian SDA untuk masa depan</li>
+                <li><strong>Prinsip Efisiensi</strong> – Menggunakan SDA secara hemat dan efisien</li>
+                <li><strong>Prinsip Keadilan</strong> – Pembagian manfaat SDA secara adil</li>
+                <li><strong>Prinsip Partisipatif</strong> – Melibatkan masyarakat dalam pengelolaan</li>
+                <li><strong>Prinsip Kearifan Lokal</strong> – Menghormati pengetahuan tradisional</li>
+            </ul>
+
+            <h3>2. Upaya Pengelolaan SDA Berkelanjutan</h3>
+            <p><strong>a. Untuk SDA yang Dapat Diperbarui:</strong></p>
+            <ul>
+                <li>Reboisasi dan penghijauan</li>
+                <li>Tebang pilih dan sistem tebang tanam</li>
+                <li>Budidaya dan penangkaran hewan</li>
+                <li>Penggunaan pupuk organik</li>
+                <li>Rotasi tanaman</li>
+            </ul>
+
+            <p><strong>b. Untuk SDA yang Tidak Dapat Diperbarui:</strong></p>
+            <ul>
+                <li>Penghematan penggunaan bahan bakar fosil</li>
+                <li>Diversifikasi energi (penggunaan energi terbarukan)</li>
+                <li>Recycling dan reuse bahan tambang</li>
+                <li>Pengembangan teknologi ramah lingkungan</li>
+                <li>Eksplorasi sumber energi alternatif</li>
+            </ul>
+
+            <h3>3. Energi Terbarukan sebagai Alternatif</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Jenis Energi</th>
+                        <th>Sumber</th>
+                        <th>Contoh Pemanfaatan</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Energi Surya</td>
+                        <td>Sinar matahari</td>
+                        <td>Panel surya, pemanas air</td>
+                    </tr>
+                    <tr>
+                        <td>Energi Angin</td>
+                        <td>Angin</td>
+                        <td>Kincir angin, PLTB Sidrap</td>
+                    </tr>
+                    <tr>
+                        <td>Energi Air</td>
+                        <td>Aliran air</td>
+                        <td>PLTA, mikrohidro</td>
+                    </tr>
+                    <tr>
+                        <td>Panas Bumi</td>
+                        <td>Panas bumi</td>
+                        <td>PLTP Kamojang, Dieng</td>
+                    </tr>
+                    <tr>
+                        <td>Biomassa</td>
+                        <td>Bahan organik</td>
+                        <td>Biogas, biodiesel</td>
+                    </tr>
+                    <tr>
+                        <td>Energi Pasang Surut</td>
+                        <td>Air laut</td>
+                        <td>PLT Pasang Surut</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="highlight-box">
+                <h4>🌱 Konsep 3R dalam Pengelolaan SDA</h4>
+                <ul>
+                    <li><strong>Reduce (Mengurangi)</strong> – Mengurangi penggunaan bahan yang dapat merusak lingkungan</li>
+                    <li><strong>Reuse (Menggunakan Kembali)</strong> – Menggunakan kembali barang yang masih layak</li>
+                    <li><strong>Recycle (Mendaur Ulang)</strong> – Mengolah kembali barang bekas menjadi produk baru</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- F. Dampak Eksploitasi SDA dan Upaya Pelestarian -->
+        <div class="content-card">
+            <h2>F. Dampak Eksploitasi SDA dan Upaya Pelestarian</h2>
+            
+            <p>Eksploitasi SDA yang berlebihan dan tidak bijaksana dapat menimbulkan berbagai dampak negatif bagi lingkungan dan kehidupan manusia.</p>
+
+            <h3>1. Dampak Negatif Eksploitasi SDA</h3>
+            <ul>
+                <li><strong>Kerusakan Hutan</strong> – Deforestasi, kepunahan satwa, longsor, banjir</li>
+                <li><strong>Pencemaran Lingkungan</strong> – Pencemaran air, udara, dan tanah akibat limbah tambang</li>
+                <li><strong>Krisis Air Bersih</strong> – Eksploitasi air tanah berlebihan</li>
+                <li><strong>Perubahan Iklim</strong> – Emisi gas rumah kaca dari pembakaran bahan bakar fosil</li>
+                <li><strong>Kerusakan Terumbu Karang</strong> – Penangkapan ikan dengan bahan peledak/racun</li>
+                <li><strong>Konflik Sosial</strong> – Perebutan sumber daya antara masyarakat dan perusahaan</li>
+            </ul>
+
+            <div class="warning-box">
+                <h4>⚠️ Kasus Nyata</h4>
+                <p>Eksploitasi hutan di Kalimantan dan Sumatera telah menyebabkan <strong>kebakaran hutan</strong> yang menghasilkan kabut asap lintas negara. Hilangnya habitat orangutan dan harimau Sumatera menjadi ancaman serius bagi keanekaragaman hayati Indonesia.</p>
+            </div>
+
+            <h3>2. Upaya Pelestarian SDA</h3>
+            <p><strong>a. Pelestarian In-Situ (di tempat asal)</strong></p>
+            <ul>
+                <li>Taman Nasional (TN Gunung Leuser, TN Komodo, TN Ujung Kulon)</li>
+                <li>Cagar Alam dan Suaka Margasatwa</li>
+                <li>Hutan Lindung</li>
+                <li>Taman Laut Nasional</li>
+            </ul>
+
+            <p><strong>b. Pelestarian Ex-Situ (di luar tempat asal)</strong></p>
+            <ul>
+                <li>Kebun Binatang</li>
+                <li>Kebun Raya (Kebun Raya Bogor)</li>
+                <li>Taman Safari</li>
+                <li>Penangkaran hewan langka</li>
+            </ul>
+
+            <h3>3. Peran Masyarakat dalam Pelestarian SDA</h3>
+            <ul>
+                <li>Menghemat penggunaan air dan listrik</li>
+                <li>Mengurangi penggunaan plastik sekali pakai</li>
+                <li>Melakukan penghijauan di lingkungan sekitar</li>
+                <li>Membuang sampah pada tempatnya</li>
+                <li>Mendukung produk ramah lingkungan</li>
+                <li>Ikut serta dalam gerakan konservasi</li>
+            </ul>
+
+            <h3>4. Peran Pemerintah dalam Pengelolaan SDA</h3>
+            <ul>
+                <li>Membuat peraturan dan undang-undang perlindungan SDA</li>
+                <li>Memberikan izin eksploitasi dengan syarat ketat</li>
+                <li>Melakukan pengawasan dan penegakan hukum</li>
+                <li>Mengembangkan energi terbarukan</li>
+                <li>Menggalakkan pendidikan lingkungan</li>
+            </ul>
+
+            <div class="success-box">
+                <h4>🌍 Gerakan Global</h4>
+                <p>Indonesia telah berkomitmen pada <strong>Sustainable Development Goals (SDGs)</strong> 2030, khususnya Goal 13 (Penanganan Perubahan Iklim), Goal 14 (Ekosistem Laut), dan Goal 15 (Ekosistem Daratan) untuk pelestarian SDA.</p>
+            </div>
+        </div>
+
+        <!-- Poin Penting untuk Ujian -->
+        <div class="content-card">
+            <h2>📋 Poin Penting untuk Ujian</h2>
+            
+            <div class="highlight-box">
+                <h4>🎯 Konsep Kunci yang Harus Dikuasai</h4>
+                <ul>
+                    <li>Pahami <strong>pengertian SDA</strong> dan syarat suatu benda menjadi SDA</li>
+                    <li>Kuasai <strong>3 klasifikasi SDA</strong>: berdasarkan jenis (hayati/abiotik), sifat (renewable/non-renewable/inexhaustible), dan ruang</li>
+                    <li>Hafalkan <strong>potensi SDA Indonesia</strong>: hutan, pertanian, perikanan, pertambangan, kelautan</li>
+                    <li>Pahami <strong>daerah penghasil</strong> SDA utama di Indonesia (minyak, gas, batu bara, emas, timah)</li>
+                    <li>Pahami konsep <strong>pembangunan berkelanjutan</strong> dan prinsip-prinsipnya</li>
+                    <li>Kuasai konsep <strong>3R (Reduce, Reuse, Recycle)</strong></li>
+                    <li>Pahami <strong>dampak negatif eksploitasi SDA</strong> dan upaya pelestariannya</li>
+                    <li>Bedakan <strong>pelestarian in-situ dan ex-situ</strong> beserta contohnya</li>
+                    <li>Pahami <strong>energi terbarukan</strong> sebagai alternatif pengganti bahan bakar fosil</li>
+                    <li>Pahami peran <strong>masyarakat dan pemerintah</strong> dalam pelestarian SDA</li>
+                </ul>
+            </div>
+
+            <div class="info-box">
+                <h4>💡 Tips Belajar</h4>
+                <p>Untuk memudahkan hafalan daerah penghasil SDA, buatlah <strong>peta persebaran SDA Indonesia</strong> dengan menandai lokasi-lokasi penting. Hubungkan juga konsep SDA dengan kehidupan sehari-hari agar lebih mudah dipahami.</p>
+            </div>
+        </div>
+
+        <!-- Navigation Footer -->
+        <div class="nav-footer">
+            <a href="1.html" class="nav-prev">← Bab Sebelumnya</a>
+            <a href="uji-formatif-2.html" class="nav-next" style="background: linear-gradient(135deg, #f39c12 0%, #e67e22 100%);">📝 Uji Formatif Bab 2</a>
+            <a href="3.html" class="nav-next">Bab Selanjutnya →</a>
+        </div>
+
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>📘 IPS Kelas VIII Semester I</h4>
+                <p>Buku ajar untuk peserta didik Madrasah Tsanawiyah kelas VIII. Disusun oleh Astariny Martha, S.Pd.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Navigasi</h4>
+                <a href="index.html#beranda">Beranda</a>
+                <a href="index.html#tentang">Tentang Buku</a>
+                <a href="index.html#bab">Daftar Bab</a>
+                <a href="index.html#penulis">Penulis</a>
+            </div>
+            <div class="footer-section">
+                <h4>Buku</h4>
+                <a href="#">Cetak</a>
+                <a href="#">E-Book</a>
+                <a href="uji-formatif-2.html">Uji Formatif</a>
+            </div>
+            <div class="footer-section">
+                <h4>Kontak</h4>
+                <a href="mailto:astarinymartha80@gmail.com">astarinymartha80@gmail.com</a>
+                <p>MTsN 6 Agam</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 Astariny Martha, S.Pd. – MTsN 6 Agam. Hak cipta dilindungi.</p>
+            <p>IPS Kelas VIII Semester I: Pemanfaatan Sumber Daya Alam</p>
+        </div>
+    </footer>
+
+</body>
+</html>

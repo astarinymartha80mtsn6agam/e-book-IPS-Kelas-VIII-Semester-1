@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bab 4 - Pengaruh Perbedaan Kondisi Wilayah dan Konektivitas Antarruang | IPS Kelas VIII Semester I</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        body { line-height: 1.7; color: #333; background: #f5f7fa; }
+        nav { background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%); padding: 1rem 2rem; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        nav ul { list-style: none; display: flex; justify-content: center; flex-wrap: wrap; gap: 1.5rem; }
+        nav a { color: white; text-decoration: none; font-weight: 500; transition: all 0.3s; padding: 0.5rem 1rem; border-radius: 5px; }
+        nav a:hover { background: rgba(255,255,255,0.2); transform: translateY(-2px); }
+        .breadcrumb { background: #e8edf3; padding: 1rem 2rem; font-size: 0.9rem; border-bottom: 2px solid #2a5298; }
+        .breadcrumb a { color: #2a5298; text-decoration: none; font-weight: 500; }
+        .breadcrumb a:hover { text-decoration: underline; }
+        .breadcrumb span { margin: 0 0.5rem; color: #666; }
+        .hero { background: linear-gradient(135deg, #1e3c72 0%, #2a5298 50%, #3a7bd5 100%); color: white; padding: 4rem 2rem; text-align: center; position: relative; overflow: hidden; }
+        .hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/></svg>') repeat; opacity: 0.3; }
+        .hero-content { position: relative; z-index: 1; max-width: 900px; margin: 0 auto; }
+        .chapter-badge { display: inline-block; background: rgba(255,255,255,0.2); padding: 0.5rem 1.5rem; border-radius: 50px; margin-bottom: 1rem; font-size: 1rem; font-weight: 600; backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.3); }
+        .hero h1 { font-size: 2.5rem; margin-bottom: 1.5rem; text-shadow: 2px 2px 4px rgba(0,0,0,0.3); }
+        .hero p { font-size: 1.15rem; max-width: 750px; margin: 0 auto 2rem; opacity: 0.95; }
+        .action-buttons { display: flex; justify-content: center; flex-wrap: wrap; gap: 1rem; margin-top: 2rem; }
+        .btn { display: inline-block; padding: 0.8rem 1.8rem; border-radius: 50px; text-decoration: none; font-weight: 600; transition: all 0.3s; box-shadow: 0 4px 15px rgba(0,0,0,0.2); }
+        .btn-primary { background: #f39c12; color: white; }
+        .btn-primary:hover { background: #e67e22; transform: translateY(-3px); }
+        .btn-secondary { background: white; color: #1e3c72; }
+        .btn-secondary:hover { background: #f5f7fa; transform: translateY(-3px); }
+        .btn-success { background: #27ae60; color: white; }
+        .btn-success:hover { background: #219a52; transform: translateY(-3px); }
+        .content-section { max-width: 1000px; margin: 0 auto; padding: 3rem 2rem; }
+        .content-card { background: white; padding: 2.5rem; border-radius: 15px; box-shadow: 0 5px 25px rgba(0,0,0,0.08); margin-bottom: 2rem; }
+        .content-card h2 { color: #1e3c72; font-size: 1.8rem; margin-bottom: 1.5rem; padding-bottom: 0.8rem; border-bottom: 3px solid #f39c12; }
+        .content-card h3 { color: #2a5298; font-size: 1.4rem; margin: 1.5rem 0 1rem; }
+        .content-card p { margin-bottom: 1rem; text-align: justify; font-size: 1.05rem; }
+        .content-card ul, .content-card ol { margin: 1rem 0 1rem 2rem; }
+        .content-card li { margin-bottom: 0.5rem; font-size: 1.02rem; }
+        .highlight-box { background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%); border-left: 5px solid #2a5298; padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; }
+        .highlight-box h4 { color: #1e3c72; margin-bottom: 0.8rem; font-size: 1.15rem; }
+        .info-box { background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%); border-left: 5px solid #f39c12; padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; }
+        .info-box h4 { color: #e67e22; margin-bottom: 0.8rem; }
+        .warning-box { background: linear-gradient(135deg, #ffebee 0%, #ffcdd2 100%); border-left: 5px solid #c0392b; padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; }
+        .warning-box h4 { color: #c0392b; margin-bottom: 0.8rem; }
+        .success-box { background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%); border-left: 5px solid #27ae60; padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; }
+        .success-box h4 { color: #27ae60; margin-bottom: 0.8rem; }
+        .definition { background: #f5f7fa; padding: 1rem 1.5rem; border-radius: 8px; margin: 1rem 0; border-left: 4px solid #2a5298; font-style: italic; }
+        .definition strong { color: #1e3c72; font-style: normal; }
+        table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+        table th { background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%); color: white; padding: 1rem; text-align: left; font-weight: 600; }
+        table td { padding: 0.9rem 1rem; border-bottom: 1px solid #e0e0e0; }
+        table tr:nth-child(even) { background: #f5f7fa; }
+        table tr:hover { background: #e3f2fd; }
+        .map-placeholder { background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%); border: 2px dashed #2a5298; border-radius: 12px; padding: 3rem 2rem; text-align: center; margin: 1.5rem 0; color: #1e3c72; }
+        .map-placeholder .icon { font-size: 3rem; margin-bottom: 1rem; }
+        .nav-footer { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 1rem; margin-top: 3rem; padding: 2rem; background: white; border-radius: 15px; box-shadow: 0 5px 25px rgba(0,0,0,0.08); }
+        .nav-footer a { flex: 1; min-width: 200px; text-align: center; padding: 1rem; border-radius: 10px; text-decoration: none; font-weight: 600; transition: all 0.3s; }
+        .nav-prev { background: #e8edf3; color: #1e3c72; }
+        .nav-prev:hover { background: #2a5298; color: white; }
+        .nav-next { background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%); color: white; }
+        .nav-next:hover { background: linear-gradient(135deg, #2a5298 0%, #3a7bd5 100%); transform: translateY(-3px); }
+        footer { background: #0f1e3d; color: white; padding: 3rem 2rem 1rem; margin-top: 3rem; }
+        .footer-content { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-bottom: 2rem; }
+        .footer-section h4 { color: #f39c12; margin-bottom: 1rem; font-size: 1.1rem; }
+        .footer-section p, .footer-section a { color: rgba(255,255,255,0.85); margin-bottom: 0.5rem; font-size: 0.95rem; }
+        .footer-section a { text-decoration: none; display: block; transition: color 0.3s; }
+        .footer-section a:hover { color: #f39c12; }
+        .footer-bottom { text-align: center; padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,0.1); font-size: 0.9rem; opacity: 0.8; }
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 1.8rem; }
+            .hero p { font-size: 1rem; }
+            .content-card { padding: 1.5rem; }
+            .content-card h2 { font-size: 1.4rem; }
+            nav ul { gap: 0.5rem; }
+            nav a { padding: 0.3rem 0.6rem; font-size: 0.85rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <ul>
+            <li><a href="index.html">IPS Kelas VIII</a></li>
+            <li><a href="index.html#beranda">Beranda</a></li>
+            <li><a href="index.html#bab">Daftar Bab</a></li>
+            <li><a href="index.html#penulis">Penulis</a></li>
+            <li><a href="index.html#kontak">Kontak</a></li>
+        </ul>
+    </nav>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+        <a href="index.html">📘 IPS Kelas VIII Semester I</a>
+        <span>›</span>
+        <a href="index.html#beranda">Beranda</a>
+        <span>›</span>
+        <a href="index.html#bab">Daftar Bab</a>
+        <span>›</span>
+        <strong>Bab 4</strong>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="chapter-badge">🔗 BAB 4</div>
+            <h1>Pengaruh Perbedaan Kondisi Wilayah dan Konektivitas Antarruang</h1>
+            <p>Memahami bagaimana perbedaan kondisi geografis antardaerah memengaruhi kehidupan masyarakat, serta peran konektivitas antarruang melalui transportasi dan komunikasi dalam mendorong interaksi, pembangunan, dan kesejahteraan bangsa Indonesia.</p>
+            
+            <div class="action-buttons">
+                <a href="index.html" class="btn btn-secondary">🏠 Beranda</a>
+                <a href="uji-formatif-4.html" class="btn btn-primary">📝 Uji Formatif Bab 4</a>
+                <a href="5.html" class="btn btn-success">Bab Selanjutnya →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Content Section -->
+    <div class="content-section">
+
+        <!-- A. Pengertian Ruang dan Konektivitas Antarruang -->
+        <div class="content-card">
+            <h2>A. Pengertian Ruang dan Konektivitas Antarruang</h2>
+            
+            <p>Dalam kehidupan sehari-hari, kita sering mendengar istilah "ruang". Ruang bukan hanya berarti tempat kosong, melainkan sebuah kesatuan yang mencakup segala hal di dalamnya, termasuk makhluk hidup, benda mati, dan kondisi alam yang saling memengaruhi.</p>
+
+            <div class="definition">
+                <p><strong>Ruang</strong> adalah tempat di permukaan bumi, baik secara keseluruhan maupun sebagian, termasuk lapisan udara yang menyelimutinya dan lapisan bumi yang berada di bawahnya, yang menjadi tempat hidup bagi makhluk hidup.</p>
+            </div>
+
+            <h3>1. Unsur-Unsur Ruang</h3>
+            <p>Ruang terdiri dari tiga unsur utama:</p>
+            <ul>
+                <li><strong>Unsur Fisik (Abiotik)</strong> – Tanah, air, udara, iklim, mineral, dan bentang alam</li>
+                <li><strong>Unsur Hayati (Biotik)</strong> – Tumbuhan, hewan, dan manusia</li>
+                <li><strong>Unsur Sosial Budaya</strong> – Adat istiadat, tradisi, nilai, dan aktivitas masyarakat</li>
+            </ul>
+
+            <h3>2. Pengertian Konektivitas Antarruang</h3>
+            <p>Konektivitas antarruang adalah keterhubungan antarwilayah yang memungkinkan terjadinya perpindahan manusia, barang, informasi, dan ide dari satu ruang ke ruang lainnya.</p>
+
+            <div class="definition">
+                <p><strong>Konektivitas Antarruang</strong> adalah hubungan keterkaitan antara satu wilayah dengan wilayah lainnya yang ditandai dengan adanya arus perpindahan manusia, barang, jasa, informasi, dan budaya, sehingga tercipta interaksi yang saling memengaruhi.</p>
+            </div>
+
+            <h3>3. Bentuk-Bentuk Konektivitas Antarruang</h3>
+            <ul>
+                <li><strong>Mobilitas Penduduk</strong> – Migrasi, urbanisasi, commuting, pariwisata</li>
+                <li><strong>Perdagangan Antardaerah</strong> – Distribusi barang dan jasa</li>
+                <li><strong>Aliran Informasi</strong> – Komunikasi, media massa, internet</li>
+                <li><strong>Aliran Modal</strong> – Investasi dan transfer keuangan</li>
+                <li><strong>Aliran Budaya</strong> – Pertukaran nilai, tradisi, dan gaya hidup</li>
+                <li><strong>Aliran Teknologi</strong> – Transfer ilmu dan inovasi</li>
+            </ul>
+
+            <div class="highlight-box">
+                <h4>📌 Penting untuk Dipahami</h4>
+                <p>Konektivitas antarruang yang baik akan mempercepat pembangunan, mengurangi kesenjangan antarwilayah, dan meningkatkan kesejahteraan masyarakat. Sebaliknya, konektivitas yang lemah akan menyebabkan isolasi dan keterbelakangan suatu daerah.</p>
+            </div>
+        </div>
+
+        <!-- B. Kondisi Wilayah Indonesia sebagai Negara Kepulauan -->
+        <div class="content-card">
+            <h2>B. Kondisi Wilayah Indonesia sebagai Negara Kepulauan</h2>
+            
+            <p>Indonesia merupakan negara kepulauan terbesar di dunia dengan kondisi geografis yang sangat beragam. Kondisi ini menciptakan perbedaan kondisi wilayah yang signifikan antardaerah.</p>
+
+            <h3>1. Karakteristik Wilayah Indonesia</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Aspek</th>
+                        <th>Kondisi</th>
+                        <th>Dampak</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Jumlah Pulau</strong></td>
+                        <td>±17.000 pulau (92 pulau besar)</td>
+                        <td>Keragaman budaya dan potensi SDA</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Luas Wilayah</strong></td>
+                        <td>±5,2 juta km² (darat + laut)</td>
+                        <td>Potensi ekonomi besar</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Bentuk Muka Bumi</strong></td>
+                        <td>Pegunungan, dataran rendah, pesisir</td>
+                        <td>Keragaman mata pencaharian</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Iklim</strong></td>
+                        <td>Tropis dengan musim hujan & kemarau</td>
+                        <td>Kesuburan tanah dan hasil pertanian</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Letak Geografis</strong></td>
+                        <td>Posisi silang antara 2 benua & 2 samudra</td>
+                        <td>Jalur perdagangan internasional</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>2. Perbedaan Kondisi Wilayah Antardaerah</h3>
+            <p>Indonesia memiliki perbedaan kondisi wilayah yang mencolok, antara lain:</p>
+            <ul>
+                <li><strong>Wilayah Barat (Sumatera, Jawa, Kalimantan)</strong> – Kaya akan hasil hutan, tambang, dan pertanian</li>
+                <li><strong>Wilayah Tengah (Sulawesi, Bali, Nusa Tenggara)</strong> – Potensi kelautan, pariwisata, dan perkebunan</li>
+                <li><strong>Wilayah Timur (Maluku, Papua)</strong> – Kaya tambang, perikanan, dan hutan</li>
+            </ul>
+
+            <h3>3. Ketimpangan Pembangunan</h3>
+            <p>Perbedaan kondisi wilayah menyebabkan ketimpangan pembangunan:</p>
+            <ul>
+                <li><strong>Pulau Jawa</strong> – Pusat ekonomi, industri, dan pemerintahan</li>
+                <li><strong>Luar Jawa</strong> – Masih tertinggal dalam infrastruktur dan akses pelayanan</li>
+                <li><strong>Daerah 3T (Tertinggal, Terdepan, Terluar)</strong> – Sangat minim akses</li>
+            </ul>
+
+            <div class="info-box">
+                <h4>💡 Tahukah Kamu?</h4>
+                <p>Pemerintah Indonesia melalui Presiden Joko Widodo meluncurkan program <strong>"Pembangunan dari Pinggiran"</strong> dan <strong>Tol Laut</strong> untuk mengurangi ketimpangan antara Jawa dan luar Jawa. Program ini bertujuan menurunkan biaya logistik di daerah terpencil hingga 20%.</p>
+            </div>
+        </div>
+
+        <!-- C. Pengaruh Perbedaan Kondisi Wilayah terhadap Kehidupan Masyarakat -->
+        <div class="content-card">
+            <h2>C. Pengaruh Perbedaan Kondisi Wilayah terhadap Kehidupan Masyarakat</h2>
+            
+            <p>Perbedaan kondisi geografis antardaerah sangat memengaruhi berbagai aspek kehidupan masyarakat, mulai dari mata pencaharian, budaya, hingga pola permukiman.</p>
+
+            <h3>1. Pengaruh terhadap Mata Pencaharian</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Kondisi Wilayah</th>
+                        <th>Mata Pencaharian Utama</th>
+                        <th>Contoh Daerah</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Pesisir pantai</td>
+                        <td>Nelayan, pedagang, pariwisata</td>
+                        <td>Pantai Utara Jawa, Bali Selatan</td>
+                    </tr>
+                    <tr>
+                        <td>Dataran rendah</td>
+                        <td>Petani, pekerja industri, pedagang</td>
+                        <td>Karawang, Subang, Sidoarjo</td>
+                    </tr>
+                    <tr>
+                        <td>Dataran tinggi</td>
+                        <td>Petani sayur, perkebunan teh, pariwisata</td>
+                        <td>Bandung, Malang, Brastagi</td>
+                    </tr>
+                    <tr>
+                        <td>Pegunungan</td>
+                        <td>Perkebunan, peternakan, kehutanan</td>
+                        <td>Dieng, Toraja, Gayo</td>
+                    </tr>
+                    <tr>
+                        <td>Pedalaman</td>
+                        <td>Berladang, berburu, pengumpul hasil hutan</td>
+                        <td>Kalimantan Tengah, Papua</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>2. Pengaruh terhadap Budaya dan Tradisi</h3>
+            <ul>
+                <li><strong>Masyarakat Pesisir</strong> – Terbuka, egaliter, berani mengambil risiko</li>
+                <li><strong>Masyarakat Pertanian</strong> – Gotong royong, komunal, menghormati tradisi</li>
+                <li><strong>Masyarakat Pegunungan</strong> – Mandiri, menjaga adat, religius</li>
+                <li><strong>Masyarakat Perkotaan</strong> – Individualis, modern, kompetitif</li>
+            </ul>
+
+            <h3>3. Pengaruh terhadap Pola Permukiman</h3>
+            <ul>
+                <li><strong>Pola Memanjang Sungai</strong> – Di Kalimantan dan Sumatera</li>
+                <li><strong>Pola Memanjang Pantai</strong> – Di Jawa Utara dan Sulawesi</li>
+                <li><strong>Pola Mengelilingi Danau</strong> – Di sekitar Danau Toba dan Danau Maninjau</li>
+                <li><strong>Pola Tersebar</strong> – Di daerah pegunungan dan pedesaan</li>
+                <li><strong>Pola Konsentrasi</strong> – Di daerah perkotaan</li>
+            </ul>
+
+            <h3>4. Pengaruh terhadap Ketersediaan Sarana dan Prasarana</h3>
+            <ul>
+                <li>Daerah perkotaan memiliki sarana transportasi, pendidikan, dan kesehatan yang lengkap</li>
+                <li>Daerah pedesaan dan terpencil masih kekurangan infrastruktur dasar</li>
+                <li>Daerah kepulauan kecil kesulitan akses listrik, air bersih, dan komunikasi</li>
+            </ul>
+
+            <div class="success-box">
+                <h4>🌟 Keunggulan Komparatif Daerah</h4>
+                <p>Setiap daerah memiliki <strong>keunggulan komparatif</strong> yang berbeda sesuai kondisi alamnya. Misalnya: Bali unggul di pariwisata, Kalimantan di pertambangan dan kehutanan, Jawa di pertanian dan industri, serta Papua di pertambangan. Keunggulan ini harus dioptimalkan melalui konektivitas yang baik.</p>
+            </div>
+        </div>
+
+        <!-- D. Interaksi Antarruang -->
+        <div class="content-card">
+            <h2>D. Interaksi Antarruang</h2>
+            
+            <p>Interaksi antarruang adalah hubungan timbal balik antara dua wilayah atau lebih yang saling memengaruhi, baik dalam bidang ekonomi, sosial, maupun budaya.</p>
+
+            <div class="definition">
+                <p><strong>Interaksi Antarruang</strong> adalah hubungan timbal balik antara suatu wilayah dengan wilayah lainnya yang menghasilkan perubahan-perubahan dalam aspek ekonomi, sosial, dan budaya di kedua wilayah yang berinteraksi.</p>
+            </div>
+
+            <h3>1. Faktor Pendorong Interaksi Antarruang</h3>
+            <ul>
+                <li><strong>Perbedaan Sumber Daya Alam</strong> – Setiap daerah memiliki SDA yang berbeda</li>
+                <li><strong>Perbedaan Kondisi Sosial Budaya</strong> – Keragaman budaya mendorong pertukaran</li>
+                <li><strong>Kemudahan Transportasi</strong> – Sarana transportasi yang memadai</li>
+                <li><strong>Kemudahan Komunikasi</strong> – Teknologi informasi yang maju</li>
+                <li><strong>Pertumbuhan Penduduk</strong> – Kebutuhan yang meningkat</li>
+                <li><strong>Kebijakan Pemerintah</strong> – Program pembangunan daerah</li>
+            </ul>
+
+            <h3>2. Bentuk-Bentuk Interaksi Antarruang</h3>
+            <p><strong>a. Interaksi Desa dan Kota</strong></p>
+            <ul>
+                <li><strong>Desa → Kota</strong> – Hasil pertanian, bahan mentah, tenaga kerja</li>
+                <li><strong>Kota → Desa</strong> – Barang industri, teknologi, modal, informasi</li>
+            </ul>
+
+            <p><strong>b. Interaksi Antarwilayah</strong></p>
+            <ul>
+                <li>Perdagangan antarpulau</li>
+                <li>Migrasi penduduk (urbanisasi, transmigrasi)</li>
+                <li>Wisata antar daerah</li>
+                <li>Pertukaran pelajar dan tenaga kerja</li>
+            </ul>
+
+            <h3>3. Teori Interaksi Wilayah</h3>
+            <p>Beberapa teori yang menjelaskan interaksi antarruang:</p>
+            <ul>
+                <li><strong>Teori Gravitasi (W.J. Reilly)</strong> – Interaksi dua wilayah dipengaruhi oleh jumlah penduduk dan jarak antar wilayah</li>
+                <li><strong>Teori Tempat yang Sentral (Walter Christaller)</strong> – Wilayah pusat menyediakan barang dan jasa untuk wilayah sekitarnya</li>
+                <li><strong>Teori Kutub Pertumbuhan (Perroux)</strong> – Pembangunan tidak terjadi serentak, melainkan di titik-titik tertentu</li>
+            </ul>
+
+            <div class="highlight-box">
+                <h4>📌 Rumus Gravitasi Reilly</h4>
+                <p>Interaksi antara dua wilayah dapat dihitung dengan rumus: <strong>I = (P₁ × P₂) / D²</strong>, di mana P = jumlah penduduk dan D = jarak antar wilayah. Semakin besar penduduk dan semakin dekat jarak, semakin besar interaksi.</p>
+            </div>
+        </div>
+
+        <!-- E. Sarana Transportasi dan Komunikasi -->
+        <div class="content-card">
+            <h2>E. Sarana Transportasi dan Komunikasi sebagai Penghubung Antarruang</h2>
+            
+            <p>Transportasi dan komunikasi merupakan urat nadi konektivitas antarruang. Keduanya berperan penting dalam mempercepat arus perpindahan manusia, barang, dan informasi.</p>
+
+            <h3>1. Sarana Transportasi</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Jenis Transportasi</th>
+                        <th>Kegunaan</th>
+                        <th>Contoh</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Darat</strong></td>
+                        <td>Menghubungkan wilayah dalam satu pulau</td>
+                        <td>Jalan Tol Trans Jawa, Trans Sumatera, Kereta Api</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Laut</strong></td>
+                        <td>Menghubungkan antarpulau</td>
+                        <td>Kapal PELNI, Tol Laut, Kapal Feri</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Udara</strong></td>
+                        <td>Menghubungkan wilayah jauh dengan cepat</td>
+                        <td>Penerbangan domestik, Perintis</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Sungai</strong></td>
+                        <td>Transportasi di daerah sungai besar</td>
+                        <td>Kapal sungai di Kalimantan</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>2. Sarana Komunikasi</h3>
+            <ul>
+                <li><strong>Telepon dan Smartphone</strong> – Komunikasi langsung antarindividu</li>
+                <li><strong>Internet</strong> – Akses informasi global, media sosial, e-commerce</li>
+                <li><strong>Televisi dan Radio</strong> – Penyiaran informasi massal</li>
+                <li><strong>Satelit</strong> – Komunikasi jarak jauh, termasuk daerah terpencil</li>
+                <li><strong>Surat dan Pos</strong> – Komunikasi tertulis tradisional</li>
+            </ul>
+
+            <h3>3. Peran Transportasi dan Komunikasi</h3>
+            <ul>
+                <li><strong>Mempercepat Distribusi Barang</strong> – Barang dari satu daerah dapat sampai ke daerah lain dengan cepat</li>
+                <li><strong>Meningkatkan Mobilitas Penduduk</strong> – Orang dapat bepergian dengan mudah</li>
+                <li><strong>Memperluas Akses Informasi</strong> – Informasi dapat diakses dari mana saja</li>
+                <li><strong>Mendorong Pertumbuhan Ekonomi</strong> – Perdagangan dan investasi meningkat</li>
+                <li><strong>Mempererat Persatuan Bangsa</strong> – Mengurangi isolasi antardaerah</li>
+            </ul>
+
+            <div class="info-box">
+                <h4>💡 Program Strategis Nasional</h4>
+                <p>Pemerintah Indonesia membangun berbagai infrastruktur konektivitas: <strong>Tol Laut</strong> untuk pemerataan harga, <strong>Jalan Tol Trans Jawa & Trans Sumatera</strong>, <strong>Kereta Cepat Jakarta-Bandung (Whoosh)</strong>, <strong>Bandara Internasional baru</strong>, dan <strong>Palapa Ring</strong> untuk pemerataan internet.</p>
+            </div>
+        </div>
+
+        <!-- F. Dampak Konektivitas Antarruang -->
+        <div class="content-card">
+            <h2>F. Dampak Konektivitas Antarruang</h2>
+            
+            <p>Konektivitas antarruang yang semakin baik membawa dampak positif maupun negatif bagi kehidupan masyarakat.</p>
+
+            <h3>1. Dampak Positif</h3>
+            <p><strong>a. Bidang Ekonomi</strong></p>
+            <ul>
+                <li>Peningkatan perdagangan antardaerah</li>
+                <li>Pemerataan harga barang</li>
+                <li>Pertumbuhan industri dan UMKM</li>
+                <li>Peningkatan investasi daerah</li>
+                <li>Penciptaan lapangan kerja</li>
+            </ul>
+
+            <p><strong>b. Bidang Sosial</strong></p>
+            <ul>
+                <li>Peningkatan kualitas pendidikan melalui pertukaran pelajar</li>
+                <li>Akses layanan kesehatan yang lebih baik</li>
+                <li>Mobilitas penduduk yang lebih mudah</li>
+                <li>Pemerataan pembangunan</li>
+            </ul>
+
+            <p><strong>c. Bidang Budaya</strong></p>
+            <ul>
+                <li>Pertukaran budaya memperkaya khazanah nasional</li>
+                <li>Pengenalan budaya daerah ke tingkat nasional dan internasional</li>
+                <li>Penguatan persatuan dan kesatuan bangsa</li>
+            </ul>
+
+            <h3>2. Dampak Negatif</h3>
+            <p><strong>a. Bidang Ekonomi</strong></p>
+            <ul>
+                <li>Persaingan ekonomi yang ketat antardaerah</li>
+                <li>Daerah yang tidak kompetitif akan tertinggal</li>
+                <li>Eksploitasi SDA daerah oleh pihak luar</li>
+            </ul>
+
+            <p><strong>b. Bidang Sosial</strong></p>
+            <ul>
+                <li>Urbanisasi berlebihan ke kota besar</li>
+                <li>Kesenjangan sosial meningkat</li>
+                <li>Kriminalitas di perkotaan</li>
+                <li>Konflik antarpenduduk</li>
+            </ul>
+
+            <p><strong>c. Bidang Budaya</strong></p>
+            <ul>
+                <li>Pudarnya budaya lokal akibat budaya asing</li>
+                <li>Gaya hidup konsumtif dan individualis</li>
+                <li>Hilangnya kearifan lokal</li>
+                <li>Westernisasi dan modernisasi berlebihan</li>
+            </ul>
+
+            <div class="warning-box">
+                <h4>⚠️ Tantangan Konektivitas</h4>
+                <p>Konektivitas yang tidak dikelola dengan baik dapat menyebabkan <strong>disparitas (kesenjangan)</strong> antarwilayah semakin lebar. Oleh karena itu, diperlukan kebijakan yang adil dan berpihak pada daerah tertinggal untuk memastikan konektivitas membawa manfaat bagi seluruh masyarakat Indonesia.</p>
+            </div>
+
+            <h3>3. Upaya Mengoptimalkan Konektivitas</h3>
+            <ul>
+                <li><strong>Pembangunan Infrastruktur Merata</strong> – Tidak hanya di Jawa</li>
+                <li><strong>Penguatan Ekonomi Daerah</strong> – Mengembangkan potensi lokal</li>
+                <li><strong>Pelestarian Budaya Lokal</strong> – Menjaga identitas daerah</li>
+                <li><strong>Pendidikan Karakter</strong> – Membentuk SDM yang berdaya saing</li>
+                <li><strong>Kolaborasi Antar-Daerah</strong> – Kerja sama saling menguntungkan</li>
+            </ul>
+        </div>
+
+        <!-- Poin Penting untuk Ujian -->
+        <div class="content-card">
+            <h2>📋 Poin Penting untuk Ujian</h2>
+            
+            <div class="highlight-box">
+                <h4>🎯 Konsep Kunci yang Harus Dikuasai</h4>
+                <ul>
+                    <li>Pahami <strong>pengertian ruang</strong> dan tiga unsurnya (fisik, hayati, sosial budaya)</li>
+                    <li>Kuasai <strong>pengertian konektivitas antarruang</strong> dan bentuk-bentuknya</li>
+                    <li>Pahami <strong>karakteristik Indonesia sebagai negara kepulauan</strong></li>
+                    <li>Hafalkan <strong>pengaruh perbedaan kondisi wilayah</strong> terhadap mata pencaharian, budaya, dan pola permukiman</li>
+                    <li>Pahami <strong>pengertian interaksi antarruang</strong> dan faktor pendorongnya</li>
+                    <li>Kuasai <strong>bentuk interaksi desa-kota</strong> (desa→kota dan kota→desa)</li>
+                    <li>Pahami <strong>teori interaksi wilayah</strong> (Gravitasi Reilly, Tempat Sentral, Kutub Pertumbuhan)</li>
+                    <li>Hafalkan <strong>jenis-jenis transportasi</strong> (darat, laut, udara, sungai) beserta contohnya</li>
+                    <li>Pahami <strong>dampak positif dan negatif</strong> konektivitas antarruang</li>
+                    <li>Pahami <strong>upaya mengoptimalkan konektivitas</strong> untuk pemerataan pembangunan</li>
+                </ul>
+            </div>
+
+            <div class="info-box">
+                <h4>💡 Tips Belajar</h4>
+                <p>Amati lingkungan sekitarmu! Perhatikan bagaimana barang-barang yang kamu gunakan berasal dari berbagai daerah. Diskusikan dengan teman: apa yang terjadi jika konektivitas antardaerah terganggu? Dengan demikian, kamu akan memahami materi secara kontekstual.</p>
+            </div>
+        </div>
+
+        <!-- Navigation Footer -->
+        <div class="nav-footer">
+            <a href="3.html" class="nav-prev">← Bab Sebelumnya</a>
+            <a href="uji-formatif-4.html" class="nav-next" style="background: linear-gradient(135deg, #f39c12 0%, #e67e22 100%);">📝 Uji Formatif Bab 4</a>
+            <a href="5.html" class="nav-next">Bab Selanjutnya →</a>
+        </div>
+
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>📘 IPS Kelas VIII Semester I</h4>
+                <p>Buku ajar untuk peserta didik Madrasah Tsanawiyah kelas VIII. Disusun oleh Astariny Martha, S.Pd.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Navigasi</h4>
+                <a href="index.html#beranda">Beranda</a>
+                <a href="index.html#tentang">Tentang Buku</a>
+                <a href="index.html#bab">Daftar Bab</a>
+                <a href="index.html#penulis">Penulis</a>
+            </div>
+            <div class="footer-section">
+                <h4>Buku</h4>
+                <a href="#">Cetak</a>
+                <a href="#">E-Book</a>
+                <a href="uji-formatif-4.html">Uji Formatif</a>
+            </div>
+            <div class="footer-section">
+                <h4>Kontak</h4>
+                <a href="mailto:astarinymartha80@gmail.com">astarinymartha80@gmail.com</a>
+                <p>MTsN 6 Agam</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 Astariny Martha, S.Pd. – MTsN 6 Agam. Hak cipta dilindungi.</p>
+            <p>IPS Kelas VIII Semester I: Pengaruh Perbedaan Kondisi Wilayah dan Konektivitas Antarruang</p>
+        </div>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,837 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bab 1 - Kondisi Geografis dan Keragaman Sosial Budaya di Indonesia | IPS Kelas VIII Semester I</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            line-height: 1.7;
+            color: #333;
+            background: #f5f7fa;
+        }
+
+        /* Navigation */
+        nav {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+        }
+
+        nav a:hover {
+            background: rgba(255,255,255,0.2);
+            transform: translateY(-2px);
+        }
+
+        /* Breadcrumb */
+        .breadcrumb {
+            background: #e8edf3;
+            padding: 1rem 2rem;
+            font-size: 0.9rem;
+            border-bottom: 2px solid #2a5298;
+        }
+
+        .breadcrumb a {
+            color: #2a5298;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+
+        .breadcrumb span {
+            margin: 0 0.5rem;
+            color: #666;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 50%, #3a7bd5 100%);
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/></svg>') repeat;
+            opacity: 0.3;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .chapter-badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            margin-bottom: 1rem;
+            font-size: 1rem;
+            font-weight: 600;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.3);
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero p {
+            font-size: 1.15rem;
+            max-width: 750px;
+            margin: 0 auto 2rem;
+            opacity: 0.95;
+        }
+
+        .action-buttons {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 1.8rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .btn-primary {
+            background: #f39c12;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #e67e22;
+            transform: translateY(-3px);
+        }
+
+        .btn-secondary {
+            background: white;
+            color: #1e3c72;
+        }
+
+        .btn-secondary:hover {
+            background: #f5f7fa;
+            transform: translateY(-3px);
+        }
+
+        .btn-success {
+            background: #27ae60;
+            color: white;
+        }
+
+        .btn-success:hover {
+            background: #219a52;
+            transform: translateY(-3px);
+        }
+
+        /* Content Section */
+        .content-section {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+
+        .content-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.08);
+            margin-bottom: 2rem;
+        }
+
+        .content-card h2 {
+            color: #1e3c72;
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.8rem;
+            border-bottom: 3px solid #f39c12;
+        }
+
+        .content-card h3 {
+            color: #2a5298;
+            font-size: 1.4rem;
+            margin: 1.5rem 0 1rem;
+        }
+
+        .content-card p {
+            margin-bottom: 1rem;
+            text-align: justify;
+            font-size: 1.05rem;
+        }
+
+        .content-card ul, .content-card ol {
+            margin: 1rem 0 1rem 2rem;
+        }
+
+        .content-card li {
+            margin-bottom: 0.5rem;
+            font-size: 1.02rem;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+            border-left: 5px solid #2a5298;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+        }
+
+        .highlight-box h4 {
+            color: #1e3c72;
+            margin-bottom: 0.8rem;
+            font-size: 1.15rem;
+        }
+
+        .info-box {
+            background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%);
+            border-left: 5px solid #f39c12;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+        }
+
+        .info-box h4 {
+            color: #e67e22;
+            margin-bottom: 0.8rem;
+        }
+
+        .warning-box {
+            background: linear-gradient(135deg, #ffebee 0%, #ffcdd2 100%);
+            border-left: 5px solid #c0392b;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+        }
+
+        .warning-box h4 {
+            color: #c0392b;
+            margin-bottom: 0.8rem;
+        }
+
+        .success-box {
+            background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+            border-left: 5px solid #27ae60;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+        }
+
+        .success-box h4 {
+            color: #27ae60;
+            margin-bottom: 0.8rem;
+        }
+
+        .definition {
+            background: #f5f7fa;
+            padding: 1rem 1.5rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+            border-left: 4px solid #2a5298;
+            font-style: italic;
+        }
+
+        .definition strong {
+            color: #1e3c72;
+            font-style: normal;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        table th {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 1rem;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        table td {
+            padding: 0.9rem 1rem;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        table tr:nth-child(even) {
+            background: #f5f7fa;
+        }
+
+        table tr:hover {
+            background: #e3f2fd;
+        }
+
+        .map-placeholder {
+            background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+            border: 2px dashed #2a5298;
+            border-radius: 12px;
+            padding: 3rem 2rem;
+            text-align: center;
+            margin: 1.5rem 0;
+            color: #1e3c72;
+        }
+
+        .map-placeholder .icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Navigation Footer */
+        .nav-footer {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 3rem;
+            padding: 2rem;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.08);
+        }
+
+        .nav-footer a {
+            flex: 1;
+            min-width: 200px;
+            text-align: center;
+            padding: 1rem;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .nav-prev {
+            background: #e8edf3;
+            color: #1e3c72;
+        }
+
+        .nav-prev:hover {
+            background: #2a5298;
+            color: white;
+        }
+
+        .nav-next {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+        }
+
+        .nav-next:hover {
+            background: linear-gradient(135deg, #2a5298 0%, #3a7bd5 100%);
+            transform: translateY(-3px);
+        }
+
+        /* Site Footer */
+        footer {
+            background: #0f1e3d;
+            color: white;
+            padding: 3rem 2rem 1rem;
+            margin-top: 3rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h4 {
+            color: #f39c12;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .footer-section p, .footer-section a {
+            color: rgba(255,255,255,0.85);
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+        }
+
+        .footer-section a {
+            text-decoration: none;
+            display: block;
+            transition: color 0.3s;
+        }
+
+        .footer-section a:hover {
+            color: #f39c12;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            .hero p {
+                font-size: 1rem;
+            }
+            .content-card {
+                padding: 1.5rem;
+            }
+            .content-card h2 {
+                font-size: 1.4rem;
+            }
+            nav ul {
+                gap: 0.5rem;
+            }
+            nav a {
+                padding: 0.3rem 0.6rem;
+                font-size: 0.85rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <ul>
+            <li><a href="index.html">IPS Kelas VIII</a></li>
+            <li><a href="index.html#beranda">Beranda</a></li>
+            <li><a href="index.html#bab">Daftar Bab</a></li>
+            <li><a href="index.html#penulis">Penulis</a></li>
+            <li><a href="index.html#kontak">Kontak</a></li>
+        </ul>
+    </nav>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+        <a href="index.html">📘 IPS Kelas VIII Semester I</a>
+        <span>›</span>
+        <a href="index.html#beranda">Beranda</a>
+        <span>›</span>
+        <a href="index.html#bab">Daftar Bab</a>
+        <span>›</span>
+        <strong>Bab 1</strong>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="chapter-badge">🌏 BAB 1</div>
+            <h1>Kondisi Geografis dan Keragaman Sosial Budaya di Indonesia</h1>
+            <p>Memahami letak geografis Indonesia, kondisi alam, serta keragaman suku, budaya, bahasa, dan agama sebagai kekayaan bangsa yang harus dilestarikan. Mengenal bagaimana kondisi geografis memengaruhi kehidupan sosial budaya masyarakat Indonesia.</p>
+            
+            <div class="action-buttons">
+                <a href="index.html" class="btn btn-secondary">🏠 Beranda</a>
+                <a href="uji-formatif-1.html" class="btn btn-primary">📝 Uji Formatif Bab 1</a>
+                <a href="2.html" class="btn btn-success">Bab Selanjutnya →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Content Section -->
+    <div class="content-section">
+
+        <!-- A. Letak dan Posisi Geografis Indonesia -->
+        <div class="content-card">
+            <h2>A. Letak dan Posisi Geografis Indonesia</h2>
+            
+            <p>Indonesia merupakan negara kepulauan terbesar di dunia yang memiliki posisi geografis sangat strategis. Kondisi geografis ini memengaruhi berbagai aspek kehidupan, mulai dari iklim, ekonomi, hingga keragaman sosial budaya masyarakatnya.</p>
+
+            <h3>1. Letak Astronomis</h3>
+            <p>Letak astronomis Indonesia adalah <strong>6° LU – 11° LS dan 95° BT – 141° BT</strong>. Letak ini memiliki beberapa dampak penting:</p>
+            <ul>
+                <li>Indonesia berada di daerah <strong>tropis</strong> yang mendapat sinar matahari sepanjang tahun</li>
+                <li>Memiliki <strong>iklim tropis</strong> dengan curah hujan tinggi</li>
+                <li>Dilewati garis khatulistiwa (0°) yang membagi bumi menjadi belahan utara dan selatan</li>
+                <li>Memiliki keanekaragaman flora dan fauna yang tinggi</li>
+            </ul>
+
+            <div class="highlight-box">
+                <h4>📌 Fakta Penting</h4>
+                <p>Indonesia dilalui oleh tiga zona waktu: <strong>WIB</strong> (Waktu Indonesia Barat, UTC+7), <strong>WITA</strong> (Waktu Indonesia Tengah, UTC+8), dan <strong>WIT</strong> (Waktu Indonesia Timur, UTC+9).</p>
+            </div>
+
+            <h3>2. Letak Geografis</h3>
+            <p>Secara geografis, Indonesia terletak di antara dua benua dan dua samudra:</p>
+            <ul>
+                <li><strong>Benua Asia</strong> (utara) dan <strong>Benua Australia</strong> (selatan)</li>
+                <li><strong>Samudra Pasifik</strong> (timur) dan <strong>Samudra Hindia</strong> (barat)</li>
+            </ul>
+            <p>Posisi silang ini menjadikan Indonesia sebagai <strong>persimpangan lalu lintas dunia</strong>, baik jalur perdagangan maupun pelayaran internasional.</p>
+
+            <h3>3. Letak Geologis</h3>
+            <p>Indonesia terletak pada pertemuan tiga lempeng tektonik dunia:</p>
+            <ul>
+                <li><strong>Lempeng Eurasia</strong> (utara)</li>
+                <li><strong>Lempeng Indo-Australia</strong> (selatan)</li>
+                <li><strong>Lempeng Pasifik</strong> (timur)</li>
+            </ul>
+            <p>Kondisi ini menyebabkan Indonesia memiliki banyak gunung berapi dan rawan gempa bumi, namun juga menghasilkan tanah yang subur serta kekayaan mineral yang melimpah.</p>
+
+            <div class="map-placeholder">
+                <div class="icon">🗺️</div>
+                <h4>Peta Letak Geografis Indonesia</h4>
+                <p>Indonesia terletak di posisi silang antara dua benua dan dua samudra</p>
+            </div>
+        </div>
+
+        <!-- B. Kondisi Alam dan Iklim Indonesia -->
+        <div class="content-card">
+            <h2>B. Kondisi Alam dan Iklim Indonesia</h2>
+            
+            <p>Kondisi alam Indonesia sangat beragam, mulai dari dataran rendah, dataran tinggi, pegunungan, pantai, hingga lautan. Keragaman ini menciptakan berbagai potensi sumber daya alam yang dapat dimanfaatkan untuk kesejahteraan masyarakat.</p>
+
+            <h3>1. Jenis-Jenis Iklim di Indonesia</h3>
+            <p>Indonesia memiliki tiga jenis iklim utama:</p>
+            <ul>
+                <li><strong>Iklim Muson (Musim)</strong> – Dipengaruhi oleh angin muson yang berganti setiap enam bulan, menghasilkan musim hujan (April–Oktober) dan musim kemarau (Oktober–April)</li>
+                <li><strong>Iklim Tropis</strong> – Disebabkan oleh letak Indonesia di garis khatulistiwa, dengan suhu rata-rata 27°C dan kelembapan tinggi</li>
+                <li><strong>Iklim Laut</strong> – Dipengaruhi oleh wilayah laut yang luas, menghasilkan curah hujan tinggi</li>
+            </ul>
+
+            <h3>2. Keragaman Bentuk Muka Bumi</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Bentuk Muka Bumi</th>
+                        <th>Ciri-Ciri</th>
+                        <th>Contoh</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Dataran Rendah</td>
+                        <td>Ketinggian 0–200 mdpl, suhu panas</td>
+                        <td>Pantai Utara Jawa, Medan</td>
+                    </tr>
+                    <tr>
+                        <td>Dataran Tinggi</td>
+                        <td>Ketinggian 200–1500 mdpl, sejuk</td>
+                        <td>Bandung, Malang, Bukittinggi</td>
+                    </tr>
+                    <tr>
+                        <td>Pegunungan</td>
+                        <td>Ketinggian >1500 mdpl, dingin</td>
+                        <td>Dieng, Bromo, Kerinci</td>
+                    </tr>
+                    <tr>
+                        <td>Pantai</td>
+                        <td>Daerah peralihan darat dan laut</td>
+                        <td>Pantai Kuta, Parangtritis</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>3. Flora dan Fauna Indonesia</h3>
+            <p>Indonesia memiliki keanekaragaman hayati yang sangat tinggi, dibagi berdasarkan <strong>Garis Wallace</strong> dan <strong>Garis Weber</strong>:</p>
+            <ul>
+                <li><strong>Wilayah Barat (Asiatis)</strong> – Sumatera, Jawa, Kalimantan. Contoh: Harimau, Gajah, Orangutan, Rafflesia</li>
+                <li><strong>Wilayah Peralihan (Endemik)</strong> – Sulawesi, Nusa Tenggara. Contoh: Komodo, Anoa, Maleo, Babirusa</li>
+                <li><strong>Wilayah Timur (Australis)</strong> – Papua, Maluku. Contoh: Cendrawasih, Kanguru Pohon, Kasuari</li>
+            </ul>
+        </div>
+
+        <!-- C. Keragaman Suku Bangsa dan Budaya -->
+        <div class="content-card">
+            <h2>C. Keragaman Suku Bangsa dan Budaya</h2>
+            
+            <p>Indonesia dikenal sebagai negara dengan <strong>keanekaragaman suku bangsa</strong> terbesar di dunia. Terdapat lebih dari <strong>1.300 suku bangsa</strong> yang tersebar dari Sabang sampai Merauke. Setiap suku memiliki kebudayaan, adat istiadat, bahasa, dan tradisi yang unik.</p>
+
+            <h3>1. Persebaran Suku Bangsa di Indonesia</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Pulau</th>
+                        <th>Suku Bangsa</th>
+                        <th>Budaya Khas</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Sumatera</td>
+                        <td>Batak, Minangkabau, Melayu, Aceh</td>
+                        <td>Rumah Gadang, Tari Saman</td>
+                    </tr>
+                    <tr>
+                        <td>Jawa</td>
+                        <td>Jawa, Sunda, Madura, Betawi</td>
+                        <td>Wayang, Batik, Angklung</td>
+                    </tr>
+                    <tr>
+                        <td>Kalimantan</td>
+                        <td>Dayak, Banjar, Kutai</td>
+                        <td>Rumah Betang, Tari Hudoq</td>
+                    </tr>
+                    <tr>
+                        <td>Sulawesi</td>
+                        <td>Bugis, Makassar, Toraja, Minahasa</td>
+                        <td>Rumah Tongkonan, Phinisi</td>
+                    </tr>
+                    <tr>
+                        <td>Bali & Nusa Tenggara</td>
+                        <td>Bali, Sasak, Bima</td>
+                        <td>Tari Kecak, Tenun Ikat</td>
+                    </tr>
+                    <tr>
+                        <td>Papua & Maluku</td>
+                        <td>Papua, Ambon, Ternate</td>
+                        <td>Tari Perang, Rumah Honai</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="info-box">
+                <h4>💡 Tahukah Kamu?</h4>
+                <p>Suku <strong>Dayak</strong> di Kalimantan memiliki lebih dari 400 sub-suku dengan bahasa dan adat yang berbeda-beda. Sementara itu, <strong>Suku Minangkabau</strong> di Sumatera Barat menganut sistem kekerabatan <strong>matrilineal</strong> (garis keturunan ibu), satu-satunya di dunia.</p>
+            </div>
+
+            <h3>2. Bentuk-Bentuk Keragaman Budaya</h3>
+            <p>Keragaman budaya Indonesia dapat dilihat dari berbagai aspek:</p>
+            <ul>
+                <li><strong>Rumah Adat</strong> – Rumah Gadang (Sumbar), Joglo (Jawa), Honai (Papua), Tongkonan (Toraja)</li>
+                <li><strong>Pakaian Adat</strong> – Ulos (Batak), Kebaya (Jawa), Baju Bundo Kanduang (Minang)</li>
+                <li><strong>Tarian Daerah</strong> – Tari Saman (Aceh), Tari Pendet (Bali), Tari Piring (Sumbar)</li>
+                <li><strong>Alat Musik</strong> – Angklung (Jabar), Gandang Tasa (Sumbar), Sasando (NTT)</li>
+                <li><strong>Upacara Adat</strong> – Ngaben (Bali), Tabuik (Paritam), Kasada (Bromo)</li>
+                <li><strong>Makanan Khas</strong> – Rendang (Sumbar), Gudeg (Yogya), Papeda (Papua)</li>
+            </ul>
+
+            <div class="success-box">
+                <h4>🏆 Kebanggaan Nasional</h4>
+                <p><strong>Rendang</strong> dari Sumatera Barat telah diakui UNESCO sebagai salah satu warisan budaya takbenda dunia. Begitu pula <strong>Batik</strong>, <strong>Wayang</strong>, <strong>Keris</strong>, <strong>Angklung</strong>, dan <strong>Samman</strong> yang telah diakui dunia internasional.</p>
+            </div>
+        </div>
+
+        <!-- D. Keragaman Bahasa, Agama, dan Kepercayaan -->
+        <div class="content-card">
+            <h2>D. Keragaman Bahasa, Agama, dan Kepercayaan</h2>
+
+            <h3>1. Keragaman Bahasa</h3>
+            <p>Indonesia memiliki lebih dari <strong>700 bahasa daerah</strong> yang menjadi identitas masing-masing suku bangsa. Bahasa-bahasa ini dikelompokkan ke dalam rumpun bahasa <strong>Austronesia</strong> dan <strong>Papua</strong>.</p>
+            <p>Meskipun memiliki ratusan bahasa daerah, bangsa Indonesia memiliki <strong>Bahasa Indonesia</strong> sebagai bahasa persatuan dan bahasa nasional, yang diikrarkan pada <strong>Sumpah Pemuda 28 Oktober 1928</strong>.</p>
+
+            <div class="definition">
+                <p><strong>Bahasa Indonesia</strong> berasal dari bahasa Melayu Riau yang diangkat menjadi bahasa nasional pada Kongres Pemuda II, 28 Oktober 1928. Bahasa Indonesia berfungsi sebagai:</p>
+                <ul>
+                    <li>Bahasa persatuan (Sumpah Pemuda)</li>
+                    <li>Bahasa negara (UUD 1945 Pasal 36)</li>
+                    <li>Bahasa pengantar dalam pendidikan</li>
+                    <li>Bahasa pengembangan IPTEK dan budaya</li>
+                </ul>
+            </div>
+
+            <h3>2. Keragaman Agama dan Kepercayaan</h3>
+            <p>Pemerintah Indonesia mengakui <strong>6 agama resmi</strong>, yaitu:</p>
+            <ol>
+                <li><strong>Islam</strong> – Agama dengan penganut terbesar (±87%)</li>
+                <li><strong>Kristen Protestan</strong></li>
+                <li><strong>Katolik</strong></li>
+                <li><strong>Hindu</strong> – Mayoritas di Bali</li>
+                <li><strong>Buddha</strong></li>
+                <li><strong>Konghucu</strong></li>
+            </ol>
+            <p>Selain itu, terdapat berbagai <strong>kepercayaan lokal</strong> (agama asli) seperti Kaharingan (Kalimantan), Marapu (Sumba), dan Parmalim (Batak).</p>
+
+            <div class="highlight-box">
+                <h4>🤝 Semboyan Bhinneka Tunggal Ika</h4>
+                <p>Keragaman agama dan kepercayaan di Indonesia dijaga oleh semboyan <strong>"Bhinneka Tunggal Ika"</strong> yang berarti "Berbeda-beda tetapi tetap satu jua". Semboyan ini取自 dari Kitab <strong>Sutasoma</strong> karangan <strong>Mpu Tantular</strong> pada masa Kerajaan Majapahit.</p>
+            </div>
+        </div>
+
+        <!-- E. Pengaruh Kondisi Geografis terhadap Kehidupan Sosial Budaya -->
+        <div class="content-card">
+            <h2>E. Pengaruh Kondisi Geografis terhadap Kehidupan Sosial Budaya</h2>
+            
+            <p>Kondisi geografis Indonesia yang berupa negara kepulauan sangat memengaruhi kehidupan sosial budaya masyarakat. Berikut adalah beberapa pengaruhnya:</p>
+
+            <h3>1. Pembentukan Karakter Masyarakat</h3>
+            <ul>
+                <li><strong>Masyarakat pesisir</strong> cenderung bersifat terbuka, egaliter, dan berani karena berinteraksi dengan pelaut asing</li>
+                <li><strong>Masyarakat pedalaman/pertanian</strong> cenderung gotong royong, komunal, dan menjaga tradisi</li>
+                <li><strong>Masyarakat pegunungan</strong> cenderung mandiri dan memiliki ikatan kekerabatan kuat</li>
+            </ul>
+
+            <h3>2. Keragaman Mata Pencaharian</h3>
+            <ul>
+                <li>Dataran rendah → pertanian, perkebunan, industri</li>
+                <li>Dataran tinggi → perkebunan teh, sayur-mayur, pariwisata</li>
+                <li>Pesisir → nelayan, tambak, perdagangan</li>
+                <li>Pegunungan → perkebunan, peternakan</li>
+            </ul>
+
+            <h3>3. Keragaman Rumah Adat</h3>
+            <p>Bentuk rumah adat disesuaikan dengan kondisi alam:</p>
+            <ul>
+                <li><strong>Rumah panggung</strong> (Rumah Gadang, Rumah Betang) → untuk menghindari banjir dan binatang buas</li>
+                <li><strong>Rumah beratap tajam</strong> → untuk mengalirkan air hujan dengan cepat</li>
+                <li><strong>Rumah Honai</strong> (Papua) → tanpa jendela untuk menahan udara dingin pegunungan</li>
+            </ul>
+
+            <h3>4. Isolasi Geografis dan Keragaman Budaya</h3>
+            <p>Kondisi kepulauan yang terpisah-pisah menyebabkan setiap daerah mengembangkan budayanya secara mandiri, sehingga tercipta keragaman budaya yang sangat kaya. Hal ini menjadi kekuatan sekaligus tantangan bagi persatuan bangsa.</p>
+
+            <div class="warning-box">
+                <h4>⚠️ Tantangan Keragaman</h4>
+                <p>Keragaman sosial budaya dapat memicu <strong>konflik SARA</strong> jika tidak dikelola dengan baik. Oleh karena itu, diperlukan sikap <strong>toleransi, saling menghargai, dan nasionalisme</strong> untuk menjaga persatuan Indonesia.</p>
+            </div>
+        </div>
+
+        <!-- F. Keunggulan dan Potensi Keragaman Indonesia -->
+        <div class="content-card">
+            <h2>F. Keunggulan dan Potensi Keragaman Indonesia</h2>
+            
+            <p>Keragaman sosial budaya bukan hanya menjadi identitas bangsa, tetapi juga merupakan <strong>potensi dan keunggulan</strong> yang dapat dikembangkan untuk kemajuan bangsa.</p>
+
+            <h3>1. Potensi Pariwisata</h3>
+            <p>Keragaman budaya menjadi daya tarik wisata utama Indonesia, seperti:</p>
+            <ul>
+                <li>Bali dengan budaya Hindu dan tari-tariannya</li>
+                <li>Yogyakarta dengan budaya Jawa dan Candi Borobudur</li>
+                <li>Sumatera Barat dengan budaya Minangkabau</li>
+                <li>Toraja dengan upacara pemakaman yang unik</li>
+            </ul>
+
+            <h3>2. Potensi Ekonomi Kreatif</h3>
+            <ul>
+                <li>Industri batik dan tenun</li>
+                <li>Kuliner tradisional (rendang, gudeg, sate)</li>
+                <li>Kerajinan tangan (ukiran, anyaman)</li>
+                <li>Seni pertunjukan (wayang, tari, musik)</li>
+            </ul>
+
+            <h3>3. Sikap Positif terhadap Keragaman</h3>
+            <p>Untuk menjaga keragaman, setiap warga negara harus memiliki sikap:</p>
+            <ul>
+                <li><strong>Toleransi</strong> – Menghargai perbedaan</li>
+                <li><strong>Saling menghormati</strong> – Tidak memaksakan kehendak</li>
+                <li><strong>Nasionalisme</strong> – Cinta tanah air dan bangsa</li>
+                <li><strong>Bhinneka Tunggal Ika</strong> – Berbeda-beda tetapi tetap satu</li>
+                <li><strong>Etnosentrisme positif</strong> – Bangga terhadap budaya sendiri tanpa merendahkan budaya lain</li>
+            </ul>
+        </div>
+
+        <!-- Poin Penting untuk Ujian -->
+        <div class="content-card">
+            <h2>📋 Poin Penting untuk Ujian</h2>
+            
+            <div class="highlight-box">
+                <h4>🎯 Konsep Kunci yang Harus Dikuasai</h4>
+                <ul>
+                    <li>Pahami <strong>letak astronomis</strong> (6° LU – 11° LS, 95° BT – 141° BT) dan <strong>letak geografis</strong> Indonesia (di antara 2 benua dan 2 samudra)</li>
+                    <li>Hafalkan <strong>tiga jenis iklim</strong>: Muson, Tropis, dan Laut</li>
+                    <li>Pahami pembagian flora-fauna menurut <strong>Garis Wallace dan Weber</strong> (Asiatis, Peralihan, Australis)</li>
+                    <li>Kuasai contoh <strong>suku bangsa</strong> dan <strong>budaya khas</strong> dari setiap pulau</li>
+                    <li>Pahami fungsi <strong>Bahasa Indonesia</strong> sebagai bahasa persatuan dan negara</li>
+                    <li>Sebutkan <strong>6 agama resmi</strong> yang diakui pemerintah Indonesia</li>
+                    <li>Pahami pengaruh kondisi geografis terhadap <strong>kehidupan sosial budaya</strong> masyarakat</li>
+                    <li>Hafalkan semboyan <strong>Bhinneka Tunggal Ika</strong> dari Kitab Sutasoma karya Mpu Tantular</li>
+                    <li>Pahami sikap positif dalam menghadapi keragaman: toleransi, nasionalisme, saling menghargai</li>
+                </ul>
+            </div>
+
+            <div class="info-box">
+                <h4>💡 Tips Belajar</h4>
+                <p>Untuk memudahkan hafalan, buatlah <strong>peta konsep</strong> yang menghubungkan letak geografis → iklim → flora/fauna → mata pencaharian → budaya. Dengan demikian, kamu akan memahami hubungan sebab-akibat antar konsep.</p>
+            </div>
+        </div>
+
+        <!-- Navigation Footer -->
+        <div class="nav-footer">
+            <a href="index.html" class="nav-prev">← Kembali ke Beranda</a>
+            <a href="uji-formatif-1.html" class="nav-next" style="background: linear-gradient(135deg, #f39c12 0%, #e67e22 100%);">📝 Uji Formatif Bab 1</a>
+            <a href="2.html" class="nav-next">Bab Selanjutnya →</a>
+        </div>
+
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>📘 IPS Kelas VIII Semester I</h4>
+                <p>Buku ajar untuk peserta didik Madrasah Tsanawiyah kelas VIII. Disusun oleh Astariny Martha, S.Pd.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Navigasi</h4>
+                <a href="index.html#beranda">Beranda</a>
+                <a href="index.html#tentang">Tentang Buku</a>
+                <a href="index.html#bab">Daftar Bab</a>
+                <a href="index.html#penulis">Penulis</a>
+            </div>
+            <div class="footer-section">
+                <h4>Buku</h4>
+                <a href="#">Cetak</a>
+                <a href="#">E-Book</a>
+                <a href="uji-formatif-1.html">Uji Formatif</a>
+            </div>
+            <div class="footer-section">
+                <h4>Kontak</h4>
+                <a href="mailto:astarinymartha80@gmail.com">astarinymartha80@gmail.com</a>
+                <p>MTsN 6 Agam</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 Astariny Martha, S.Pd. – MTsN 6 Agam. Hak cipta dilindungi.</p>
+            <p>IPS Kelas VIII Semester I: Kondisi Geografis dan Keragaman Sosial Budaya di Indonesia</p>
+        </div>
+    </footer>
+
+</body>
+</html>
